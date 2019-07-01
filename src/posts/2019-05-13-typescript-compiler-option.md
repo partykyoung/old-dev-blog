@@ -1,89 +1,93 @@
 ---
 title: tsconfig.json
 date: 2019-05-13 22:45:44
-tags:
-  - TypeScript
-categories:
-  - Front-end
-  - TypeScript
+# tags:
+#   - TypeScript
+# categories:
+#   - Front-end
+#   - TypeScript
+path: /front-end/typescript/compiler-option
 ---
+
 ## tsconfig.json
+
 **tsconfig.json** 파일은 프로젝트를 컴파일 하는데 필요한 루트 파일과 컴파일러 옵션을 지정한다.
 
 [JSON schema for the TypeScript compiler's configuration file](http://json.schemastore.org/tsconfig)에서 스펙을 확인할 수 있다.
 
 ex)
+
 ```json
 {
-    "compilerOptions": {
-        "module": "system",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "outFile": "../../built/local/tsc.js",
-        "sourceMap": true
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
-    ]
+  "compilerOptions": {
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "../../built/local/tsc.js",
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
 ```
 
 ### compileOnSave
+
 ```json
 {
   // ...
-  "compileOnSave": true,
+  "compileOnSave": true
   // ...
 }
 ```
-- ts 파일을 저장 시 자동 컴파일을 해준다. 
+
+- ts 파일을 저장 시 자동 컴파일을 해준다.
 - true / false (default: false)
 
 ### extends
+
 ```json
 {
   // ...
-  "extends": "./configs/base",
+  "extends": "./configs/base"
   // ...
 }
 ```
-- extends 속성을 사용해 다른 파일의 설정을 상속할 수 있다. 
+
+- extends 속성을 사용해 다른 파일의 설정을 상속할 수 있다.
   - 클라이언트 작업물과 서버 사이드 작업물의 설정이 비슷하다면 한 파일을 만들어놓고 상속받은 후 필요한 부분만 바꿔 쓸 수 있다.
 
 ### files, include, exclude
+
 셋다 설정이 없으면 모든 ts 파일들을 컴파일 해준다.
 
 #### files
+
 ```json
 {
   // ...
   "files": [
-        "core.ts",
-        "sys.ts",
-        "types.ts",
-        "emitter.ts",
-        "tsc.ts",
-        "diagnosticInformationMap.generated.ts"
-    ],
+    "core.ts",
+    "sys.ts",
+    "types.ts",
+    "emitter.ts",
+    "tsc.ts",
+    "diagnosticInformationMap.generated.ts"
+  ]
   // ...
 }
-
 ```
+
 - 상대 혹은 절대 경로의 리스트 배열이다.
 - files에 지정되어 있는 파일은 exclude에 관계 없이 항상 컴파일 대상에 포함된다. -> exclude보다 순위가 더 높다.
 
 #### include
+
 ```json
 {
   // ...
-  "include": [
-        "src/**/*"
-    ],
+  "include": ["src/**/*"]
   // ...
 }
 ```
@@ -95,29 +99,29 @@ ex)
   - true/false
 
 #### exclude
+
 ```json
 {
   // ...
-  "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
-    ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
   // ...
 }
 ```
 
 - glob 패턴 (.gitignore 이랑 비슷함.)
-- exclude에 포함된 패턴과 맞는 파일들은 컴파일 대상에서 제외된다. 
+- exclude에 포함된 패턴과 맞는 파일들은 컴파일 대상에서 제외된다.
 - node_modules, bower_components, jspm_packages, <outDir>은 default로 제외한다.
 
 ### compileOptions
+
 #### types
+
 ```json
 {
   // ...
   "compilerOptions": {
     // ...
-    "types" : ["node", "lodash", "express"],
+    "types": ["node", "lodash", "express"]
     // ...
   }
   // ...
@@ -125,24 +129,26 @@ ex)
 ```
 
 - 타입을 가져올 패키지 목록.
-- 기본적으로는 @types 모든 패키지가 컴파일에 포함된다. types를 지정할 경우 나열된 패키지만 컴파일 대상에 포함된다. 
+- 기본적으로는 @types 모든 패키지가 컴파일에 포함된다. types를 지정할 경우 나열된 패키지만 컴파일 대상에 포함된다.
 
 ### target
+
 ```json
 {
   // ...
   "compilerOptions": {
     // ...
-    "target": "es3",
+    "target": "es3"
     // ...
   }
   // ...
 }
 ```
 
-- 컴파일 결과물을 js의 어떤 버전으로 할 것인지 지정한다. (default: es3) 
+- 컴파일 결과물을 js의 어떤 버전으로 할 것인지 지정한다. (default: es3)
 
 ### lib
+
 ```json
 {
   // ...
@@ -152,7 +158,7 @@ ex)
     "lib": [
       "dom",
       "es5",
-      "es2015.promise" 
+      "es2015.promise"
     ],
     //...
   }
@@ -168,13 +174,14 @@ ex)
 - 위의 기본 값 대신에 커스텀하게 라이브러리를 쓰려고 할 때, lib을 정의한다.
 - [Understanding “target” and “module” in tsconfig](https://stackoverflow.com/questions/41993811/understanding-target-and-module-in-tsconfig)
 
-### outDir 
+### outDir
+
 ```json
 {
   // ...
   "compilerOptions": {
     // ...
-    "outDir": "",
+    "outDir": ""
     // ...
   }
   // ...
@@ -184,12 +191,13 @@ ex)
 - 컴파일된 파일들의 위치를 지정해준다.
 
 ### outFile
+
 ```json
 {
   // ...
   "compilerOptions": {
     // ...
-    "outFile": "",
+    "outFile": ""
     // ...
   }
   // ...
@@ -199,18 +207,19 @@ ex)
 - 컴파일 결과물을 단일 파일로 떨궈준다.
 
 ### module
+
 ```json
 {
   // ...
   "compilerOptions": {
     // ...
-    "module": "es3",
+    "module": "es3"
     // ...
   }
   // ...
 }
-
 ```
+
 - 컴파일된 모듈의 결과물을 어떤 모듈 시스템으로 할 지 결정한다.
   - commonjs, amd, umd, system, es6, es2015, none 중 설정 가능.
   - amd, systme 은 outFile 설정과 사용된다.

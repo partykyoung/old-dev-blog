@@ -2,11 +2,12 @@
 title: javascript로 사진 똑바로 만들기
 date: 2018-07-11 01:03:37
 
-categories:  
-  - Front-end
-  - memo
-tags: 
-- JavaScript
+# categories:
+#   - Front-end
+#   - memo
+# tags:
+# - JavaScript
+path: /front-end/issue/ex-if
 ---
 
 회사에서 열심히 일을 하던 도중 이슈가 하나 생겼다. 폰으로 사진 파일을 업로드 하면 어떤 사진들은 이미지 방향이 자꾸 돌아가서 업로드 되는 것이었다.
@@ -26,23 +27,23 @@ tags:
 
 ```javascript
 function getExif(file) {
-  const reader = new FileReader();
-  const imageViewer = document.getElementById("imageViewer");
-  const image = file.files[0];
+  const reader = new FileReader()
+  const imageViewer = document.getElementById("imageViewer")
+  const image = file.files[0]
 
   reader.onload = e => {
     EXIF.getData(image, () => {
-      const tags = EXIF.getAllTags(image);
+      const tags = EXIF.getAllTags(image)
 
       // metadata 출력
-      console.log(tags);
+      console.log(tags)
 
       // 이미지 미리보기
-      imageViewer.style.backgroundImage = `url(${e.target.result})`;
-    });
-  };
+      imageViewer.style.backgroundImage = `url(${e.target.result})`
+    })
+  }
 
-  reader.readAsDataURL(image);
+  reader.readAsDataURL(image)
 }
 ```
 
@@ -60,17 +61,17 @@ function getExif(file) {
 
 ```javascript
 function fixRotationOfFile(file) {
-  const image = file.files[0];
+  const image = file.files[0]
 
   loadImage(
     image,
     img => {
-      const imageViewer = document.getElementById("imageViewer");
+      const imageViewer = document.getElementById("imageViewer")
 
-      imageViewer.appendChild(img);
+      imageViewer.appendChild(img)
     },
     { maxWidth: 400, orientation: true }
-  );
+  )
 }
 ```
 
@@ -79,26 +80,26 @@ function fixRotationOfFile(file) {
 
 ```javascript
 return new Promise((resolve, reject) => {
-  const image = file.files[0];
-  const fileType = image.type;
+  const image = file.files[0]
+  const fileType = image.type
 
   loadImage(
     file,
     img => {
       if (img.type === "error") {
-        reject(img);
+        reject(img)
       }
 
       //
       img.toBlob(blob => {
-        const createdFile = new File([blob], image.name);
+        const createdFile = new File([blob], image.name)
 
         // 이미지 업로드 실행은 여기서
-      }, fileType);
+      }, fileType)
     },
     { orientation: true }
-  );
-});
+  )
+})
 ```
 
 위의 코드와 같은 식으로 정방향으로 출력된 blob 이미지를 file 로 바꾸어 이미지를 업로드 하는 식으로 해결했다.

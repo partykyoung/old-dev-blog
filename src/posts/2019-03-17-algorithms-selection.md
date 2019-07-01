@@ -1,14 +1,16 @@
 ---
 title: 선택 문제
-tags:
-  - Algorithms
-categories:
-  - Base
-  - Algorithms
+# tags:
+#   - Algorithms
+# categories:
+#   - Base
+#   - Algorithms
+path: /base/algorithms/selection
 date: 2019-05-10 19:55:08
 ---
 
-## 선택 문제 
+## 선택 문제
+
 n개의 원소가 임의의 순서로 저장된 배열에서 i번째로 작은 원소를 찾는 문제.
 
 - i = 1 이면 최솟값.
@@ -19,7 +21,8 @@ n개의 원소가 임의의 순서로 저장된 배열에서 i번째로 작은 �
 또 다른 직관적인 방법으로는 최솟값 찾는 과정을 i번 반복한다. i-1번째까지는 최솟값을 찾은 후 삭제한다. 이 경우에는 최솟값을 찾는데 걸리는 시간 O(n)을 i번 반복하기 때문에 성능은 O(in)이다.
 
 ## 최솟값 찾기
-각 데이터를 하나씩 모드 비교한다. 
+
+각 데이터를 하나씩 모드 비교한다.
 
 ```c
 int findMinimum (int arr[], int length) {
@@ -34,9 +37,11 @@ int findMinimum (int arr[], int length) {
   return min;
 }
 ```
+
 n개의 데이터에서 대해서 최소한 length - 1번의 비교가 필요하므로 성능은 O(n)이다.
 
 ## 최솟값과 최대값 모두 찾기.
+
 최솟값과 최댓값을 모두 찾으려면 최솟값을 찾은 후에 최댓값을 찾거나 최댓값을 찾은 후 최솟값을 찾으면 된다.
 
 ```c
@@ -76,9 +81,11 @@ void findMinMax(int arr[], int length) {
   printf("최댓값: %d, 최솟값: %d\n", max, min);
 }
 ```
+
 위의 알고리즘을 이용하면 $(3/2 * n) - 2$번의 비교를 통해서 최솟값과 최댓값을 동시에 찾을 수 있다.
 
 ### i번째로 작은 원소 찾기: 최악 $O(n^2)$, 평균 O(n)
+
 퀵 정렬의 분할 함수 Partition()을 이용하면 모든 원소를 정렬하지 않고도 i번째로 작은 원소를 구할 수 있다.
 
 - i = j 일때 피벗이 찾고자 하는 i 번째 원소.
@@ -86,15 +93,19 @@ void findMinMax(int arr[], int length) {
 - i > j 일때 오른쪽 부분배열에 대해 순환 적용.
 
 #### 분할
+
 피벗을 기준으로 주어진 배열을 두 부분배열로 분할한다. i가 피벗의 인덱스와 같으면 피벗의 값을 반환하고 종료한다.
 
 #### 정복
+
 인덱스 i가 포함된 부분배열에 대해서 선택 알고리즘을 순환적으로 적용한다.
 
-#### 결합 
+#### 결합
+
 필요 없다.
 
 #### 알고리즘
+
 ```c
 void swap(int arr[], int a, int b) {
     int temp = arr[a];
@@ -117,14 +128,14 @@ int partition(int arr[], int leftIndex, int rightIndex) {
     while (r_hold > leftIndex && arr[r_hold] >= pivot) {
       r_hold--;
     }
-    
+
     if (l_hold < r_hold) {
       // arr[l_hold]와 arr[r_hold]의 값을 교환한다.
       swap(arr, l_hold, r_hold);
     }
   }
 
-  // 피벗과 arr[r_hold]값을 교환한다. 
+  // 피벗과 arr[r_hold]값을 교환한다.
   swap(arr, leftIndex, r_hold);
 
   return r_hold;
@@ -149,7 +160,8 @@ int findNumber(int arr[], int leftIndex, int rightIndex, int findNum) {
 ```
 
 #### 성능분석
-최악의 경우 = 퀵 정렬의 최악의 경우 
+
+최악의 경우 = 퀵 정렬의 최악의 경우
 
 - 분할 함수가 항상 하나의 부분배열만 생성하는 경우.
 - 오름차순으로 정렬된 상태에서 i = n을 찾는 경우.
@@ -159,15 +171,18 @@ int findNumber(int arr[], int leftIndex, int rightIndex, int findNum) {
 평균적인 경우에는 O(n).
 
 ### i번째로 작은 원소 찾기: 최악 O(n), 평균 O(n)
+
 특정한 성질을 만족하도록 피벗을 선택하되 항상 일정한 비율의 두 부분배열로 분할 시킨다. 그러면 항상 하나의 부분배열만으로 분할되는 문제를 피하여 최악의 수행 시간 O($n^2$)를 개선할 수 있다.
 
 #### 피벗 선택 방법
+
 1. 크기가 n인 배열의 원소를 5개씩 묶어 $n/5$개의 그룹을 형성한다. 이떄 n이 5의 배수가 되지 않아 그룹을 형성하지 못한 채 남은 원소들은 그대로 남겨둔다.
 2. 각 그룹에 대해서 중간 값을 찾는다.
-3. $n/5$개의 중간값들을 대상으로 다시 중간값을 찾는다. 
+3. $n/5$개의 중간값들을 대상으로 다시 중간값을 찾는다.
 4. 이렇게 계산된 '중간값들의 중간값'을 피벗으로 사용하여 주어진 배열을 분할한다.
 
 #### 알고리즘
+
 ```c
 // 삽입 정렬 함수
 void insertionSort(int arr[], int leftIndex, int rightIndex){
@@ -194,7 +209,7 @@ int partition(int arr[], int leftIndex, int rightIndex, int pivot) {
   for (int i = leftIndex; i <= rightIndex; i++) {
     if (arr[i] < pivot) {
       int temp = arr[i];
-    
+
       arr[i] = arr[swapIndex];
       arr[swapIndex] = temp;
 
@@ -208,7 +223,7 @@ int partition(int arr[], int leftIndex, int rightIndex, int pivot) {
 int selection (int arr[], int leftIndex, int rightIndex, int findIndex) {
   int arrLength = rightIndex - leftIndex + 1;
   int medianNum = arrLength / 5;
-  
+
   if (0 > findIndex && findIndex > arrLength) {
     return -1;
   }
@@ -227,9 +242,9 @@ int selection (int arr[], int leftIndex, int rightIndex, int findIndex) {
     maidanArr[i] = selection(arr, leftIndex + (5 * i), (leftIndex + (5 * (i+1)-1)), leftIndex + (5 * i) + 2);
   }
 
-  // 중간값들의 중간값을 계산하기 위해 선택 함수를 순환호출한다. 
+  // 중간값들의 중간값을 계산하기 위해 선택 함수를 순환호출한다.
   int pivot = selection(maidanArr, 0, medianNum - 1, (medianNum / 2) + 1);
-  
+
   // pivot을 사용하여 배열 arr을 분할한다.
   int pivotIndex = partition(arr, leftIndex, rightIndex, pivot);
   int rank = pivotIndex - leftIndex + 1;
@@ -239,9 +254,10 @@ int selection (int arr[], int leftIndex, int rightIndex, int findIndex) {
   } else {
       return selection(arr, pivotIndex + 1, rightIndex, findIndex);
   }
-} 
+}
 ```
 
 ## Reference
+
 [방송대 컴퓨터과학과 알고리즘 4강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
 [프로그래밍 면접 문제 10 : Kth Largest Element in Array](https://ronniej.sfuh.tk/kth-largest-element-array/)
