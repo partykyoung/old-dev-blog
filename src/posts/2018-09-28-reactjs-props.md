@@ -5,7 +5,7 @@ tags:
 categories:
   - Front-end
   - React.js
-  path: /front-end/reactjs/props
+path: /front-end/reactjs/props
 ---
 
 ## props

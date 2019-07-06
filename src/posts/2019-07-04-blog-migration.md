@@ -136,3 +136,9 @@ exports.createPages = ({ actions, graphql }) => {
   })
 }
 ```
+
+```
+yarn add typescript @types/react @types/react-dom gatsby-plugin-typescript @types/react-helmet
+```
+
+https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27
