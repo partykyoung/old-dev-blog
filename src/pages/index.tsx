@@ -9,12 +9,7 @@ export default class Index extends Component {
   render() {
     return (
       <Layout>
-      {/* <SEO title="Home" /> */}
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-     
-      <Link to="/page-2/">Go to page 2</Link>
+      블로그 리뉴얼 중 입니다 :)
     </Layout>
     )
   }
