@@ -1,11 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from "gatsby"
 
-export default class index extends Component {
+import Layout from "../components/Layout"
+// import SEO from "../components/seo"
+
+
+export default class Index extends Component {
   render() {
     return (
-      <div>
-        test
-      </div>
+      <Layout>
+      {/* <SEO title="Home" /> */}
+      <h1>Hi people</h1>
+      <p>Welcome to your new Gatsby site.</p>
+      <p>Now go build something great.</p>
+     
+      <Link to="/page-2/">Go to page 2</Link>
+    </Layout>
     )
   }
 }
