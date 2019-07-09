@@ -1,5 +1,26 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import styled, { theme } from '../styledComponents';
+
+const Wrapper = styled.header`
+  display: flex;
+  width: 100%;
+  height: ${({theme}) => theme.headerHeight};
+  padding: 0 1rem;
+  min-width: 320px;
+  align-items: center;
+  box-sizing: border-box;
+`;
+
+const Title = styled.h1`
+  width: 146px;
+  height: 24px;
+  margin-right: auto;
+`;
+
+const Nav = styled.nav`
+  margin-left: auto;
+`;
 
 const Image = () => {
   const data = useStaticQuery(graphql`
@@ -20,8 +41,8 @@ const Image = () => {
 
 const Header = () => {
   return (
-    <header>
-      <h1 style={{ margin: '0 auto', width: '146px', height: '24px', textAlign: "center" }}>
+    <Wrapper theme={theme}>
+      <Title>
         <Link
           to="/"
           style={{
@@ -32,8 +53,13 @@ const Header = () => {
         >
           <Image />
         </Link>
-      </h1>
-    </header>
+      </Title>
+      <Nav>
+        <Link to="/about">
+          about
+        </Link>
+      </Nav>
+    </Wrapper>
   )
 }
 
