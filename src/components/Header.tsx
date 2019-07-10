@@ -9,7 +9,9 @@ const Wrapper = styled.header`
   padding: 0 1rem;
   min-width: 320px;
   align-items: center;
+  background-color: ${({theme}) => theme.whiteColor};
   box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 `;
 
 const Title = styled.h1`
@@ -43,14 +45,7 @@ const Header = () => {
   return (
     <Wrapper theme={theme}>
       <Title>
-        <Link
-          to="/"
-          style={{
-            textAlign: "center",
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+        <Link to="/" >
           <Image />
         </Link>
       </Title>

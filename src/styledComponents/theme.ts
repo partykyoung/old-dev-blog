@@ -10,6 +10,7 @@ export interface IThemeProps {
   grayColor: string,
   blackgreyColor: string,
 
+  bodyColor: string;
   borderColor: string,
   primaryColor: string,
   textColor: string, 
@@ -58,8 +59,9 @@ const theme: IThemeProps = {
  grayColor: "#979797",
  blackgreyColor: "#656565",
 
+ bodyColor: "#adc2cb",
  borderColor: "#d1d2d3",
- primaryColor: "#3399ff",
+ primaryColor: "#44b3f8",
  textColor: "#212529",
 
  // 폰트 크기

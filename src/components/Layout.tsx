@@ -1,7 +1,8 @@
 import React from "react"
-import styled, {theme } from '../styledComponents';
+import styled, {theme} from '../styledComponents';
 
-import Header from "./Header"
+import Header from "./Header";
+import Footer from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode
@@ -25,12 +26,12 @@ const Wrapper = styled.div`
 const Layout: React.FC<LayoutProps> = ({children}) => {
   return (
     <>
-      <Header />
-      <Wrapper theme={theme}>
-        <main>{children}</main>
-      </Wrapper>
+    <Header />
+    <Wrapper theme={theme}>
+        <main role="main">{children}</main>
+    </Wrapper>
+    <Footer/>
     </>
-
   );
 }
 

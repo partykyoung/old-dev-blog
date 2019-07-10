@@ -40,33 +40,39 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.blackColor};
     box-sizing: border-box;
   }
-
-  header {
-    height: ${theme.headerHeight}
-  }
-
-  footer {
-    height: ${theme.footerHeight}
+ 
+  body {
+    background-color: ${theme.bodyColor}
   }
 
   img,
   fieldset {
     border: 0;
   }
+  
   ul,
   ol {
     list-style: none;
   }
+
   em,
   address {
     font-style: normal;
   }
+
   a,
   a:hover,
   a:active,
   a:focus {
+    color: ${theme.primaryColor};
     text-decoration: none;
     box-sizing: border-box;
+  }
+
+  
+  #___gatsby {
+    position: relative;
+    min-height: 100%;
   }
 `;
 
