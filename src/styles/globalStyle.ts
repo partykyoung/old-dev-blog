@@ -28,8 +28,11 @@ const GlobalStyle = createGlobalStyle`
   select,
   button,
   table {
-    font-size: ${theme.font14};
     line-height: 1.25em;
+  }
+
+  html {
+    font-size: 16px;
   }
 
   html,
