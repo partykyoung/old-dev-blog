@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
-// import SEO from "../components/seo"
 
 export default class Index extends Component {
   render() {

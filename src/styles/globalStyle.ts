@@ -1,5 +1,5 @@
-import { createGlobalStyle } from '@nfront/global-styles';
-import theme from '../styledComponents/theme';
+import { createGlobalStyle } from "@nfront/global-styles"
+import theme from "../styledComponents/theme"
 
 const GlobalStyle = createGlobalStyle`
   html, body, 
@@ -71,12 +71,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     box-sizing: border-box;
   }
+`
 
-  
-  #___gatsby {
-    position: relative;
-    min-height: 100%;
-  }
-`;
-
-export default GlobalStyle;
+export default GlobalStyle

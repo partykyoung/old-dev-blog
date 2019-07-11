@@ -2,14 +2,11 @@ import React from "react"
 import styled, { theme } from "../styledComponents"
 
 const Wrapper = styled.footer`
-  position: absolute;
   width: 100%;
   height: ${({ theme }) => theme.footerHeight};
-  background-color: ${({theme}) => theme.whiteColor};
-  bottom: 0;
-  left: 0;
+  font-size: ${({ theme }) => theme.font14};
+  background-color: ${({ theme }) => theme.whiteColor};
   line-height: ${({ theme }) => theme.footerHeight};
-  right: 0;
   text-align: center;
 `
 
@@ -27,7 +24,7 @@ const Footer = () => {
         <a href="https://github.com/partyKyoung/blog" target="_blank">
           source code
         </a>
-      {` )`}
+        {` )`}
       </span>
     </Wrapper>
   )

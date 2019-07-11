@@ -151,4 +151,11 @@ yarn add gatsby-plugin-global-styles @nfront/global-styles
 
 ```
 
+## package.json
+
+```
+   "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/partyKyoung/partyKyoung.github.io"
+
+```
+
 https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27
