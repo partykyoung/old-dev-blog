@@ -6,6 +6,7 @@ categories:
   - Front-end
   - React.js
 path: /front-end/reactjs/props
+date: 2018-09-28 11:28:25
 ---
 
 ## props

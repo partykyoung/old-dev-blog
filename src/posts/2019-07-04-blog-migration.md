@@ -22,7 +22,7 @@ gatsby develop
 
 markdown 파일에 path 필요
 
-```md
+```markdown
 ---
 title: Hexo 에서 Gatsby로 블로그 마이그레이션 하기
 date: 2019-07-04
@@ -36,7 +36,7 @@ path: /etc/blog-migration
 
 ## blogTemplate
 
-```js
+```typescript
 import React from "react"
 import { graphql } from "gatsby"
 
@@ -75,7 +75,7 @@ export const pageQuery = graphql`
 
 ## gatsby-config.js
 
-```js
+```javascript
 // 생략
 
   plugins: [
@@ -98,7 +98,7 @@ export const pageQuery = graphql`
 
 ## gatsby-node.js
 
-```js
+```javascript
 const path = require(`path`)
 
 exports.createPages = ({ actions, graphql }) => {
@@ -148,7 +148,10 @@ yarn add gatsby-plugin-styled-components styled-components babel-plugin-styled-c
 ```
 yarn add gatsby-plugin-global-styles @nfront/global-styles
 
+```
 
+```
+gatsby-remark-prismjs prismjs
 ```
 
 ## package.json

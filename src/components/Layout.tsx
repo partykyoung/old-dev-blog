@@ -10,8 +10,6 @@ interface LayoutProps {
 
 const Container = styled.div`
   width: 100%;
-  padding: 0.75rem;
-  box-sizing: border-box;
   min-width: 320px;
   min-height: ${({ theme }) =>
     `calc(100vh - (${theme.headerHeight} + ${theme.footerHeight})`});
@@ -21,9 +19,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   padding: 1rem;
-  margin: 0.75rem auto;
-  background-color: ${({ theme }) => theme.whiteColor};
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  margin: 0 auto;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.breakPoints.tablet} {
@@ -40,6 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Header />
       <Container theme={theme}>
+        <div style={{textAlign: "center", margin: "16px 0"}}>블로그 리뉴얼 중 입니다 :)</div>
         <Wrapper theme={theme}>{children}</Wrapper>
       </Container>
       <Footer />

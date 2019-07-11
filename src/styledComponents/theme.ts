@@ -1,43 +1,45 @@
 export interface IThemeProps {
   // 색상
-  whiteColor: string,
-  blackColor: string,
-  redColor: string,
-  orangeColor: string,
-  yellowColor: string,
+  whiteColor: string;
+  blackColor: string;
+  redColor: string;
+  orangeColor: string;
+  yellowColor: string;
   greenColor: string
-  blueColor: string,
-  grayColor: string,
-  blackgreyColor: string,
+  blueColor: string;
+  grayColor: string;
+  blackgreyColor: string;
 
   bodyColor: string;
-  borderColor: string,
-  primaryColor: string,
-  textColor: string, 
+  borderColor: string;
+  primaryColor: string;
+  textColor: string; 
 
  // 폰트 크기
- font16: string,
- font14: string,
- font13: string,
- font12: string,
+ font20: string;
+ font18: string;
+ font16: string;
+ font14: string;
+ font13: string;
+ font12: string;
 
   // 레이아웃
-  headerHeight: string,
-  footerHeight: string,
+  headerHeight: string;
+  footerHeight: string;
 
   // media query
-  xSmall: string,
-  small: string,
-  medium: string,
-  large: string,
-  xLarge: string,
+  xSmall: string;
+  small: string;
+  medium: string;
+  large: string;
+  xLarge: string;
 
   breakPoints: {
-   mobileS: string, 
-   mobile: string,
-   tablet: string,
-   desktop: string,
-   desktopL: string
+   mobileS: string; 
+   mobile: string;
+   tablet: string;
+   desktop: string;
+   desktopL: string;
   }
 }
 
@@ -65,6 +67,8 @@ const theme: IThemeProps = {
  textColor: "#212529",
 
  // 폰트 크기
+ font20: "1.25rem",
+ font18: "1.125rem",
  font16: "1rem",
  font14: "0.875rem",
  font13: "0.8125rem",
