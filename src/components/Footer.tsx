@@ -15,11 +15,11 @@ const Footer = () => {
     <Wrapper theme={theme}>
       <span>
         {`Built with `}
-        <a href="href=https://www.gatsbyjs.org/" target="_blank">
+        <a href="https://www.gatsbyjs.org/" target="_blank">
           Gatsby
         </a>
         {` + `}
-        <a>GitHub Pages.</a>
+        <a href="https://pages.github.com/" target="_blank">GitHub Pages.</a>
         {` ( `}
         <a href="https://github.com/partyKyoung/blog" target="_blank">
           source code
