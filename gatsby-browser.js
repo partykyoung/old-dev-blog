@@ -6,4 +6,5 @@
 
 // You can delete this file if you're not using it
 // gatsby-browser.js
-require("prismjs/themes/prism-atom-one-dark.css");
+require("./src/styles/prism-atom-one-dark.css");
+ 
