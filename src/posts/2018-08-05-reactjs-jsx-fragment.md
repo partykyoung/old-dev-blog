@@ -57,7 +57,7 @@ class App extends Component {
 export default App
 ```
 
-![실행결과](/images/frontend/reactjs-fragment-1.png)
+![실행결과](../images/frontend/reactjs-fragment-1.png)
 JSX는 컴포넌트에 여러 요소가 있다면 부모 요소 하나로 꼭 감싸야 한다. Virtual DOM에서 컴포넌트 변화를 감지해 낼 때 효율적으로 비교할 수 있도록 컴포넌트 내부는 DOM 트리 구조 하나여야 한다는 규칙이 있기 때문이다.
 하지만 이렇게 요소들을 감싸기 위한 용도로 DOM 요소들을 추가하다보면 쓸모없는 요소들이 늘어나게 된다.
 
@@ -80,7 +80,7 @@ class App extends Component {
 export default App
 ```
 
-![실행결과](/images/frontend/reactjs-fragment-2.png)
+![실행결과](../images/frontend/reactjs-fragment-2.png)
 
 Fragment는 React v16 이상의 버전에서 도입되었다. Fragment로 부모 DOM 요소를 추가하지 않고도 자식 요소들을 그룹화 할 수 있다.
 Fragment를 사용하면 단지 부모 요소로만 쓰이는 불필요한 DOM을 줄일 수 있어 조금 더 빨라지고 메모리 사용량도 조금 더 적어진다. 개발자 도구로 DOM 요소를 확인 할 때도 조금 더 편리하게 확인할 수 있다.

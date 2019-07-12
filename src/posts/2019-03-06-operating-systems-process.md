@@ -52,7 +52,7 @@ date: 2019-03-16 22:34:05
 
 시스템에서 프로세스가 처리될 때 프로세스는 생성, 준비, 실행, 대기, 종료의 다섯 가지 중 하나의 상태에 있게 된다.
 
-![프로세스의 상태 변화](/images/base/operating-systems-process-1.png)
+![프로세스의 상태 변화](../images/base/operating-systems-process-1.png)
 
 ### 생성
 

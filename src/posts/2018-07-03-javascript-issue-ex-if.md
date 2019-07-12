@@ -12,8 +12,8 @@ path: /front-end/issue/ex-if
 
 회사에서 열심히 일을 하던 도중 이슈가 하나 생겼다. 폰으로 사진 파일을 업로드 하면 어떤 사진들은 이미지 방향이 자꾸 돌아가서 업로드 되는 것이었다.
 
-![이렇게 이미지 뷰어나 앨범에서 보면 제대로 출력되는 사진들이](/images/frontend/javascript-memo-exif-1.png)
-![이런식으로 이미지가 돌아가서 나온다](/images/frontend/javascript-memo-exif-2.png)
+![이렇게 이미지 뷰어나 앨범에서 보면 제대로 출력되는 사진들이](../images/frontend/javascript-memo-exif-1.png)
+![이런식으로 이미지가 돌아가서 나온다](../images/frontend/javascript-memo-exif-2.png)
 
 사실 좀 귀찮기도 하고 어떻게 고칠지 막막하기도 해서 그냥 냅두고 싶었지만 그러면 절대 안되기 때문에 우여곡절 어떻게든 방법을 찾아서 해결 했는데 그 과정을 공유해보고자 한다.
 
@@ -21,7 +21,7 @@ path: /front-end/issue/ex-if
 
 카메라로 사진을 찍으면 메타데이터로 exif 값이 저장된다. 이 exif 는 디지털 카메라에서 이용되는 이미지 파일 포맷인데 여기에 orientation 이라고 사진의 방향 값이 저장되어 있다.
 
-![exif orientation](/images/frontend/javascript-memo-exif-4.gif)
+![exif orientation](../images/frontend/javascript-memo-exif-4.gif)
 
 [exif-js](https://github.com/exif-js/exif-js) 오픈소스를 사용하면 exif 데이터를 읽어올 수 있길래 한번 써보았다.
 
@@ -47,7 +47,7 @@ function getExif(file) {
 }
 ```
 
-![확인해보면 orientation값이 6으로 되어있다.](/images/frontend/javascript-memo-exif-3.png)
+![확인해보면 orientation값이 6으로 되어있다.](../images/frontend/javascript-memo-exif-3.png)
 
 ## 해결 방법
 
@@ -75,7 +75,7 @@ function fixRotationOfFile(file) {
 }
 ```
 
-![정방향으로 출력되는 이미지](/images/frontend/javascript-memo-exif-4.png)
+![정방향으로 출력되는 이미지](../images/frontend/javascript-memo-exif-4.png)
 이렇게 하면 이미지가 정뱡향으로 출력된다!
 
 ```javascript

@@ -31,14 +31,15 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
-              noInlineHighlight: false,       
+              noInlineHighlight: false,
             },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
-            },   
+              maxWidth: 590,
+              showCaptions: true
+            },
           }
         ],
       },

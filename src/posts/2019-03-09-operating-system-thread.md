@@ -15,7 +15,7 @@ path: /base/operating-system/thread
 
 ## 쓰레드
 
-[프로세스와 쓰레드](/images/base/operating-system-thread.png)
+[프로세스와 쓰레드](../images/base/operating-system-thread.png)
 
 - 하나의 프로세스 내에서 다중처리를 위해 제안된 개념으로 실행 단위를 프로세스에서 한 단계 낮추어 규정한 것이다.
 - 대부분의 기존 프로그램은 하나의 프로세스가 하나의 쓰레드를 갖는 형태이나, 처리효율을 극대화하는 방법으로 프로세스 내에서의 병렬적 수행을 위해 다중 쓰레딩을 이용한다.

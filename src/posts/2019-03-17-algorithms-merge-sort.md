@@ -25,7 +25,7 @@ path: /base/algorithms/merge-sort
 
 정렬된 두 부분배열을 합병하여 하나의 정렬된 배열을 만든다.
 
-![합병정렬](/images/base/algorithms-merge-sort-1.png)
+![합병정렬](../images/base/algorithms-merge-sort-1.png)
 
 ## 알고리즘
 

@@ -12,10 +12,10 @@ path: /front-end/css/css-darwing-heavyrain
 
 요즘 css drawing 에 맛들려 시간날 때마다 조금씩 css drawing을 작업하다가 튜토리얼을 간단하게 작성해보기로 했다.
 
-![출처: 치킨쿤 유튜브 썸네일](/images/frontend/css-drawing-tutorial-01.png)
+![출처: 치킨쿤 유튜브 썸네일](../images/frontend/css-drawing-tutorial-01.png)
 위의 이미지는 호무새 방송시 구독 메시지와 같이 출력되는 이미지인데 튜토리얼용으로도 괜찮을것 같아서 캡쳐해왔다. css로 이 이미지를 한번 작업해보자.
 
-![](/images/frontend/css-drawing-tutorial-02.png)
+![](../images/frontend/css-drawing-tutorial-02.png)
 먼저 어떻게 영역을 나눠볼지 정해보자.
 
 ```html
@@ -41,7 +41,7 @@ path: /front-end/css/css-darwing-heavyrain
 
 ## 얼굴
 
-![호무새 얼굴](/images/frontend/css-drawing-tutorial-03.png)
+![호무새 얼굴](../images/frontend/css-drawing-tutorial-03.png)
 
 ```css
 /* 얼굴 */
@@ -86,7 +86,7 @@ div 하나를 호무새 얼굴로 잡고 가상 선택자(before, after)로 호�
 
 ## 호무새 눈
 
-![호무새 눈](/images/frontend/css-drawing-tutorial-04.png)
+![호무새 눈](../images/frontend/css-drawing-tutorial-04.png)
 
 ```css
 /* 눈 */
@@ -150,7 +150,7 @@ div 하나를 호무새 얼굴로 잡고 가상 선택자(before, after)로 호�
 
 ## 호무새 부리
 
-![호무새 부리](/images/frontend/css-drawing-tutorial-05.png)
+![호무새 부리](../images/frontend/css-drawing-tutorial-05.png)
 호무새 부리
 
 ```css

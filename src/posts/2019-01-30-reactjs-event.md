@@ -104,7 +104,7 @@ export default class MyComponent extends Component {
 
 ### 이벤트 바인딩
 
-![함수가 가리키는 this](/images/frontend/reactjs-event-1.png)
+![함수가 가리키는 this](../images/frontend/reactjs-event-1.png)
 JavaScript 에서 함수를 선언하면 함수는 자기 자신을 가리키는 this 를 생성하며, 함수 호출 시, this 는 전역 객체를 바인딩 하게 된다.
 
 ```javascript
@@ -126,7 +126,7 @@ export default class MyComponent extends Component {
 }
 ```
 
-![함수 바인딩이 되어있지 않기 때문에 함수 실행 시 오류가 발생한다.](/images/frontend/reactjs-event-2.png)
+![함수 바인딩이 되어있지 않기 때문에 함수 실행 시 오류가 발생한다.](../images/frontend/reactjs-event-2.png)
 리액트도 JavaScript이기 때문에 위의 코드 처럼 컴포넌트에 임의 메서드를 만들면 기본적으로 this에 접근할 수 없다.
 
 ```javascript

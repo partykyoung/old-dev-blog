@@ -103,7 +103,7 @@ webpack 4 버전 부터는 꼭 --mode (develop or production)를 설정해주어
 
 ## npm run build
 
-![실행 결과](/images/backend/nodejs-setting-1.png)
+![실행 결과](../images/backend/nodejs-setting-1.png)
 빌드도 잘되고 실행도 잘된다. 작업환경을 끝냈으니 이제 본격적으로 Node.js 공부를 해보자.
 
 [해당 포스트에 작성된 모든 소스는 여기서 확인할 수 있다.](https://github.com/partyKyoung/nodejs-study)

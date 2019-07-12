@@ -23,19 +23,19 @@ Node.js에서는 기본적인 내장 객체와 내장 모듈으르 제공한다.
 노드에서는 window 대신 global 객체 안에 console이 들어있다. 브라우저에서의 console과 거의 비슷하다. console 객체는 보통 디버깅을 위해 사용된다.
 
 - console.time(레이블): console.timeEnd(레이블)과 대응되어 같은 레이블을 가진 time과 timeEnd 사이의 시간을 측정한다.
-  ![console.time](/images/backend/node-global-01.png)
+  ![console.time](../images/backend/node-global-01.png)
 
 - console.log(내용): 평범한 로그를 콘솔에 표시한다.
-  ![console.log](/images/backend/node-global-02.png)
+  ![console.log](../images/backend/node-global-02.png)
 
 - console.error(에러): 에러를 콘솔에 표시한다.
-  ![console.error](/images/backend/node-global-03.png)
+  ![console.error](../images/backend/node-global-03.png)
 
 - console.dir(객체, 옵션): 객체를 콘솔에 표시할때 사용한다. 첫 번째 인자로 객체를 넣고 두 번째 인자로 옵션을 넣는다.
-  ![console.dir](/images/backend/node-global-04.png)
+  ![console.dir](../images/backend/node-global-04.png)
 
 - console.trace(레이블): 에러가 어디서 발생했는지 추적할 수 있게 해준다.
-  ![console.trace](/images/backend/node-global-05.png)
+  ![console.trace](../images/backend/node-global-05.png)
 
 ## 타이머
 

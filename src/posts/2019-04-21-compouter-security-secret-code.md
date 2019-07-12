@@ -43,12 +43,12 @@ path: /base/computer-security/secret-code
 - 암호문에 사용되는 문자들은 평문에서 사용된 문자들이 그대로 이용되며 단지 위치만 바뀐다.
 
 ex)
-![스파르타의 봉 암호 (출처: 위키백과)](/images/base/compouter-security-secret-code-1.png)
+![스파르타의 봉 암호 (출처: 위키백과)](../images/base/compouter-security-secret-code-1.png)
 컴퓨터보안재미있는과목입니다~! -> 컴안는니퓨재과다터미목~보있입!
 
 #### 치환법
 
-![치환법 (출처: 위키백과)](/images/base/compouter-security-secret-code-2.png)
+![치환법 (출처: 위키백과)](../images/base/compouter-security-secret-code-2.png)
 
 - 평문의 문자들을 다른 문자로 치환함으로써 암호화 하는 기법.
 - 암호화를 하는 쪽과 복호화를 하는 쪽이 미리 정해 놓은 문자 치환규칙에 따라 암호화와 복호화를 수행하는 방식.
@@ -56,7 +56,7 @@ ex)
 
 #### 시저암호
 
-![시저암호 (출처: 위키백과)](/images/base/compouter-security-secret-code-3.png)
+![시저암호 (출처: 위키백과)](../images/base/compouter-security-secret-code-3.png)
 
 - 알파벳 26글자를 알파벳 순서로 세 자씩 오른쪽으로 이동시킨 뒤, 해당되는 글자로 치환하여 암호화를 함.
 

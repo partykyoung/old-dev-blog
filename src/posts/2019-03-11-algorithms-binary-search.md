@@ -28,7 +28,7 @@ x가 가운데 원소보다 작으면 왼쪽 부분배열을 대상으로 이진
 
 부분배열에 대해서 이진 탐색의 결과가 직접 반환되므로 결과를 결합할 필요가 없다.
 
-![이진 탐색 분할](/images/base/algorithms-binary-search-1.png)
+![이진 탐색 분할](../images/base/algorithms-binary-search-1.png)
 
 ## 알고리즘
 

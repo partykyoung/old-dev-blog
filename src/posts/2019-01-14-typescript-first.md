@@ -48,9 +48,9 @@ greeter("typescript")
 
 TypeScript 공식 사이트에서 튜토리얼을 보고 간단하게 작성해 보았다.
 
-![parameter에 타입을 지정해주면 타입이 맞지 않을 때 오류를 출력해준다.](/images/frontend/typescript-first-1.png)
+![parameter에 타입을 지정해주면 타입이 맞지 않을 때 오류를 출력해준다.](../images/frontend/typescript-first-1.png)
 
-![parameter에 타입을 생략하면 any로 타입이 설정된다.](/images/frontend/typescript-first-2.png)
+![parameter에 타입을 생략하면 any로 타입이 설정된다.](../images/frontend/typescript-first-2.png)
 
 ```
 tsc helloTypeScript.ts
@@ -58,9 +58,9 @@ tsc helloTypeScript.ts
 
 tsc 명령어로 TypeScript를 컴파일 할 수 있다.
 
-![tsc 명령어로 ts파일을 컴파일 하면 js 파일이 생성된다.](/images/frontend/typescript-first-3.png)
+![tsc 명령어로 ts파일을 컴파일 하면 js 파일이 생성된다.](../images/frontend/typescript-first-3.png)
 
-![컴파일된 js 파일에도 타입이 지정되어 있을까 확인해봤더니 타입이 지정되지는 않았다.](/images/frontend/typescript-first-4.png)
+![컴파일된 js 파일에도 타입이 지정되어 있을까 확인해봤더니 타입이 지정되지는 않았다.](../images/frontend/typescript-first-4.png)
 
 ## Reference
 

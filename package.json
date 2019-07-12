@@ -32,8 +32,6 @@
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-transformer-remark": "^2.6.3",
     "gatsby-transformer-sharp": "^2.2.1",
-    "language-c": "^0.59.8",
-    "language-javascript": "^0.128.0-0",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

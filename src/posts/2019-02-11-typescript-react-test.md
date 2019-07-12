@@ -273,7 +273,7 @@ yarn run test
 
 위의 명령어로 테스트를 실행할 수 있다.
 
-![스냅샷 생성](/images/frontend/typescript-react-test-1.png)
+![스냅샷 생성](../images/frontend/typescript-react-test-1.png)
 테스트를 실행하면 스냅샷 폴더가 생긴다.
 
 ```javascript
@@ -316,11 +316,11 @@ exports[`<Modal /> Modal Render... 1`] = `
 
 이런식으로 스냅샷이 생성된다.
 
-![테스트 성공](/images/frontend/typescript-react-test-2.png)
+![테스트 성공](../images/frontend/typescript-react-test-2.png)
 테스트에 성공하면 위의 스샷 처럼 성공 메시지들이 출력된다.
 debug로 child elements가 제대로 출력되는지 console.log를 찍었기 떄문에 console.log 결과물이 같이 출력되었다.
 
-![테스트 실패](/images/frontend/typescript-react-test-3.png)
+![테스트 실패](../images/frontend/typescript-react-test-3.png)
 테스트에 실패하면 실패한 테스트 코드 위치와 원하는 테스트 값, 실제로 나온 테스트 결과값을 보여준다.
 
 ## 마무리

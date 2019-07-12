@@ -18,7 +18,7 @@ JavaScript 배열 객체의 내장 함수 중 하나이다. 배열 내의 모든
   - **index**: 현재 처리하고 있는 요소의 index 값
   - **array**: 현재 처리하고 있는 배열의 원본
 
-![arr.map 실행 결과](/images/frontend/reactjs-map-1.png);
+![arr.map 실행 결과](../images/frontend/reactjs-map-1.png);
 
 ## Component map
 
@@ -56,7 +56,7 @@ export default class Map extends Component {
 
 리액트에서 key는 컴포넌트 배열을 렌더링 했을 때 어떤 원소에 변동이 있었는지 알아내려고 사용한다. key가 없으면 가상 DOM을 비교하는 과정에서 리스트를 순차적으로 비교하면서 변화를 감지하지만 key가 있으면 key 값을 사용하여 리스트에 어던 변화가 일어났는지 더욱 빠르게 알 수 있다.
 
-![key를 정해주지 않으면 실행 시 경고 메시지가 뜬다.](/images/frontend/reactjs-map-2.png);
+![key를 정해주지 않으면 실행 시 경고 메시지가 뜬다.](../images/frontend/reactjs-map-2.png);
 
 key 값을 설정할 때는 mpa 함수의 인자로 전달되는 함수 내부에서 컴포넌트 props를 설정하듯이 설정하면 된다. key 값은 언제나 유일해야 한다. key값이 중복된다면 렌더링 과정에서 오류가 발생한다.
 

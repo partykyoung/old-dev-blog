@@ -38,22 +38,22 @@ path: /base/algorithms/divide-and-conquer
 
 ### 이진 탐색
 
-![이진 탐색](/images/base/algorithms-divide-and-conquer-1.png)
+![이진 탐색](../images/base/algorithms-divide-and-conquer-1.png)
 크기가 n인 문제를 크기가 n/2인 두 개의 작은 문제로 분할한다. 그 중 하나의 작은 문제는 처리 대상에서 제외한다.
 
 ### 합병 정렬
 
-![합병 정렬](/images/base/algorithms-divide-and-conquer-2.png)
+![합병 정렬](../images/base/algorithms-divide-and-conquer-2.png)
 크기가 n인 문제를 크기가 n/2인 두 개의 작은 문제로 분할한다.
 
 ### 퀵 정렬
 
-![퀵 정렬](/images/base/algorithms-divide-and-conquer-3.png)
+![퀵 정렬](../images/base/algorithms-divide-and-conquer-3.png)
 크기가 n인 문제를 쿠기는 감소하지만 일정하지 않은 크기의 두 개의 작은 문제로 분할한다.
 
 ### 선택 문제
 
-![선택 문제](/images/base/algorithms-divide-and-conquer-4.png)
+![선택 문제](../images/base/algorithms-divide-and-conquer-4.png)
 크기가 n인 문제를 크기는 감소하지만 일정하지 않은 크기의 두 개의 작은 문제로 분할한다. 그중 하나의 작은 문제는 처리 대상에서 제외한다.
 
 ## Reference

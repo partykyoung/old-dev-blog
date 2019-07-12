@@ -17,12 +17,12 @@ path: /front-end/css/email-template
 
 먼저 내가 받은 이메일 중 몇몇 이메일을 검사해 보았다.
 
-![aws 메일](/images/frontend/html-email-template-03.png)
-![구글 애널리틱스 메일](/images/frontend/html-email-template-04.png)
+![aws 메일](../images/frontend/html-email-template-03.png)
+![구글 애널리틱스 메일](../images/frontend/html-email-template-04.png)
 대부분은 table로 레이아웃을 잡고 퍼블리싱을 했다.
 
-![구글 드라이브 알림 메일](/images/frontend/html-email-template-01.png)
-![티스토리 메일](/images/frontend/html-email-template-02.png)
+![구글 드라이브 알림 메일](../images/frontend/html-email-template-01.png)
+![티스토리 메일](../images/frontend/html-email-template-02.png)
 평범하게 div를 사용해서 레이아웃을 잡은 이메일들도 있었다.
 
 스타일은 전부다 인라인 스타일을 적용하고 있었다.

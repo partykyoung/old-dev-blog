@@ -28,7 +28,7 @@ path: /base/algorithms/quick-sort
 
 필요 없음
 
-![퀵정렬](/images/base/algorithms-quick-sort-1.png)
+![퀵정렬](../images/base/algorithms-quick-sort-1.png)
 
 ## 알고리즘
 

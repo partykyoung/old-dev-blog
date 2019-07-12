@@ -55,11 +55,11 @@ export default Child
 
 props에 접근할 때는 this 키워드를 사용하여 접근한다.
 
-![실행결과](/images/frontend/reactjs-props-1.png)
+![실행결과](../images/frontend/reactjs-props-1.png)
 
 부모 Component에서 자식 Component로 전달되며 받아온 props는 수정할 수 없다.
 
-![Object.isFrozen 메소드로 동결되어 있는것을 확인할 수 있다. props값을 바꾸려고 하면 에러가 난다.](/images/frontend/reactjs-props-2.png)
+![Object.isFrozen 메소드로 동결되어 있는것을 확인할 수 있다. props값을 바꾸려고 하면 에러가 난다.](../images/frontend/reactjs-props-2.png)
 
 ### propTypes
 
@@ -90,7 +90,7 @@ export default class Parent extends Component {
 }
 ```
 
-![잘못된 타입으로 props를 넘겨줘 보았다.](/images/frontend/reactjs-props-3.png)
+![잘못된 타입으로 props를 넘겨줘 보았다.](../images/frontend/reactjs-props-3.png)
 props의 타입을 propTypes에서 설정한 타입과 다른 타입으로 넘겨주면 렌더링은 되나 개발자 도구에 오류 메시지가 출력된다.
 
 ```javascript
@@ -101,7 +101,7 @@ export default class Parent extends Component {
 }
 ```
 
-![필수 props를 제외해 보았다.](/images/frontend/reactjs-props-4.png)
+![필수 props를 제외해 보았다.]/frontend/reactjs-props-4.png)
 필수 props가 빠졌을 때도 렌더링은 되나 개발자 도구에 오류 메시지가 출력된다.
 
 ### defaultProps
@@ -137,7 +137,7 @@ export default class Parent extends Component {
 }
 ```
 
-![defaultProps 적용](/images/frontend/reactjs-props-5.png)
+![defaultProps 적용](../images/frontend/reactjs-props-5.png)
 props를 지정해주지 않으면 defaultProps에 있는 기본 값이 적용된다.
 
 ### transform-class-properties
@@ -207,7 +207,7 @@ class Child extends React.Component<ChildProps, ChildState> {
 export default Child
 ```
 
-![잘못된 타입을 지정했더니 렌더링 조차 되지 않고 오류를 출력한다.](/images/frontend/reactjs-props-6.png)
+![잘못된 타입을 지정했더니 렌더링 조차 되지 않고 오류를 출력한다.](../images/frontend/reactjs-props-6.png)
 
 ## Reference
 

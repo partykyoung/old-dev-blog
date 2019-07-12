@@ -2229,11 +2229,6 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==
 
-bindings@1.2.x:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
-  integrity sha1-FK1hE4EtLTfXLme0ystLtyZQXxE=
-
 bl@^1.0.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/bl/-/bl-1.2.2.tgz#a160911717103c07410cef63ef51b397c025af9c"
@@ -7600,21 +7595,6 @@ kleur@^3.0.2:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-language-c@^0.59.8:
-  version "0.59.8"
-  resolved "https://registry.yarnpkg.com/language-c/-/language-c-0.59.8.tgz#e7153a1f19530c47d504702cafe09073ef951fca"
-  integrity sha512-1eU3SH9h983NjtamBkaoetqNZTx5ziUPO3ccUaaXVxY2gZtk8/KpUV9v+XX9TkUukpTPSIxHb2bbrj974MzmPA==
-  dependencies:
-    tree-sitter-c "^0.11.3"
-    tree-sitter-cpp "^0.11.3"
-
-language-javascript@^0.128.0-0:
-  version "0.128.0-0"
-  resolved "https://registry.yarnpkg.com/language-javascript/-/language-javascript-0.128.0-0.tgz#ea50fa0039ffee1adbedcc0f24d6e58194ca9779"
-  integrity sha512-9qko8V7owjKILpUSJRR2JeRysfe8G30MlPcF24mLofP3hbChP2lyZSAcS0SSS5+zxXVeA9iOkZ/XHIBsydz3Yg==
-  dependencies:
-    tree-sitter-javascript "^0.4.7"
-
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
@@ -8413,7 +8393,7 @@ name-all-modules-plugin@^1.0.1:
   resolved "https://registry.yarnpkg.com/name-all-modules-plugin/-/name-all-modules-plugin-1.0.1.tgz#0abfb6ad835718b9fb4def0674e06657a954375c"
   integrity sha1-Cr+2rYNXGLn7Te8GdOBmV6lUN1w=
 
-nan@^2.10.0, nan@^2.12.1, nan@^2.13.2, nan@^2.14.0, nan@^2.4.0:
+nan@^2.12.1, nan@^2.13.2, nan@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
@@ -12115,28 +12095,6 @@ traverse@0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
   integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
-
-tree-sitter-c@^0.11.3:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/tree-sitter-c/-/tree-sitter-c-0.11.4.tgz#b622fd9918aa2d43062b8cb1fdbd0a4649ddd9a1"
-  integrity sha512-x+kvnlefaHeMBfX0sdnfrpUiw+lDc0r8qKq01yD+nRq2WXrCDULU1P9Gz6HVYG+Uv2TsYfdSMW6elHronqfloQ==
-  dependencies:
-    bindings "1.2.x"
-    nan "^2.4.0"
-
-tree-sitter-cpp@^0.11.3:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/tree-sitter-cpp/-/tree-sitter-cpp-0.11.4.tgz#c2f523440efd4915ae55576c8b86b835040091a3"
-  integrity sha512-0/6d+7ILObB8iFI59cVKtpA4xJ2m0oAbteJkszxeZjNFP3fjWrHMWb+tpqoB8RlH+2t0aq4LLmpuyznV2Yo1vA==
-  dependencies:
-    nan "^2.10.0"
-
-tree-sitter-javascript@^0.4.7:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/tree-sitter-javascript/-/tree-sitter-javascript-0.4.9.tgz#7376877dbe53bf2dd7b238a0b6033050728cb038"
-  integrity sha512-yFawpjyDYy+ALhAejbXwltY3R3PxQwmNqJRgDbom9HlT6UwcIjegcXNpZDdnQPiAX/Z42y3eNoVq0pbR4iBrhg==
-  dependencies:
-    nan "^2.4.0"
 
 trim-lines@^1.0.0:
   version "1.1.2"
