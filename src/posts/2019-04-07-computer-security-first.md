@@ -1,11 +1,7 @@
 ---
 title: 컴퓨터 보안 개념
 date: 2019-04-07 19:15:27
-# tags:
-#   - Computer security
-# categories:
-#   - Base
-#   - Computer security
+description: 컴포터 보안이란 다양한 형태의 정보 중 컴퓨팅 환경이 관여된 모든 상황에 대한 정보보호를 뜻한다.
 path: /base/computer-security/computer-security
 ---
 

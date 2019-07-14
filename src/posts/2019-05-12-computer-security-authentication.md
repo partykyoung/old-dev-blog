@@ -1,11 +1,7 @@
 ---
 title: 인증
 date: 2019-05-12 20:04:26
-# tags:
-#   - Computer security
-# categories:
-#   - Base
-#   - Computer security
+description: 인증이란 어떤 실체가 정말 그 실체가 맞는지 확인하는 과정을 말한다.
 path: /base/computer-security/authentication
 ---
 

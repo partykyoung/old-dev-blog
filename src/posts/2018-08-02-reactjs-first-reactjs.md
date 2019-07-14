@@ -1,12 +1,8 @@
 ---
 title: React.js
-# tags:
-#   - React.js
-# categories:
-#   - Front-end
-#   - React.js
 date: 2018-08-02 02:49:46
 path: /front-end/reactjs/reactjs
+description: React.js가 무엇인지 알아봅시다.
 ---
 
 ## React.js?

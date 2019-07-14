@@ -1,12 +1,8 @@
 ---
 title: 프로세스의 생성과 종료
-# tags:
-#   - Operating systems
-# categories:
-#   - Base
-#   - Operating systems
 path: /base/operating-system/process-gerating
 date: 2019-03-06 22:41:58
+descriptoin: 운영체제가 새로은 프로세스를 생성하고 실행하려면 프로세스 관리를 위한 프로세스 제어 블록을 만든 후에 프로세스에 주소 공간을 할당해야 한다.
 ---
 
 ### 프로세스 생성

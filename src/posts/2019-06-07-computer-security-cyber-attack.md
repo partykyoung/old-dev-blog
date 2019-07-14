@@ -1,6 +1,7 @@
 ---
 title: 사이버 공격
 date: 2019-06-07 23:24:01
+description: 사이버 공격 및 사이버 공격의 종류.
 path: /base/computer-sicurity/cyber-attack
 ---
 

@@ -1,11 +1,7 @@
 ---
 title: TypeScript
 date: 2019-01-14 22:45:44
-tags:
-  - TypeScript
-categories:
-  - Front-end
-  - TypeScript
+description: Microsoft에서 개발한 오픈 소스 프로그래밍 언어.
 path: /front-end/typescript/typescript
 ---
 

@@ -1,11 +1,7 @@
 ---
 title: 암호의 개념
 date: 2019-04-21 18:26:49
-# tags:
-#   - Computer security
-# categories:
-#   - Base
-#   - Computer security
+description: 암호의 개념에 대해 공부하였습니다.
 path: /base/computer-security/secret-code
 ---
 

@@ -1,11 +1,7 @@
 ---
 title: 분할정복 방법
-# categories:
-#   - Base
-#   - Algorithms
-# tags:
-#   - Algorithms
 date: 2019-03-11 02:03:57
+description: 주어진 문제의 입력을 더 이상 나눌 수 없을 때까지 두 개 이상의 작은 문제들로 순환적으로 분할하고, 이렇게 분할된 작은 문제들을 각각 해결한 후 이들의 해를 결합하여 원래의 문제의 해를 구하는 방식.
 path: /base/algorithms/divide-and-conquer
 ---
 

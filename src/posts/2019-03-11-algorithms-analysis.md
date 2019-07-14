@@ -1,11 +1,7 @@
 ---
 title: 알고리즘 분석
 date: 2019-03-11 00:27:29
-# tags:
-#   - Algorithms
-# categories:
-#   - Base
-#   - Algorithms
+description: 설계한 알고리즘은 무엇보다 정확하고 효율적인 알고리즘이어야 한다.
 path: /base/algorithms/analysis
 ---
 

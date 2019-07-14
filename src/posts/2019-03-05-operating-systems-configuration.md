@@ -1,12 +1,8 @@
 ---
 title: 운영체제의 구성
-# categories:
-#   - Base
-#   - Operating systems
-# tags:
-#   - Operating systems
 path: /base/operating-system/operating-system-configuration
 date: 2019-03-16 22:04:34
+descriptoin: 운영체제를 구성하는 요소는 다양하지만 컴퓨터 시스템의 자원의 성격에 따라 구분한다. 크게 프로세스 관리자, 메모리 관리자, 장치 관리자, 파일 관리자로 나눌 수 있다.
 ---
 
 ## 운영체제의 구성

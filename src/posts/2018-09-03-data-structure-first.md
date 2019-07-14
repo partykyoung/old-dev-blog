@@ -1,11 +1,7 @@
 ---
 title: 자료구조란 무엇인가
-# tags:
-#   - Data structure
-# categories:
-#   - Base
-#   - Data Structure
 date: 2018-09-16 18:21:40
+description: 전산학에서 자료를 효율적으로 이용할 수 있도록 컴퓨터에 저장하는 방법.
 path: /base/data-structure/data-structure
 ---
 

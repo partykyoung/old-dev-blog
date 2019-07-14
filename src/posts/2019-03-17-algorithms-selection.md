@@ -1,12 +1,8 @@
 ---
 title: 선택 문제
-# tags:
-#   - Algorithms
-# categories:
-#   - Base
-#   - Algorithms
-path: /base/algorithms/selection
 date: 2019-05-10 19:55:08
+path: /base/algorithms/selection
+description: n개의 원소가 임의의 순서로 저장된 배열에서 i번째로 작은 원소를 찾는 문제.
 ---
 
 ## 선택 문제

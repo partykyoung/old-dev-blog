@@ -1,12 +1,8 @@
 ---
 title: Node.js 작업환경 설정하기
-# tags:
-#   - Node.js
-# categories:
-#   - Back-end
-#   - Node.js
 path: /back-end/nodejs/setting
 date: 2018-07-31 01:33:31
+description: Webpack으로 Node.js 프로젝트 설정하기.
 ---
 
 Node.js 프로젝트를 만들고 Webpack 설정까지 해보자.

@@ -1,11 +1,7 @@
 ---
 title: TypeScript로 생성한 React 프로젝트에서 테스트 환경 구축 및 테스트 실행하기
-# tags:
-#   - TypeScript
-# categories:
-#   - Front-end
-#   - TypeScript
 date: 2019-02-14 19:30:34
+description: 테스트 환경 구축 및 코드 작성 과정을 기록하였습니다.
 path: /front-end/typescript/react-test
 ---
 

@@ -1,11 +1,7 @@
 ---
 title: create-react-app + TypeScript + Next.js
 date: 2019-05-14 23:04:23
-# tags:
-#   - Next.js
-# categories:
-#   - Front-end
-#   - Etc
+description: Next.js와 TypeScript를 사용하여 React 프로젝트 설정하기.
 path: /front-end/etc/nextjs-setting
 ---
 

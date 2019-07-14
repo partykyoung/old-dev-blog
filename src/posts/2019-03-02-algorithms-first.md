@@ -1,12 +1,8 @@
 ---
 title: 알고리즘
-# categories:
-#   - Base
-#   - Algorithms
-# tags:
-#   - Algorithms
 path: /base/algorithms/algorithms
 date: 2019-03-11 00:23:17
+descriptoin: 알고리즘은 주어진 문제를 해결하기 위한 일련의 처리 과정을 단계적으로 나열한 것이다.
 ---
 
 ## 알고리즘의 개념

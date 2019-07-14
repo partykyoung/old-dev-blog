@@ -1,11 +1,9 @@
 ---
 title: 이벤트 핸들링
 tags: ["front-end", "react.js"]
-# categories:
-#   - Front-end
-#   - React.js
-path: /front-end/reactjs/event
 date: 2019-02-09 23:48:14
+description: 유저가 웹 브라우저에서 DOM 요소들과 상호 작용하는 것을 이벤트(event)라고 한다.
+path: /front-end/reactjs/event
 ---
 
 ## 이벤트

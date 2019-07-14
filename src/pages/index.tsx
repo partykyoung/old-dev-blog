@@ -1,8 +1,9 @@
 import React, { Component } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
+import SEO from "../components/SEO"
 import Layout from "../components/Layout"
-import PostLink from '../components/index/PostLink';
+import PostLink from "../components/index/PostLink"
 
 export const pageQuery = graphql`
   query {
@@ -20,19 +21,19 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
 
 interface edgeTypes {
   node: {
-    id: string;
-    excerpt: string;
+    id: string
+    excerpt: string
     frontmatter: {
-      date: string;
-      path: string;
-      title: string;
-    };
-  };
-};
+      date: string
+      path: string
+      title: string
+    }
+  }
+}
 
 const Index = ({
   data: {
@@ -46,13 +47,19 @@ const Index = ({
   }
 }) => {
   const Posts = edges.map((edge: edgeTypes) => {
+    return <PostLink key={edge.node.id} post={edge.node} />
+  })
 
-    return (
-      <PostLink key={edge.node.id} post={edge.node} />
-    );
-  });
-
-  return <Layout>{Posts}</Layout>
+  return (
+    <>
+      <SEO
+        url="https://dev.kyoungah.com"
+        title="경아 개발 블로그"
+        description="배우고 익혔던 것들을 기록하고 있습니다."
+      />
+      <Layout>{Posts}</Layout>
+    </>
+  )
 }
 
-export default Index;
+export default Index

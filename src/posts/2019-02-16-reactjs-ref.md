@@ -1,11 +1,7 @@
 ---
 title: ref
 date: 2019-02-17 21:31:49
-# tags:
-#   - React.js
-# categories:
-#   - Front-end
-#   - React.js
+description: HTML에서 id를 사용하여 DOM에 이름을 다는 것 처럼 리액트에서는 ref를 사용하여 DOM에 이름을 달 수 있다.
 path: /front-end/reactjs/ref
 ---
 

@@ -1,11 +1,7 @@
 ---
 title: create-react-app으로 생성한 React 프로젝트 TypeScript로 마이그레이션 하기
-# tags:
-#   - TypeScript
-# categories:
-#   - Front-end
-#   - TypeScript
 date: 2019-01-22 00:48:28
+description: create-react-app으로 생성한 React 프로젝트에 TypeScript 환경을 설정해보자.
 path: /front-end/typescript/react-with-typescript
 ---
 

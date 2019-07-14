@@ -1,12 +1,8 @@
 ---
 title: 운영체제
-# categories:
-#   - Base
-#   - Operating systems
-# tags:
-#   - Operating systems
 path: /base/operating-system/operating-system
 date: 2019-03-16 21:43:35
+descriptoin: 컴퓨터의 하드웨어 자원을 관리하고 컴퓨터 프로그램이 동작하기 위한 서비스를 제공하는 시스템 소프트웨어.
 ---
 
 ## 운영체제

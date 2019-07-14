@@ -1,12 +1,8 @@
 ---
 title: 프로세스 제어 블록
-# tags:
-#   - Operating systems
-# categories:
-#   - Base
-#   - Operating systems
 path: /base/operating-system/process-pcb
 date: 2019-03-17 22:31:51
+descriptoin: 프로세스를 관리하기 위해 운영체제는 각 프로세스마다 프로세스 제어블록(PCB)을 두고서 여기에 해당 프로세스의 정보를 보관한다.
 ---
 
 ## 프로세스 제어 블록(PCB)

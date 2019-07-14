@@ -1,11 +1,7 @@
 ---
 title: tsconfig.json
 date: 2019-05-13 22:45:44
-# tags:
-#   - TypeScript
-# categories:
-#   - Front-end
-#   - TypeScript
+description: tsconfig.json의 옵션들을 간단하게 알아보았습니다.
 path: /front-end/typescript/compiler-option
 ---
 

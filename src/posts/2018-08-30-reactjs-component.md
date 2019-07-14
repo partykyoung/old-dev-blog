@@ -1,12 +1,8 @@
 ---
 title: Component
-tags:
-  - React.js
-categories:
-  - Front-end
-  - React.js
 date: 2018-09-02 23:29:09
 path: /front-end/reactjs/component
+description: Component는 데이터가 주어졌을 때 이에 맞추어 UI를 만들어 주고 LifeCycle API를 이용하여 Component가 화면에서 나타날 때, 사라질 때, 변화가 일어날 때 주어진 작업들을 처리할 수 있으며 method를 만들어 특별한 기능을 붙일 수 있다.
 ---
 
 ## Component

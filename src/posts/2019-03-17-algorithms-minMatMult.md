@@ -1,11 +1,7 @@
 ---
 title: 연쇄 행렬 곱셈 문제
 date: 2019-05-12 23:30:07
-# tags:
-#   - Algorithms
-# categories:
-#   - Base
-#   - Algorithms
+description: n개의 행렬을 연쇄적으로 곱할 때 최적의 곱셈 순서를 구하는 문제.
 path: /base/algorithms/min-mat-mult
 ---
 

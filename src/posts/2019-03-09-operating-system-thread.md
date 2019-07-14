@@ -1,10 +1,6 @@
 ---
 title: 쓰레드
-# tags:
-#   - Operating systems
-# categories:
-#   - Base
-#   - Operating systems
+description: 하나의 프로세스 내에서 다중처리를 위해 제안된 개념으로 실행 단위를 프로세스에서 한 단계 낮추어 규정한 것.
 date: 2019-05-10 20:35:45
 path: /base/operating-system/thread
 ---

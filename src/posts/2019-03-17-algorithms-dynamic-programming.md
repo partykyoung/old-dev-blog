@@ -1,11 +1,7 @@
 ---
 title: 동적 프로그래밍 방법
-# tags:
-#   - Algorithms
-# categories:
-#   - Base
-#   - Algorithms
 date: 2019-05-12 21:53:04
+description: 문제의 크기가 작은 소문제에 대한 해를 저장해 놓고, 이를 이용하여 크기가 보다 큰 문제의 해를 점진적으로 만들어가는 상향식 접근 방법.
 path: /base/algorithms/dynamic-programming
 ---
 

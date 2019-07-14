@@ -1,13 +1,8 @@
 ---
 title: javascript로 사진 똑바로 만들기
 date: 2018-07-11 01:03:37
-
-# categories:
-#   - Front-end
-#   - memo
-# tags:
-# - JavaScript
 path: /front-end/issue/ex-if
+description: 이미지 exif에 대한 이슈를 js 모듈로 해결하는 방법 입니다.
 ---
 
 회사에서 열심히 일을 하던 도중 이슈가 하나 생겼다. 폰으로 사진 파일을 업로드 하면 어떤 사진들은 이미지 방향이 자꾸 돌아가서 업로드 되는 것이었다.

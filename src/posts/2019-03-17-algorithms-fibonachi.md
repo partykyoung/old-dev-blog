@@ -1,11 +1,7 @@
 ---
 title: 피보나치 수열
-# tags:
-#   - Algorithms
-# categories:
-#   - Base
-#   - Algorithms
 date: 2019-05-12 22:35:49
+description: 첫째 및 둘째 항이 1이며 그 뒤의 모든 항은 바로 앞 두 항의 합인 수열.
 path: /base/algorithms/fibonachi
 ---
 

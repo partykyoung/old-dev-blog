@@ -1,12 +1,8 @@
 ---
 title: Component 반복
-# tags:
-#   - React.js
-# categories:
-#   - Front-end
-#   - React.js
 path: /front-end/reactjs/map
 date: 2019-02-25 23:19:04
+descriptoin: array.map 메소드를 사용하여 기존 배열을 사용하여 컴포넌트로 구성된 배열을 생성할 수 있다.
 ---
 
 ## arr.map(callback(currentValue[, index[, array]])[, thisArg])

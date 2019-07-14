@@ -1,11 +1,7 @@
 ---
 title: state
 date: 2019-01-27 22:03:42
-# tags:
-#   - React.js
-# categories:
-#   - Front-end
-#   - React.js
+description: Component 내부에서 읽고 업데이트도 가능한 값을 사용하려면 state를 써야 한다.
 path: /front-end/reactjs/state
 ---
 

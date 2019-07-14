@@ -1,11 +1,7 @@
 ---
 title: 배열
-tags:
-  - Data structure
-categories:
-  - Base
-  - Data Structure
 date: 2018-11-11 23:03:46
+description: 인덱스와 원소값(<index, value>)의 쌍으로 구성된 집합.
 path: /base/data-structure/array
 ---
 

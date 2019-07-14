@@ -1,10 +1,7 @@
 ---
 title: Mac 개발환경 설정
 date: 2019-04-25 23:46:25
-# tags:
-#   - etc
-# categories:
-#   - Etc
+description: Mac 개발환경 설정 기록.
 path: /etc/development-env-setting
 ---
 

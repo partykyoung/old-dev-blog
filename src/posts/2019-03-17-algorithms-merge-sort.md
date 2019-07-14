@@ -1,11 +1,7 @@
 ---
 title: 합병정렬
-# tags:
-#   - Algorithms
-# categories:
-#   - Base
-#   - Algorithms
 date: 2019-03-18 01:13:13
+description: 배열을 동일한 크기의 두 개의 부분배열로 분할하고 각각의 부분 배열을 순환적으로 정렬한 후, 정렬된 두 부분배열을 합병하여 하나의 정렬된 배열을 만든다.
 path: /base/algorithms/merge-sort
 ---
 

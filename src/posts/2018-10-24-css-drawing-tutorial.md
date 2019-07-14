@@ -1,13 +1,8 @@
 ---
 title: css drawing 튜토리얼 - 호무새 그리기
 date: 2018-10-24 11:28:25
-# tags:
-#   - HTML
-#   - CSS
-# categories:
-#   - Front-end
-#   - Css
 path: /front-end/css/css-darwing-heavyrain
+description: CSS로 호무새를 그려보자.
 ---
 
 요즘 css drawing 에 맛들려 시간날 때마다 조금씩 css drawing을 작업하다가 튜토리얼을 간단하게 작성해보기로 했다.

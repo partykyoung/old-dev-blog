@@ -1,11 +1,7 @@
 ---
 title: Next.js
 date: 2019-05-14 21:27:26
-# tags:
-#   - Next.js
-# categories:
-#   - Front-end
-#   - Etc
+description: CSR과 SSR이 뭔지 한번 더 정리하면서 Next.js에 대해 알아봤습니다.
 path: /front-end/etc/nextjs
 ---
 

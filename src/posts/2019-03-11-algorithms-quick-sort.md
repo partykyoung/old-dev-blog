@@ -1,11 +1,7 @@
 ---
 title: 퀵 정렬
 date: 2019-03-17 19:15:00
-# categories:
-#   - Base
-#   - Algorithms
-# tags:
-#   - Algorithms
+description: 특정 원소를 기준으로 주어진 배열을 두 부분배열로 분할하고, 각 부분배열에 대해서 퀵 정렬을 순환적으로 적용하는 방식.
 path: /base/algorithms/quick-sort
 ---
 

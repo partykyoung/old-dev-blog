@@ -1,12 +1,8 @@
 ---
 title: 프로세스
-# categories:
-#   - Base
-#   - Operating systems
-# tags:
-#   - Operating systems
 path: /base/operating-system/process
 date: 2019-03-16 22:34:05
+descriptoin: 프로세스란 실행 중인 프로그램을 뜻한다.
 ---
 
 ## 프로세스

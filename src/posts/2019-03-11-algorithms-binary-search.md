@@ -1,11 +1,7 @@
 ---
 title: 이진 탐색
 date: 2019-03-17 03:03:57
-# categories:
-#   - Base
-#   - Algorithms
-# tags:
-#   - Algorithms
+description: 정렬된 상태의 데이텅에 대해 적용 가능한 효과적인 탐색 방법.
 path: /base/algorithms/binary-search
 ---
 

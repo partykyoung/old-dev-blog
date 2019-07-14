@@ -1,12 +1,8 @@
 ---
 title: Node.js
-# categories:
-#   - Back-end
-#   - Node.js
-# tags:
-#   - Node.js
 path: /back-end/nodejs/nodejs
 date: 2018-07-17 01:43:46
+description: Node.js는 크롬 V8 자바스크립트 엔진으로 빌드된 자바스크립트 런타임이다.
 ---
 
 ## Node.js?

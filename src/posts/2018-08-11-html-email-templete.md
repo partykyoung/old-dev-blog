@@ -1,13 +1,8 @@
 ---
 title: html 이메일 템플릿 작성하기
-# tags:
-#   - HTML
-#   - CSS
-# categories:
-#   - Front-end
-#   - memo
 date: 2018-08-23 00:16:39
 path: /front-end/css/email-template
+description: 이메일 템플릿 퍼블리싱을 하면서 알게된 것들을 정리했습니다.
 ---
 
 오랜만에 퍼블리싱 외주를 받았는데 이메일 템플릿을 퍼블리싱 하는 일이었다.

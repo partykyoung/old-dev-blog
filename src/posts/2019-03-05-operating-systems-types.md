@@ -1,12 +1,8 @@
 ---
 title: 운영체제의 유형
-# categories:
-#   - Base
-#   - Operating systems
-# tags:
-#   - Operating systems
 path: /base/operating-system/operating-system-types
 date: 2019-03-16 22:10:01
+descriptoin: 운영체제는 응답시간의 속도와 데이터 입력의 방식에 따라 일괄처리, 대화형, 실시간, 하이브리드 운영체제의 네 가지 유형으로 분류된다.
 ---
 
 ## 운영체제의 유형

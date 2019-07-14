@@ -1,13 +1,9 @@
 ---
 title: Node.js 내장 객체
 tags: ["back-end", "node.js"]
-# tags:
-#   - Node.js
-# categories:
-#   - Back-end
-#   - Node.js
 path: /back-end/nodejs/global
 date: 2019-01-10 12:28:04
+description: Node.js에서는 기본적인 내장 객체와 내장 모듈으르 제공한다.
 ---
 
 Node.js에서는 기본적인 내장 객체와 내장 모듈으르 제공한다. 브라우저의 window 객체와 비슷하다고 보면 된다.
