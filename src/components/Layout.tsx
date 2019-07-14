@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { theme } from "../styledComponents"
 
+import SEO from './SEO';
 import Header from "./Header"
 import Footer from "./Footer"
 
@@ -34,6 +35,7 @@ const Wrapper = styled.div`
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
+      <SEO url="https://dev.kyoungah.com" title="경아 개발 블로그" description="배우고 익혔던 것들을 기록하고 있습니다." />
       <Header />
       <Container theme={theme}>
         <div style={{textAlign: "center", margin: "16px 0"}}>블로그 리뉴얼 중 입니다 :)</div>
