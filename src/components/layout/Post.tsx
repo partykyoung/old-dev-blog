@@ -10,13 +10,13 @@ const Wrapper = styled.div`
   .blog-post-content {
     h2 {
       font-size: ${({ theme }) => theme.font24};
-      margin: 1.5rem 0;
+      margin: 1.5rem 0 0.75rem;
       padding-bottom: 0.3rem;
     }
     
     h3 {
       font-size: ${({ theme }) => theme.font20};
-      margin: 1rem 0;
+      margin: 1.5rem 0 0.75rem;
     }
 
     p, li {
@@ -39,6 +39,15 @@ const Wrapper = styled.div`
       margin-top: 0.25em;
     }
   }
+
+  .gatsby-highlight {
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+
+    code {
+      font-size: ${({ theme }) => theme.font14};
+    }
+  }  
 `;
 
 interface PostProps {
@@ -53,4 +62,4 @@ const Post: React.SFC<PostProps> = ({ children} ) => {
   )
 }
 
-export default Post
+export default Post;

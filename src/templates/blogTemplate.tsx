@@ -12,7 +12,7 @@ const Title = styled.h1`
 `
 
 const Date = styled.div`
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem;
   font-size: ${({ theme }) => theme.font14};
 `;
 
@@ -43,6 +43,7 @@ export default function Template({
   )
 }
 
+// grapthql을 이용하여 markdown에서 데이터를 가지고 온다.
 export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {

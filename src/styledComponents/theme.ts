@@ -54,7 +54,7 @@ const xLarge: string = "1200px";
 const theme: IThemeProps = {
  // 색상
  whiteColor: "#FFFFFF",
- blackColor: "#212121",
+ blackColor: "#24292e",
  redColor: "#dc3545",
  orangeColor: "#f68b1f",
  yellowColor: "#ffdd45",
