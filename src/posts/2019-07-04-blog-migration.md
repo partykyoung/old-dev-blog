@@ -254,7 +254,9 @@ exports.createPages = ({ actions, graphql }) => {
 }
 ```
 
-## code hilight 설정하기
+## code hightlte 설정하기
+
+code highlite 에는 prismjs를 사용했다.
 
 ```
 
