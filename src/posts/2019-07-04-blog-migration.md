@@ -129,15 +129,12 @@ Gatsby는 데이터 소스라는 곳에서 GraphQL을 이용하여 데이터를 
 ---
 title: Hexo 에서 Gatsby로 블로그 마이그레이션 하기
 date: 2019-07-04
-# tags:
-#   - etc
-# categories:
-#   - Etc
+description: Hexo에서 Gatsby로 블로그 마이그레이션 하는 과정을 정리하였습니다.
 path: /etc/blog-migration
 ---
 ```
 
-Hexo에서는 path를 따로 지정해 줄 필요가없었는데 Gatsby에서는 path를 지정해줘야한다. 이 path는 해당 포스트의 url이 된다. tags와 categories는 Hexo에서 쓰던 방식과 Gatsby에서 쓰는 방식이 다른 것 같아 일단 주석처리 해두었다.
+Hexo에서는 path를 따로 지정해 줄 필요가없었는데 Gatsby에서는 path를 지정해줘야한다. 이 path는 해당 포스트의 url이 된다. tags와 categories는 Hexo에서 쓰던 방식과 Gatsby에서 쓰는 방식이 다른 것 같아 일단 주석처리 해두었다. 여기서 title, description, path는 seo 데이터로도 사용할 수 있다.
 
 ```
 yarn add gatsby-source-filesystem gatsby-transformer-remark
@@ -254,29 +251,101 @@ exports.createPages = ({ actions, graphql }) => {
 }
 ```
 
-## code hightlte 설정하기
+## code highlight 설정하기
 
-code highlite 에는 prismjs를 사용했다.
+code highlight에는 prismjs를 사용했다. 원래는 highlight.js를 사용했는데 gatsby 플러그인을 찾을 때 prismjs가 별이 좀 더 많아서 끌렸다.
+
+```
+yarn add gatsby-remark-prismjs prismjs
 
 ```
 
-gatsby-remark-prismjs prismjs
+### gatsby-config.js
 
+```javascript
+module.exports = {
+  // 생략...
+  plugins: [
+    // 생략...
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
+          // 생략...
+        ],
+      },
+    },
+    // 생략...
+  ],
+}
 ```
 
-````
+### gatsby-browser.js
 
+원하는 highlight 테마가 있으면 gatsby-browser 파일에다가 import 해주면된다.
 
-## package.json
+```javascript
+/**
+ * Implement Gatsby's Browser APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/browser-apis/
+ */
+
+// You can delete this file if you're not using it
+// gatsby-browser.js
+require("./src/styles/prism-atom-one-dark.css")
+```
+
+## SEO
+
+gatsby-cli로 생성된 프로젝트를 보면 SEO 컴포넌트가 있다. markdown 파일에서 필요한 속성들을 가지고와서 SEO 컴포넌트에 뿌려주는 식으로 작업하였다. 이 SEO 컴포넌트를 위에서 만든 blogTemplate 컴포넌트에 import 해주면된다.
+
+### SEO.tsx
+
+```javascript
+// 생략...
+
+const SEO: React.SFC<SEOProps> = ({ description, title, url }) => {
+  return (
+    <Helmet title={title}>
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <meta name="description" content={description} />
+      <meta property="og:title" title={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+    </Helmet>
+  )
+}
+
+// 생략...
+```
+
+## 배포
+
+netlify를 사용하면 자동배포를 할 수 있다고 하는데 마이너한 이슈인것 같아서 일단 제일 마지막 작업으로 미뤘다. 일단은 아래의 명령어로 github 페이지에 배포하고 있다.
 
 ```
    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/partyKyoung/partyKyoung.github.io"
 
 ```
 
+## 마무리
+
+혹시 나중에 또 참고할 일이 있을까봐 이렇게 마이그레이션 과정을 정리해놓기는 했는데 gatsbyjs 공식문서가 진짜 잘되어 있는데다 왠만한 플러그인은 다 있기 때문에 좀 막히는게 있다 싶으면 그냥 gatsby 공식 문서를 확인하는게 제일 좋은 것 같다. 개인적으로 gatsby로 블로그 마이그레이션을 하고 엄청 만족하고 있다. 익숙한 React로 되어 있어서 커스터마이징 하기가 제일 쉽다는게 한 80%는 먹고 가는 것 같다.
+
 ## Reference
 
+[gatsbyjs plugins](https://www.gatsbyjs.org/plugins/)
 [정적 사이트 생성기 Gatsby](https://blog.outsider.ne.kr/1426)
-
-https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27
-````
+[Getting started with Typescript on Gatsby](https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27)
+[heejongahn/blog](https://github.com/heejongahn/blog)
