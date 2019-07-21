@@ -83,4 +83,4 @@ resolve 옵션은 webpack이 알아서 경로나 확장자를 처리할 수 있�
 
 ## Reference
 
-[Adding TypeScript](https://facebook.github.io/create-react-app/docs/adding-typescript)
+- [Adding TypeScript](https://facebook.github.io/create-react-app/docs/adding-typescript)

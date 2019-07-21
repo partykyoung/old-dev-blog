@@ -55,4 +55,4 @@ descriptoin: 알고리즘은 주어진 문제를 해결하기 위한 일련의 �
 
 ## Reference
 
-[방송대 컴퓨터과학과 알고리즘 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 알고리즘 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)

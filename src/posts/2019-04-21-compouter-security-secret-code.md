@@ -107,4 +107,4 @@ DES는 대표적인 대칭키 알고리즘으로 2001년 새로운 표준 알고
 
 ## Reference
 
-[방송대 컴퓨터과학과 컴퓨터 보안 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920020759&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 컴퓨터 보안 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920020759&condLscValue=001&condYr=&condSmst=)

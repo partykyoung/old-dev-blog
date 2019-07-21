@@ -342,10 +342,11 @@ netlify를 사용하면 자동배포를 할 수 있다고 하는데 마이너한
 ## 마무리
 
 혹시 나중에 또 참고할 일이 있을까봐 이렇게 마이그레이션 과정을 정리해놓기는 했는데 gatsbyjs 공식문서가 진짜 잘되어 있는데다 왠만한 플러그인은 다 있기 때문에 좀 막히는게 있다 싶으면 그냥 gatsby 공식 문서를 확인하는게 제일 좋은 것 같다. 개인적으로 gatsby로 블로그 마이그레이션을 하고 엄청 만족하고 있다. 익숙한 React로 되어 있어서 커스터마이징 하기가 제일 쉽다는게 한 80%는 먹고 가는 것 같다.
+아직 미완성이지만 빨리 마무리까지 끝낸 후 나처럼 Gatsby로 블로그를 시작하는 분들께 조금이나마 도움이 되고 싶다.
 
 ## Reference
 
-[gatsbyjs plugins](https://www.gatsbyjs.org/plugins/)
-[정적 사이트 생성기 Gatsby](https://blog.outsider.ne.kr/1426)
-[Getting started with Typescript on Gatsby](https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27)
-[heejongahn/blog](https://github.com/heejongahn/blog)
+- [gatsbyjs plugins](https://www.gatsbyjs.org/plugins/)
+- [정적 사이트 생성기 Gatsby](https://blog.outsider.ne.kr/1426)
+- [Getting started with Typescript on Gatsby](https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27)
+- [heejongahn/blog](https://github.com/heejongahn/blog)

@@ -134,4 +134,4 @@ O(1) < O($logn$) < O(n) < O($nlong$) < O($n^2$) < O($n^3$) < O($2^n$)
 
 ## Reference
 
-[방송대 컴퓨터과학과 알고리즘 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 알고리즘 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)

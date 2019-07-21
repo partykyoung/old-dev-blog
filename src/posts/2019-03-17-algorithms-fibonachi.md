@@ -63,4 +63,4 @@ double fibonachi (int num) {
 
 ## Reference
 
-[방송대 컴퓨터과학과 알고리즘 5강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 알고리즘 5강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)

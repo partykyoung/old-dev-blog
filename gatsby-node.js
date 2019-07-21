@@ -1,4 +1,5 @@
-const path = require(`path`)
+const path = require(`path`);
+const createPaginatedPages = require('gatsby-paginate');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -13,8 +14,12 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            id
             frontmatter {
               path
+            }
+            fields {
+              slug
             }
           }
         }
@@ -24,8 +29,17 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
+    
+    createPaginatedPages({
+      edges: result.data.posts.edges,
+      createPage: createPage,
+      pageTemplate: 'src/templates/pageTemplate.tsx',
+      pageLength: 5, // This is optional and defaults to 10 if not used
+      pathPrefix: '', // This is optional and defaults to an empty string if not used
+      context: {}, // This is optional and defaults to an empty object if not used
+    })
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    return result.data.allMarkdownRemark.edges.map(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
@@ -34,3 +48,5 @@ exports.createPages = ({ actions, graphql }) => {
     })
   })
 }
+
+

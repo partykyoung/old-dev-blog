@@ -135,4 +135,4 @@ T(n) = $\frac{1}{n}\sum\_{i = 1}^{n}(T(i - 1) + T(n - i)) + O(n) (n >= 2)$
 
 ## Reference
 
-[방송대 컴퓨터과학과 알고리즘 3강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 알고리즘 3강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)

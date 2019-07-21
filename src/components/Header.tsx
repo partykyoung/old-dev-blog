@@ -14,7 +14,8 @@ const Wrapper = styled.header`
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 `;
 
-const Title = styled.h1`
+const StyledLink = styled(Link)`
+  display: block;
   width: 146px;
   height: 24px;
   margin-right: auto;
@@ -44,11 +45,9 @@ const Image = () => {
 const Header = () => {
   return (
     <Wrapper theme={theme}>
-      <Title>
-        <Link to="/" >
+        <StyledLink to="/" >
           <Image />
-        </Link>
-      </Title>
+        </StyledLink>
       <Nav>
         <Link to="/about">
           about

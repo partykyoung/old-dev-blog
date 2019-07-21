@@ -46,4 +46,4 @@ descriptoin: 운영체제를 구성하는 요소는 다양하지만 컴퓨터 �
 
 ## Reference
 
-[방송대 컴퓨터과학과 운영체제 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 운영체제 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)

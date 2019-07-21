@@ -215,6 +215,6 @@ export default class MyComponent extends Component<Props, State> {
 
 ## Reference
 
-[리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
-[react 컴포넌트에서 constructor 내부에 이벤트 함수를 바인딩 해줘야 하는 이유](https://2dubbing.tistory.com/66)
-[컴포넌트 이벤트 연결(바인딩)](https://www.zerocho.com/category/React/post/578232e7a479306028f43393)
+- [리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
+- [react 컴포넌트에서 constructor 내부에 이벤트 함수를 바인딩 해줘야 하는 이유](https://2dubbing.tistory.com/66)
+- [컴포넌트 이벤트 연결(바인딩)](https://www.zerocho.com/category/React/post/578232e7a479306028f43393)

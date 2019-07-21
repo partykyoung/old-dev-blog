@@ -43,4 +43,4 @@ CPU의 레지스터에 해당하는 정보들을 포함한다.
 
 ## Reference
 
-[방송대 컴퓨터과학과 운영체제 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 운영체제 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)

@@ -40,6 +40,6 @@ React App의 SSR을 도와주는 프레임워크.
 
 ## Reference
 
-[Next.js - getting Started](https://nextjs.org/learn/basics/getting-started)
-[SSR과 CSR의 차이를 알아보자](https://velog.io/@rjs1197/SSR%EA%B3%BC-CSR%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
-[서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR)](https://goodgid.github.io/Server-Side-Rendering-and-Client-Side-Rendering/2)
+- [Next.js - getting Started](https://nextjs.org/learn/basics/getting-started)
+- [SSR과 CSR의 차이를 알아보자](https://velog.io/@rjs1197/SSR%EA%B3%BC-CSR%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
+- [서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR)](https://goodgid.github.io/Server-Side-Rendering-and-Client-Side-Rendering/2)

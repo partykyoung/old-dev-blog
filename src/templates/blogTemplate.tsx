@@ -9,12 +9,31 @@ import SEO from '../components/SEO';
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.font28};
   line-height: 1.2;
+  font-weight: 600;
 `
 
-const Date = styled.div`
-  margin: 0.5rem 0 1rem;
+const PostData = styled.div`
+  margin: 0.5rem 0 1.5rem;
+  color: #7a7a7a;
+  font-size: ${({ theme }) => theme.font14};
+  line-height: 1.5;
+`;
+
+const Date = styled.span`
+  font-size: ${({ theme }) => theme.font13};
+
+  &:after {
+    display: inline-block;
+    margin: 0 0.5rem;
+    content: "•"
+  }
+`;
+
+
+const Description = styled.span`
   font-size: ${({ theme }) => theme.font14};
 `;
+
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -32,7 +51,10 @@ export default function Template({
     <Layout>
       <Post>
         <Title theme={theme}>{frontmatter.title}</Title>
-        <Date>{frontmatter.date}</Date>
+        <PostData theme={theme}>
+          <Date>{frontmatter.date}</Date>
+          <Description>{frontmatter.description}</Description>
+        </PostData>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}

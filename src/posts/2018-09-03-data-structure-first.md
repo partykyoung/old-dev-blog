@@ -44,4 +44,4 @@ I = P(D, A)
 
 ## Reference
 
-[방송대 컴퓨터과학과 자료구조 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920025679&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 자료구조 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920025679&condLscValue=001&condYr=&condSmst=)

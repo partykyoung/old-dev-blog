@@ -77,4 +77,4 @@ ex) 윈도우, 맥 OS, 리눅스 등..
 
 ## Reference
 
-[방송대 컴퓨터과학과 운영체제 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 운영체제 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)

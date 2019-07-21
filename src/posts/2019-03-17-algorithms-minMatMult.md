@@ -162,6 +162,6 @@ O($\sum_{s=1}^{n-1}$[(n - s) X s]) = O($n^3$) 이므로 알고리즘의 시간 �
 
 ## Reference
 
-[방송대 컴퓨터과학과 알고리즘 5강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
-[[DP] 연쇄행렬 최소곱셈 알고리즘](https://huiyu.tistory.com/entry/DP-%EC%97%B0%EC%87%84%ED%96%89%EB%A0%AC-%EC%B5%9C%EC%86%8C%EA%B3%B1%EC%85%88-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
-[[Algorithm] 동적계획법 - 연속 행렬 곱셈 본문](https://twinparadox.tistory.com/183)
+- [방송대 컴퓨터과학과 알고리즘 5강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
+- [[DP] 연쇄행렬 최소곱셈 알고리즘](https://huiyu.tistory.com/entry/DP-%EC%97%B0%EC%87%84%ED%96%89%EB%A0%AC-%EC%B5%9C%EC%86%8C%EA%B3%B1%EC%85%88-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+- [[Algorithm] 동적계획법 - 연속 행렬 곱셈 본문](https://twinparadox.tistory.com/183)

@@ -107,5 +107,5 @@ fragments를 일일히 import 하지않고 <></>만으로도 fragments를 사용
 
 ## Reference
 
-[리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
-[Fragments](https://reactjs.org/docs/fragments.html)
+- [리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
+- [Fragments](https://reactjs.org/docs/fragments.html)

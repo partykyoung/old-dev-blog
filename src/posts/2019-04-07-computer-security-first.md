@@ -72,4 +72,4 @@ ex)
 
 ## Reference
 
-[방송대 컴퓨터과학과 컴퓨터 보안 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920020759&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 컴퓨터 보안 1강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920020759&condLscValue=001&condYr=&condSmst=)

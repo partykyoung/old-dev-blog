@@ -90,4 +90,4 @@ I/O 처리, 페이지 교환 같은 명령어 등에 의해 일어난다. 이러
 
 ## Reference
 
-[방송대 컴퓨터과학과 운영체제 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 운영체제 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)

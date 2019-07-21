@@ -197,5 +197,5 @@ export default class ParentRef extends Component {
 
 ## Reference
 
-[리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
-[Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)
+- [리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
+- [Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)

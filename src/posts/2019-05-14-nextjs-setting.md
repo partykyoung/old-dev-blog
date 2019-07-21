@@ -103,5 +103,5 @@ npm run dev
 
 ## Reference
 
-[zeit/next-plugins](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)
-[[nextjs] nextjs는 어떻게 동작하는가?](https://blueshw.github.io/2018/04/15/why-nextjs/)
+- [zeit/next-plugins](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)
+- [[nextjs] nextjs는 어떻게 동작하는가?](https://blueshw.github.io/2018/04/15/why-nextjs/)

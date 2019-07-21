@@ -36,4 +36,4 @@ descriptoin: 운영체제가 새로은 프로세스를 생성하고 실행하려
 
 ## Reference
 
-[방송대 컴퓨터과학과 운영체제 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)
+- [방송대 컴퓨터과학과 운영체제 2강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920017322&condLscValue=001&condYr=&condSmst=)

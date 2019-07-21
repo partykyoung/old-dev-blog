@@ -255,5 +255,5 @@ int selection (int arr[], int leftIndex, int rightIndex, int findIndex) {
 
 ## Reference
 
-[방송대 컴퓨터과학과 알고리즘 4강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
-[프로그래밍 면접 문제 10 : Kth Largest Element in Array](https://ronniej.sfuh.tk/kth-largest-element-array/)
+- [방송대 컴퓨터과학과 알고리즘 4강](http://press.knou.ac.kr/goods/textBookView.do?condCmdtCode=9788920026935&condLscValue=001&condYr=&condSmst=)
+- [프로그래밍 면접 문제 10 : Kth Largest Element in Array](https://ronniej.sfuh.tk/kth-largest-element-array/)
