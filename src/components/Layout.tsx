@@ -13,12 +13,11 @@ const Container = styled.div`
   min-width: 320px;
   min-height: ${({ theme }) =>
     `calc(100vh - (${theme.headerHeight} + ${theme.footerHeight})`});
-
 `
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   margin: 0 auto;
   box-sizing: border-box;
 

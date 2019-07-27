@@ -1,9 +1,11 @@
-import React, { Component } from "react"
+import React  from "react"
 import { graphql } from "gatsby"
 
 import SEO from "../components/SEO"
 import Layout from "../components/Layout"
-import PostLink from "../components/index/PostLink"
+import PostLink from "../components/PostLink"
+
+import styled from '../styledComponents';
 
 export const pageQuery = graphql`
   query {
@@ -23,7 +25,11 @@ export const pageQuery = graphql`
   }
 `
 
-interface edgeTypes {
+const Wrapper = styled.div`
+  padding: 2rem 1rem;
+`;
+
+interface EdgeTypes {
   node: {
     id: string
     excerpt: string
@@ -42,11 +48,11 @@ const Index = ({
 }: {
   data: {
     allMarkdownRemark: {
-      edges: edgeTypes[]
+      edges: EdgeTypes[]
     }
   }
 }) => {
-  const Posts = edges.map((edge: edgeTypes) => {
+  const Posts = edges.map((edge: EdgeTypes) => {
     return <PostLink key={edge.node.id} post={edge.node} />
   })
 
@@ -57,7 +63,7 @@ const Index = ({
         title="경아 개발 블로그"
         description="배우고 익혔던 것들을 기록하고 있습니다."
       />
-      <Layout>{Posts}</Layout>
+      <Layout><Wrapper>{Posts}</Wrapper></Layout>
     </>
   )
 }

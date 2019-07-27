@@ -44,10 +44,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
  
-  body {
-    background-color: ${theme.bodyColor}
-  }
-
   img,
   fieldset {
     border: 0;
@@ -66,10 +62,14 @@ const GlobalStyle = createGlobalStyle`
   a,
   a:hover,
   a:active,
-  a:focus {
-    color: ${theme.primaryColor};
+  a:focus {    
+    color: #adc2cb;
     text-decoration: none;
-    box-sizing: border-box;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
   }
 `
 

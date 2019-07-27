@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/Layout"
-import Post from "../components/layout/Post";
+import Post from "../components/Post";
 
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.font28};

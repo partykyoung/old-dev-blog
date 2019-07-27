@@ -222,8 +222,10 @@ ex)
 - 지정하지 않으면 target이 es6일 땐 es6으로, 그렇지 않으면 commonJS가 기본값으로 사용된다.
 - es6, es2015는 target값이 es5 이하일때 사용 가능.
 
-[TypeScript-Handbook 한글 문서 - tsconfig](https://typescript-kr.github.io/pages/tsconfig.json.html)
-[TypeScript-Handbook 한글 문서 - 컴파일러 옵션](https://typescript-kr.github.io/pages/Compiler%20Options.html)
-[tsconfig 컴파일 옵션 정리](https://vomvoru.github.io/blog/tsconfig-compiler-options-kr/)
-[tsconfig.json의 lib](https://norux.me/59)
-[타입스크립트 코리아 : 2017.05 기초 세미나 (4) - Compiler Options](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%A6%AC%EC%95%84-1705-%EA%B8%B0%EC%B4%88-%EC%84%B8%EB%AF%B8%EB%82%98/lecture/6803)
+## Reference
+
+- [TypeScript-Handbook 한글 문서 - tsconfig](https://typescript-kr.github.io/pages/tsconfig.json.html)
+- [TypeScript-Handbook 한글 문서 - 컴파일러 옵션](https://typescript-kr.github.io/pages/Compiler%20Options.html)
+- [tsconfig 컴파일 옵션 정리](https://vomvoru.github.io/blog/tsconfig-compiler-options-kr/)
+- [tsconfig.json의 lib](https://norux.me/59)
+- [타입스크립트 코리아 : 2017.05 기초 세미나 (4) - Compiler Options](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%A6%AC%EC%95%84-1705-%EA%B8%B0%EC%B4%88-%EC%84%B8%EB%AF%B8%EB%82%98/lecture/6803)

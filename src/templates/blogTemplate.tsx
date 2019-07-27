@@ -1,9 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled, {theme} from '../styledComponents';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 import Layout from '../components/Layout';
-import Post from '../components/layout/Post';
+import Comment from '../components/Comment';
+import Post from '../components/Post';
 import SEO from '../components/SEO';
 
 const Title = styled.h1`
@@ -14,32 +16,26 @@ const Title = styled.h1`
 
 const PostData = styled.div`
   margin: 0.5rem 0 1.5rem;
-  color: #7a7a7a;
+  color: #b3b3b3;
   font-size: ${({ theme }) => theme.font14};
   line-height: 1.5;
 `;
 
 const Date = styled.span`
   font-size: ${({ theme }) => theme.font13};
-
-  &:after {
-    display: inline-block;
-    margin: 0 0.5rem;
-    content: "•"
-  }
 `;
-
-
-const Description = styled.span`
-  font-size: ${({ theme }) => theme.font14};
-`;
-
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }: any) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, id } = markdownRemark
+  const disqusConfig = {
+    url: `${"https://dev.kyoungah.com"+frontmatter.path}`,
+    identifier: id,
+    title: frontmatter.title,
+  };
+
 
   return (
     <>
@@ -53,13 +49,15 @@ export default function Template({
         <Title theme={theme}>{frontmatter.title}</Title>
         <PostData theme={theme}>
           <Date>{frontmatter.date}</Date>
-          <Description>{frontmatter.description}</Description>
         </PostData>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </Post>
+      <Comment>
+        <Disqus config={disqusConfig} />
+      </Comment>
     </Layout>
     </>
   )
@@ -69,6 +67,7 @@ export default function Template({
 export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
+      id
       html
       frontmatter {
         date(formatString: "YYYY년 MM월 DD일")

@@ -334,9 +334,16 @@ const SEO: React.SFC<SEOProps> = ({ description, title, url }) => {
 
 netlify를 사용하면 자동배포를 할 수 있다고 하는데 마이너한 이슈인것 같아서 일단 제일 마지막 작업으로 미뤘다. 일단은 아래의 명령어로 github 페이지에 배포하고 있다.
 
-```
-   "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/partyKyoung/partyKyoung.github.io"
+### package.json
 
+```json
+{
+  // 생략...
+  "scripts": {
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/partyKyoung/partyKyoung.github.io"
+  }
+  // 생략...
+}
 ```
 
 ## 마무리
