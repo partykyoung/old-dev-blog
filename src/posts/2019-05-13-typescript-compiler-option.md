@@ -91,7 +91,7 @@ ex)
 - glob 패턴 (.gitignore 이랑 비슷함.).
 - include에 포함된 패턴과 맞는 파일들을 컴파일 대상에 포함시킨다.
 - exclude 속성으로 필터링 할 수 있다.
-- js파일을 컴파일 대상에 포함시키는 allowJs 옵션이 있다.
+- js파일(js, jsx)을 컴파일 대상에 포함시키는 allowJs 옵션이 있다.
   - true/false
 
 #### exclude

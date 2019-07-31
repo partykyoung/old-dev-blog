@@ -31,50 +31,53 @@ package.json에 next를 실행시키는 명령어를 적어준다.
 }
 ```
 
-## next.config.js
-
-root 폴더에 next.config.js 파일을 생성한 후 next-typescript를 적용해준다. next에 플러그인을 적용하거나 webpack 커스터마이징을 할 때 이 파일에서 작업하면 된다.
-
-```javascript
-const withTypescript = require("@zeit/next-typescript")
-
-module.exports = withTypescript()
-```
-
-## .babelrc 또는 package.json
-
-.babelrc 파일을 생성해 아래와 같은 내용을 추가해준다. create-react-app으로 생성한 프로젝트는 babelrc 설정이 package.json안에 들어가 있기 때문에 따로 babelrc 파일을 생성할 필요가 없다.
-
-```json
-{
-  "presets": ["next/babel", "@zeit/next-typescript/babel"]
-}
-```
-
 ## tsconfig.json
 
-아래와 같이 typeScript 설정 파일을 생성해준다.
+8.1.0 버전까지는 next.js에서 typescript를 사용하려면 next-typescrip라는 플러그인을 추가로 사용해야했으나 9버전 부터는 tsconfig.json 파일만 생성해주면 TypeScript를 사용할 수 있게 되었다.
 
 ```json
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "esnext"
+    "allowJs": true, // js파일(js, jsx)도 컴파일 대상에 포함시킨다.
+    "alwaysStrict": true, // 엄격모드에서 구문을 분석한다.
+    "esModuleInterop": true, /* import * as 모듈 from ... -> import 모듈 from ... 이런 식으로 import 할 수 있게 해준다. */
+    "isolatedModules": true, /* 각 파일을 별도의 모듈로 변환해준다. */
+    "jsx": "preserve" /* Preserves jsx outside of Next.js. */
+    "lib": [
+      "dom",
+      "es2017"
+    ], /* List of library files to be included in the type checking. */
+    "module": "esnext", // 컴파일된 모듈의 결과물을 어떤 모듈 시스템으로 할지 결정한다.
+    "moduleResolution": "node" /* Determine how modules get resolved. */,
+    "noEmit": true, /* Do not emit outputs. Makes sure tsc only does type checking. */,
+
+    /* Strict Type-Checking Options, optional, but recommended. */
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
+    "noUnusedLocals": true /* Report errors on unused locals. */,
+    "noUnusedParameters": true, // Report errors on unused parameters. */,
+    "strict": true, // 모든 엄격한 타입 검사 옵션을 활성화한다.
+    "target": "esnext" // 컴파일 결과물을 js의 어떤 버전으로 할 것인지 지정한다.
   }
 }
+```
+
+error TS2349: Cannot invoke an expression whose type lacks a call signature.
+
+```
+import * as next from 'next' -> import next from 'next'
+```
+
+Cannot re-export a type when the '--isolatedModules' flag is provided.
+
+```
+// export { SomeType };
+
+import { SomeType } from "./types";
+export type SomeType = SomeType;
+```
+
+```
+import { WithRouterProps } from 'next/dist/client/with-router';
 ```
 
 ## pages/index.js
