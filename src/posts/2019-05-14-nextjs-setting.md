@@ -80,6 +80,17 @@ export type SomeType = SomeType;
 import { WithRouterProps } from 'next/dist/client/with-router';
 ```
 
+Argument of type 'ConnectedComponentClass<FunctionComponent<PageTemplateProps>, Pick<PageTemplateProps, "children" | "gaId">>'
+
+withRouter(connnect()()) =>
+
+```
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(Container);
+```
+
 ## pages/index.js
 
 첫 페이지를 만들어준다.
