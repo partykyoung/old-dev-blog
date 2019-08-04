@@ -1,3 +1,10 @@
+---
+title: 서버리스와 서버리스 프레임워크.
+date: 2019-07-26
+description: 서버리스에 대해 알아보고 서버리스 프레임워크를 사용해보았습니다.
+path: /back-end/serverless/serverless-first
+---
+
 ## 서버리스
 서버에서 처리하는 작업을 클라우드 기반의 서비스로 처리해서 서버 구축 및 관리 비용을 줄이는 구조.
 
@@ -23,16 +30,70 @@ ex) aws lambda, azure functions, goolge cloud functions
 
 lambda에서 실행하는 코드를 deploy 하는 과정을 굉장히 쉽게 해준다.
 
+### serverless 설치 
 ```
+// serverless 프레임워크를 전역으로 설치한다.
 npm install -g serverless
 ```
 
+### serverless 프로젝트 생성
+
 Node.js 프로젝트 형태를 가지고 있는 aws-nodejs라는 템플릿을 이용
+```
 serverless create --template aws-nodejs
 
 yarn add serverless-webpack serverless-offline ts-loader typescript webpack
-
+```
 serverless config credentials --provider aws --key 액세스키ID --secret 비밀액세스키
+
+### webpack.config.js
+```js
+const path = require("path");
+const slsw = require('serverless-webpack');
+
+module.exports = {
+  mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
+  entry: path.join(__dirname, "src/server.ts"),
+  output: {
+    libraryTarget: "commonjs",
+    filename: "[name].js",
+    path: path.resolve(__dirname, "build")
+  },
+  module: {
+    rules: [{
+      test: /.tsx?$/,
+      loader: "ts-loader",
+      exclude: /node_modules/
+    }]
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
+  },
+  target: 'node',
+}
+```
+
+### serverless.yml
+```yml
+# 생략...
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: ap-northeast-2
+  stage: dev
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+functions:
+  server: # server라는 함수가 실행되면 src/server 파일 안의 함수가 실행된다.
+    handler: src/server 
+    events:
+      - http:
+          path: / # 
+          method: get
+```
 
 https://futurecreator.github.io/2019/03/14/serverless-architecture/
 https://ndb796.tistory.com/311
