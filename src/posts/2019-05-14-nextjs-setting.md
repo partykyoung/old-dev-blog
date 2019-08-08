@@ -61,36 +61,6 @@ package.json에 next를 실행시키는 명령어를 적어준다.
 }
 ```
 
-error TS2349: Cannot invoke an expression whose type lacks a call signature.
-
-```
-import * as next from 'next' -> import next from 'next'
-```
-
-Cannot re-export a type when the '--isolatedModules' flag is provided.
-
-```
-// export { SomeType };
-
-import { SomeType } from "./types";
-export type SomeType = SomeType;
-```
-
-```
-import { WithRouterProps } from 'next/dist/client/with-router';
-```
-
-Argument of type 'ConnectedComponentClass<FunctionComponent<PageTemplateProps>, Pick<PageTemplateProps, "children" | "gaId">>'
-
-withRouter(connnect()()) =>
-
-```
-export default compose(
-  withRouter,
-  connect(mapStateToProps)
-)(Container);
-```
-
 ## pages/index.js
 
 첫 페이지를 만들어준다.
@@ -113,6 +83,48 @@ nextjs를 사용하려면 pages폴더가 무조건 있어야 한다. 이 pages�
 
 ```
 npm run dev
+```
+
+## next 8.1에서 9버전대로 업그레이드 하면서 났던 오류들.
+### error TS2349: Cannot invoke an expression whose type lacks a call signature.
+tsconfig.json에서 esModuleInterop를 true로 줬기 때문에 나는 오류인것 같다. 아래처럼 import 문을 고쳐주면 된다.
+
+```javascript
+// import * as next from 'next'
+
+ import next from 'next'
+```
+
+### Cannot re-export a type when the '--isolatedModules' flag is provided.
+이것 역시 tsconfig.json에서 isolatedModules 옵션을 true로 해줬기 때문에 나는 것 같다. 아래 처럼 export 문을 고쳐주면 된다.
+
+```javascript
+// export { SomeType };
+
+import { SomeType } from "./types";
+export type SomeType = SomeType;
+```
+
+### Module '"node_modules/next/router"' has no exported member 'WithRouterProps'.
+WithRouterProps를 import 할 때 나는 오류 인데 아래처럼 고쳐주면 된다. import 문을 고쳐주면 된다.
+
+```javascript
+// import { WithRouterProps } from 'next/router'; 
+
+import { WithRouterProps } from 'next/dist/client/with-router';
+```
+
+### Argument of type 'ConnectedComponentClass<FunctionComponent<PageTemplateProps>, Pick<PageTemplateProps, "children" | "gaId">>'
+이건 정확히 원인을 모르겠는데 withRouter랑 connect 함수를 compose로 묶어주면 해결된다. 
+
+```javascript
+// withRouter(connnect()()) => .. 생략
+
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(Container);
 ```
 
 ## Reference

@@ -13,6 +13,7 @@ npm info "eslint-config-airbnb@latest" peerDependencies
 - eslint-config-airbnb: airbnb 코드 스타일
 - eslint-config-prettier: prettier 에서 관리 해 줄 수 있는 코드 스타일의 ESLint 규칙을 비활성화 시켜준다. -> Eslint와 prettier의 충돌을 막아준다.
 - eslint-plugin-prettier: Prettier에서 인식하는 코드상의 포맷 오류를 ESLint 오류로 출력해준다.
+- eslint-import-resolver-alias: 
 
 
 ## .prettierrc
