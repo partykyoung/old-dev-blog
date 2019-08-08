@@ -120,7 +120,6 @@ import { WithRouterProps } from 'next/dist/client/with-router';
 ```javascript
 // withRouter(connnect()()) => .. 생략
 
-
 export default compose(
   withRouter,
   connect(mapStateToProps)
