@@ -61,20 +61,32 @@ package.json에 next를 실행시키는 명령어를 적어준다.
 }
 ```
 
-error TS2349: Cannot invoke an expression whose type lacks a call signature.
+## v8.1.0 -> v9로 업데이트 하면서 났던 이슈들
+
+###error TS2349: Cannot invoke an expression whose type lacks a call signature.
 
 ```
-import * as next from 'next' -> import next from 'next'
+// 수정 전
+import * as next from 'next'
+
+// 수정 후
+import next from 'next'
 ```
 
-Cannot re-export a type when the '--isolatedModules' flag is provided.
+아마 tsconfig.json의 esModuleInterop 옵션 떄문에 나는 이슈인것 같다. 위의 코드처럼 import 방식을 바꿔주면 해결된다.
+
+### Cannot re-export a type when the '--isolatedModules' flag is provided.
 
 ```
-// export { SomeType };
+// 수정 전
+export { SomeType };
 
+// 수정 후
 import { SomeType } from "./types";
 export type SomeType = SomeType;
 ```
+
+역시 tsconfig.json의 isolatedModules 옵션 때문에 나는 이슈인것 같다. 위의 코드처럼 바꿔주면 된다.
 
 ```
 import { WithRouterProps } from 'next/dist/client/with-router';
