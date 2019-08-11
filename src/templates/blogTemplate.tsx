@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import styled, {theme} from '../styledComponents';
 import { Disqus } from 'gatsby-plugin-disqus';
 
+import "katex/dist/katex.min.css"
+
 import Layout from '../components/Layout';
 import Comment from '../components/Comment';
 import Post from '../components/Post';
