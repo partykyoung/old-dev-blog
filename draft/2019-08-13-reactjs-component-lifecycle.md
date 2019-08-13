@@ -25,10 +25,6 @@ props나 state가 바뀌거나 부모 컴포넌트가 리렌더링될 때, fourc
 ## 라이프사이클 종류
 
 ### render()
-```javascript
-rcc
-```
-
 lifeCycle 메서드 중 유일한 필수 메서드 이다.
 
 HTML태그나 컴포넌트같은 리액트 요소들을 반환한다. 아무것도 보여주고 싶지 않으면 null 또는 false 값을 반환하면 된다. 이 메서드 안에서 this.props와 this.state에 접근할 수 있다.
@@ -41,7 +37,9 @@ shoudComponentUpdate 메서드가 false를 반환하면 render 메서드는 호�
 
 이 메서드 안에서 super을 호출한 후에 props를 인자로 넘겨줘야 constructor 안에서 this.props에 접근할 수 있다.
 
-### getDerivedStateFromProps()
+### static getDerivedStateFromProps()
+props로 받아온 값을 state에 동기화시키는 용도로 사용한다. 이 메서드는 컴포넌트 인스턴스에 접근할 수 없다.
+
 ### componentDidMount()
 ### shoudComponentUpdate()
 ### getSnapshotBeforeUpdate()
