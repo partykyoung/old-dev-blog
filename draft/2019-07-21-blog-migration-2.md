@@ -87,13 +87,18 @@ export const pageQuery = graphql`
 `
 ```
 
-## mathjax
-mathjs 라는 라이브러리를 사용하고 있어서 이번 블로그에도 역시 적용하기로 했다. gatsby-remark-mathjax 라는 플러그인을 사용했는데 제대로 안되서 katex 라는 플러그인으로 바꿨다. 생각해보니 mathjax를 설치하지 않고 gatsby-remark-mathjax 플러그인만 설치해서 안됐던 것 같다 ㅎ...
+## KaTeX
+
+이전 블로그에서 수학 수식을 표현해주는 mathjax 라는 js 라이브러리를 사용하고 있었기 때문에 gatsby-remark-mathjax 라는 플러그인을 사용하려고 했으나 설정을 했음에도 불구하고 mathjax가 제대로 실행이 되질 않았다. 계속 방법을 찾아보다가 katex라는걸 알게되었는데 mathjax 처럼 역시 수학 수식을 표현해주는 js 라이브러리 였다. 혹시나 하는 마음에 적용해보았는데 다행히 mathjax와 문법(?)이 같애서 수학 수식이 원하는대로 출력되었다!
+
+gatsby-remark-katex 플러그인을 사용하려면 gatsby-transformer-remark가 같이 필요한데 나처럼 markdown 작업 등을 미리 해놨으면 이미 설치가 되어 있을 것이다. 없으면 같이 설치해주면 된다.
+
 ```
-yarn add gatsby-transformer-remark gatsby-remark-katex katex
+yarn add gatsby-remark-katex katex
 ```
 
 ### gatsby-config.js
+
 ```js
 module.exports = {
   // 생략...
@@ -109,8 +114,8 @@ module.exports = {
             options: {
               // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
               strict: `ignore`,
-            }
-          }
+            },
+          },
         ],
       },
     },
