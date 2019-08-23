@@ -27,9 +27,16 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
+              aliases: {
+                c: "c",
+                sh: "shell",
+                es6: "javascript",
+                env: "bash",
+                mdx: "md",
+                ".json": "json",
+              },              
               classPrefix: "language-",
               inlineCodeMarker: null,
-              aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,
             },

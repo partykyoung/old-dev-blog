@@ -1,9 +1,11 @@
 const path = require(`path`);
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.tsx`)
+  const blogPostTemplate = path.resolve('src/templates/blogTemplate.tsx');
+  const blogListTemplate = path.resolve('src/pages/index.tsx');
 
   return graphql(`
     {
@@ -13,8 +15,11 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
-              path
+              tags
             }
           }
         }
@@ -25,12 +30,46 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const { edges } = result.data.allMarkdownRemark
+
+    edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: node.fields.slug,
         component: blogPostTemplate,
-        context: {}, // additional data can be passed via context
+        context: {
+          slug: node.fields.slug
+        }, // additional data can be passed via context
+      });
+    });
+
+    const postsPerPage = 10;
+    const numPages = Math.ceil(edges.length / postsPerPage);
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? '/' : `/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1
+        }
       })
-    })
+    });
   })
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode });
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
+  }
 }
