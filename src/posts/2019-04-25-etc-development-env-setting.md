@@ -15,7 +15,7 @@ path: /etc/development-env-setting
 - Mac 패키지 관리자는 Homebrew 사용 중.
 
 2. git 설치
-   ```
+   ```bash
    brew install git
    ```
 
@@ -31,7 +31,7 @@ path: /etc/development-env-setting
 
 2. yarn 설치
 
-```
+```bash
   brew install yarn
 ```
 
@@ -53,7 +53,7 @@ path: /etc/development-env-setting
 
 1. gcc 설치
 
-```
+```bash
 brew install gcc
 ```
 

@@ -15,7 +15,7 @@ path: /etc/blog-migration-2
 
 Gatsby에서 disqus를 사용하려면 gatsby-plugin-disqus 플러그인을 설치하면 된다.
 
-```
+```bash
 yarn add gatsby-plugin-disqus
 ```
 
@@ -93,13 +93,13 @@ export const pageQuery = graphql`
 
 gatsby-remark-katex 플러그인을 사용하려면 gatsby-transformer-remark가 같이 필요한데 나처럼 markdown 작업 등을 미리 해놨으면 이미 설치가 되어 있을 것이다. 없으면 같이 설치해주면 된다.
 
-```
+```bash
 yarn add gatsby-remark-katex katex
 ```
 
 ### gatsby-config.js
 
-```js
+```javascript
 module.exports = {
   // 생략...
   plugins: [

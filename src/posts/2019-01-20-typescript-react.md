@@ -8,7 +8,7 @@ path: /front-end/typescript/react-with-typescript
 TypeScript에 익숙해질 겸 기존에 진행하고 있던 프로젝트를 TypeScript으로 마이그레이션 해보기로 했다.
 create-react-app v2로 생성한 프로젝트면 간단하게 마이그레이션 할 수 있다.
 
-```
+```bash
 yarn add @types/node @types/react @types/react-dom
 yarn add --dev typescript awesome-typescript-loader source-map-loader @types/jest
 ```
@@ -17,7 +17,7 @@ yarn add --dev typescript awesome-typescript-loader source-map-loader @types/jes
 
 ### App.tsx
 
-```typescript
+```javascript
 import * as React from "react"
 
 interface Props {}

@@ -7,7 +7,7 @@ description: JSX와 Fragment가 무엇인지 알아봅시다.
 
 ## JSX
 
-```jsx
+```javascript
 import React, { Component } from "react"
 
 class App extends Component {
@@ -28,7 +28,7 @@ export default App
 
 JSX는 JavaScript XML의 약자이다. render 함수를 보면 HTML 태그 처럼 생긴 것들이 보이는데 저 부분이 JSX 이다. JSX로 컴포넌트가 화면에 어떻게 보일지 나타낼 수 있다. JSX는 HTML과 비슷해 보이지만 용도도 사용법도 다르다.
 
-```jsx
+```javascript
 import React, { Component } from "react"
 
 class App extends Component {
@@ -59,7 +59,7 @@ JSX는 컴포넌트에 여러 요소가 있다면 부모 요소 하나로 꼭 �
 
 ## Fragment
 
-```jsx
+```javascript
 import React, { Component, Fragment } from "react"
 
 class App extends Component {
@@ -81,7 +81,7 @@ export default App
 Fragment는 React v16 이상의 버전에서 도입되었다. Fragment로 부모 DOM 요소를 추가하지 않고도 자식 요소들을 그룹화 할 수 있다.
 Fragment를 사용하면 단지 부모 요소로만 쓰이는 불필요한 DOM을 줄일 수 있어 조금 더 빨라지고 메모리 사용량도 조금 더 적어진다. 개발자 도구로 DOM 요소를 확인 할 때도 조금 더 편리하게 확인할 수 있다.
 
-```jsx
+```javascript
 import React, { Component } from "react"
 
 class App extends Component {

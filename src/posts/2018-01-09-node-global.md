@@ -69,7 +69,7 @@ module.exports = {
 
 - exports
 
-```
+```bash
   exports.test = 0
   exports.test2 = 1
 ```

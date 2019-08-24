@@ -1,13 +1,13 @@
 serverless에 express 같은 프레임워크를 사용하는 이유 -> serverless.yml에 일일히 실행하는 함수들을 작성해 주는게 귀찮아서 (?) -> Express가 전체 라우팅 로직을 다루도록
 
-```
+```bash
 yarn add serverless-http
 ```
 
 - serverless-http
   koa, express 등을 감싸서 serverless 작업을 할 수 있도록 도와주는 플러그인.
 
-```
+```bash
 yarn add koa koa-router
 yarn add -dev ts-node nodemon
 ```
@@ -16,7 +16,7 @@ yarn add -dev ts-node nodemon
 
 ## package.json
 
-```
+```bash
 {
   "scripts": {
     "dev": "NODE_PATH=src NODE_ENV=development nodemon",

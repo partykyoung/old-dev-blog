@@ -28,7 +28,7 @@ NPM의 이슈는 NPM 최신버전에서 해결됐고 속도 차이점은 솔직�
 
 es6 개발환경을 구축하기 위해 webpack이랑 babel을 사용할 것이다.
 
-```
+```bash
 yarn init -y
 yarn add --dev webpack webpack-cli babel-loader babel-core babel-preset-env
 ```

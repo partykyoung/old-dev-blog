@@ -7,24 +7,6 @@ import PostLink from "../components/PostLink"
 
 import styled from '../styledComponents';
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "YYYY년 MM월 DD일")
-            path
-            title
-          }
-        }
-      }
-    }
-  }
-`
-
 const Wrapper = styled.div`
   padding: 2rem 1rem;
 `;
@@ -68,4 +50,32 @@ const Index = ({
   )
 }
 
-export default Index
+export default Index;
+
+export const pageQuery = graphql`
+  query blogPageQuery($skip: Int!, $limit: Int!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`

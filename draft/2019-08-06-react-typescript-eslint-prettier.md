@@ -1,10 +1,10 @@
 
 
-```
+```bash
 yarn add --dev @typescript-eslint/parser eslint eslint-config-airbnb eslint-config-prettier prettier 
 ```
 
-```
+```bash
 npm info "eslint-config-airbnb@latest" peerDependencies
 ```
 

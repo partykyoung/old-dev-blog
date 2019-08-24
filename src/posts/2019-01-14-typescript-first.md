@@ -26,7 +26,7 @@ path: /front-end/typescript/typescript
 
 ## TypeScript 5분 튜토리얼
 
-```
+```bash
 npm install -g typescript
 ```
 
@@ -34,7 +34,7 @@ TypeScript를 전역으로 설치해주자.
 
 ### helloTypeScript.ts
 
-```typescript
+```javascript
 function greeter(person: string) {
   return `Hello ${person}`
 }
@@ -48,7 +48,7 @@ TypeScript 공식 사이트에서 튜토리얼을 보고 간단하게 작성해 
 
 ![parameter에 타입을 생략하면 any로 타입이 설정된다.](../images/frontend/typescript-first-2.png)
 
-```
+```bash
 tsc helloTypeScript.ts
 ```
 
