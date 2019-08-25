@@ -15,10 +15,8 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            fields {
-              slug
-            }
             frontmatter {
+              path
               tags
             }
           }
@@ -34,10 +32,10 @@ exports.createPages = ({ actions, graphql }) => {
 
     edges.forEach(({ node }) => {
       createPage({
-        path: node.fields.slug,
+        path: node.frontmatter.path,
         component: blogPostTemplate,
         context: {
-          slug: node.fields.slug
+          path: node.frontmatter.path
         }, // additional data can be passed via context
       });
     });
@@ -58,18 +56,4 @@ exports.createPages = ({ actions, graphql }) => {
       })
     });
   })
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
-  }
 }
