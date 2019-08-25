@@ -1,6 +1,19 @@
 import React from 'react';
 import { Link } from "gatsby";
 
+import styled from '../styledComponents';
+
+const Wrapper = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
+  }
+`;
+
 interface PageContextProps {
   currentPage: number;
   numPages: number;
@@ -14,7 +27,7 @@ const Pagination = ({pageContext}: any) => {
   const nextPage = (currentPage + 1).toString()
 
   return (
-    <ul>
+    <Wrapper>
       {
         !isFirst &&
         <li><Link to={prevPage}>이전</Link></li>
@@ -30,7 +43,7 @@ const Pagination = ({pageContext}: any) => {
         !isLast &&
         <li><Link to={nextPage}>다음</Link></li>
       }
-    </ul>
+    </Wrapper>
   )
 }
 
