@@ -43,18 +43,18 @@ const Wrapper = styled.div`
   }
 `;
 
-interface PostLInkProps {
-  post: {
-    excerpt: string;
-    frontmatter: {
-      date: string;
-      path: string;
-      title: string;
-    };
-  };
-}
+// interface PostLInkProps {
+//   post: {
+//     excerpt: string;
+//     frontmatter: {
+//       date: string;
+//       path: string;
+//       title: string;
+//     };
+//   };
+// }
 
-const PostLink: React.SFC<PostLInkProps> = ({post}) => {
+const PostLink: React.SFC<any> = ({post}) => {
   return (
     <Wrapper theme={theme}>
       <Link to={post.frontmatter.path}>

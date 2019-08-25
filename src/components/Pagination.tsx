@@ -5,6 +5,7 @@ import styled from '../styledComponents';
 
 const Wrapper = styled.ul`
   display: flex;
+  margin-top: 1rem;
   justify-content: center;
   align-items: center;
 
