@@ -121,9 +121,8 @@ module.exports = {
 
 ## markdown 설정하기
 
-Gatsby에서는 데이터소스라고 부르는데 여기서 데이터 소스는 Wordpress같은 CMS 도구가 될 수도 있고 다른 정적 사이트 생성기처럼 Markdown 파일이 될 수도 있고 API 등을 통해서 다른 곳에서 가져올 수도 있다. 플러그인 시스템이 잘 되어 있어서 다양한 데이터소스에서 데이터를 가져올 수 있다.
-
-Gatsby는 데이터 소스라는 곳에서 GraphQL을 이용하여 데이터를 가지고 온다. 나는 이 데이터 소스를 markdown 파일이 되도록 설정 했다.
+Gatsby는 데이터 소스라는 곳에서 GraphQL을 이용하여 데이터를 가지고 온다. 이 데이터 소스는 Wordpress같은 CMS 도구가 될 수도 있고 다른 정적 사이트 생성기처럼 Markdown 파일이 될 수도 있고 API 등을 통해서 다른 곳에서 가져올 수도 있다. 플러그인 시스템이 잘 되어 있어서 다양한 데이터소스에서 데이터를 가져올 수 있다.
+나는 데이터 소스가 markdown 파일이 되도록 설정 했다.
 
 ```markdown
 ---
@@ -134,7 +133,7 @@ path: /etc/blog-migration
 ---
 ```
 
-Hexo에서는 path를 따로 지정해 줄 필요가없었는데 Gatsby에서는 path를 지정해줘야한다. 이 path는 해당 포스트의 url이 된다. tags와 categories는 Hexo에서 쓰던 방식과 Gatsby에서 쓰는 방식이 다른 것 같아 일단 주석처리 해두었다. 여기서 title, description, path는 seo 데이터로도 사용할 수 있다.
+Hexo에서는 path를 따로 지정해 줄 필요가없었는데 Gatsby에서는 path를 지정해줘야한다. 이 path는 해당 포스트의 url이 된다. tags와 categories는 Hexo에서 쓰던 방식과 Gatsby에서 쓰는 방식이 다른 것 같아 일단 주석처리 해두었다. 여기서 title, description, path는 SEO 데이터로도 사용할 수 있다.
 
 ```
 yarn add gatsby-source-filesystem gatsby-transformer-remark
