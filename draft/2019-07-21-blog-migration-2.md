@@ -5,9 +5,7 @@ description: Hexo에서 Gatsby로 블로그 마이그레이션 하는 과정을 
 path: /etc/blog-migration-2
 ---
 
-[Hexo에서 Gatsby로 블로그 마이그레이션 작업](/etc/blog-migration/)을 계속 이어 하면서 과정을 마저 정리 하였다.
-
-이번에는 페이징 작업이랑 댓글 작업을 하였는데 역시 Gatsby 공식 문서에 관련 플러그인 문서화가 굉장히 잘되어 있어서 문제 없이 할 수 있었다.
+[Hexo에서 Gatsby로 블로그 마이그레이션 작업](/etc/blog-migration/)을 계속 이어 하면서 과정을 한번 더 정리 하였다. 직접 이것 저것 원하는대로 다 커스터마이징 하려다 보니 끝이 없는 것 같다 ㅠ.
 
 ## disqus
 
@@ -34,9 +32,6 @@ module.exports = {
         shortname: `kyoungah`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
 ```
@@ -64,7 +59,7 @@ export default function Template({
 
   return (
     <>
-      /** 포스트 컨텐츠 **/
+      {/** 포스트 컨텐츠 **/}
       <Disqus config={disqusConfig} />
     </>
   )
@@ -89,7 +84,7 @@ export const pageQuery = graphql`
 
 ## KaTeX
 
-이전 블로그에서 수학 수식을 표현해주는 mathjax 라는 js 라이브러리를 사용하고 있었기 때문에 gatsby-remark-mathjax 라는 플러그인을 사용하려고 했으나 설정을 했음에도 불구하고 mathjax가 제대로 실행이 되질 않았다. 계속 방법을 찾아보다가 katex라는걸 알게되었는데 mathjax 처럼 역시 수학 수식을 표현해주는 js 라이브러리 였다. 혹시나 하는 마음에 적용해보았는데 다행히 mathjax와 문법(?)이 같애서 수학 수식이 원하는대로 출력되었다!
+이전 블로그에서 수학 수식을 표현해주는 mathjax 라는 js 라이브러리를 사용하고 있었기 때문에 gatsby-remark-mathjax 라는 플러그인을 사용하려고 했으나 설정을 했음에도 불구하고 mathjax가 제대로 실행이 되질 않았다. 계속 방법을 찾아보다가 katex라는걸 알게되었는데 mathjax 처럼 역시 수학 수식을 표현해주는 js 라이브러리 였다. 혹시나 하는 마음에 적용해보았는데 다행히 mathjax와 문법(?)이 같애서 수학 수식이 원하는대로 출력되었다.
 
 gatsby-remark-katex 플러그인을 사용하려면 gatsby-transformer-remark가 같이 필요한데 나처럼 markdown 작업 등을 미리 해놨으면 이미 설치가 되어 있을 것이다. 없으면 같이 설치해주면 된다.
 
@@ -123,3 +118,31 @@ module.exports = {
   ],
 }
 ```
+
+## Google Analytics
+
+구글 애널리틱스 설정은 gatsby-plugin-google-analytics 플러그인을 사용하였다.
+
+```bash
+yarn add gatsby-plugin-google-analytics
+```
+
+```javascript
+module.exports = {
+  // 생략 ...
+  plugins: [
+    // 생략...
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-80236732-4",
+      },
+    },
+  ],
+}
+```
+
+## 마무리
+
+이제 얼추 필요한 기능들을 블로그에 적용한 것 같다. 페이징 작업만 남았는데 이건 왠지 길어질 것 같아서 따로 정리 글을 작성할 예정이다.
+계속 꾸준히 글을 쓰며 블로그를 관리하다가 보완할 부분이 있으면 계속 조금씩 추가해야겠다.
