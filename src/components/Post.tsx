@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 
   h2, h3, h4, h5 {
     font-weight: 600;
-    margin: 1.5rem 0 0.75rem;
+    margin: 2rem 0 0.75rem;
   }
   
   h2 {
@@ -74,6 +74,14 @@ const Wrapper = styled.div`
     vertical-align: top;
     border-width: 0 0 2px;
     text-align: center;
+  }
+
+  figcaption {
+    margin-top: 0.3125rem;
+    color: ${({theme}) => theme.grayColor};
+    font-size: ${({theme}) => theme.font14};
+    text-align: center;
+    font-style: italic;
   }
 }
 
