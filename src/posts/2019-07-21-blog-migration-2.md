@@ -13,6 +13,8 @@ path: /etc/blog-migration-2
 
 Gatsby에서 disqus를 사용하려면 gatsby-plugin-disqus 플러그인을 설치하면 된다.
 
+### Install
+
 ```bash
 yarn add gatsby-plugin-disqus
 ```
@@ -88,6 +90,8 @@ export const pageQuery = graphql`
 
 gatsby-remark-katex 플러그인을 사용하려면 gatsby-transformer-remark가 같이 필요한데 나처럼 markdown 작업 등을 미리 해놨으면 이미 설치가 되어 있을 것이다. 없으면 같이 설치해주면 된다.
 
+### Install
+
 ```bash
 yarn add gatsby-remark-katex katex
 ```
@@ -142,7 +146,30 @@ module.exports = {
 }
 ```
 
+## RSS
+
+부끄럽지만 솔직히 말하자면 RSS 기능을 적극적으로 사용해본적이 없어서 생각지도 않고 있었는데 회사 슬랙에서 RSS 봇으로 기술 블로그들의 글을 공유하는걸 보고서 아 나도 추가해야겠구나 싶었다. [gatsby-plugin-feed](https://www.gatsbyjs.org/packages/gatsby-plugin-feed/)을 사용하면 RSS 기능을 쉽게 추가할 수 있다.
+
+### Install
+
+```markdown
+yarn add gatsby-plugin-feed
+```
+
+### gatsby-config.js
+
+여러가지 옵션들을 추가할 수 있으나 뭐가 뭔지 잘 몰라서 일단 기본으로만 설정해두었다. 추후에 필요한 부분이 있으면 옵션을 추가하여 커스터마이징 할 생각이다.
+
+```javascript
+module.exports = {
+  // 생략 ...
+  plugins: [
+    // 생략...
+    `gatsby-plugin-feed`,
+  ],
+}
+```
+
 ## 마무리
 
-이제 얼추 필요한 기능들을 블로그에 적용한 것 같다. 페이징 작업만 남았는데 이건 왠지 길어질 것 같아서 따로 정리 글을 작성할 예정이다.
-계속 꾸준히 글을 쓰며 블로그를 관리하다가 보완할 부분이 있으면 계속 조금씩 추가해야겠다.
+블로그 마이그레이션 작업을 계속 하다보니 자꾸 욕심이 생겨서 이거 저거 더 추가하게 된다.

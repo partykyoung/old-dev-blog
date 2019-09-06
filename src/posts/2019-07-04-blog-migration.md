@@ -30,6 +30,10 @@ gatsby develop
 
 요즘 대세인 TypeScript을 Gatsby 프로젝트에도 적용하기로 했다. 평소 js 프로젝트에 TypeScript 환경을 설정하는 것과 비슷하다. gatsby-config.js 파일에 gatsby-plugin-typescript 플러그인만 추가해주면 된다.
 
+TypeScript 환경을 구축하고 나니 functional Component가 제대로 작동 안하는 이슈가 있었는데 [gatsby를 2.13.8 버전으로 업데이트](https://github.com/gatsbyjs/gatsby/issues/15423)하고 나니 정상 작동 되었다.
+
+### Install
+
 ```
 yarn add typescript @types/react @types/react-dom gatsby-plugin-typescript @types/react-helmet
 ```
@@ -63,11 +67,11 @@ module.exports = {
 }
 ```
 
-TypeScript 환경을 구축하고 나니 functional Component가 제대로 작동 안하는 이슈가 있었는데 [gatsby를 2.13.8 버전으로 업데이트](https://github.com/gatsbyjs/gatsby/issues/15423)하고 나니 정상 작동 되었다.
-
 ## styled-components 설정하기
 
 회사에서 styled-component를 사용하고 있는데 이게 익숙해지니 너무 편해서 블로그에서도 사용할 수 있도록 설정했다.
+
+### Install
 
 ```
 yarn add gatsby-plugin-styled-components styled-components babel-plugin-styled-components
@@ -89,6 +93,8 @@ module.exports = {
 ## 전역 css 설정
 
 전역 css를 설정해주려고 찾아봤더니 전역 css에 대한 플러그인도 있어서 편하게 설정할 수 있었다. @nfront/global-styles 대신에 styled-components의 createGlobalStyle 함수를 사용하고 싶었는데 인식을 제대로 하지 못하는 이슈가 있어서 그냥 @nfront/global-styles 모듈의 createGlobalStyle 함수를 사용했다.
+
+### Install
 
 ```
 yarn add gatsby-plugin-global-styles @nfront/global-styles
@@ -135,12 +141,14 @@ path: /etc/blog-migration
 
 Hexo에서는 path를 따로 지정해 줄 필요가없었는데 Gatsby에서는 path를 지정해줘야한다. 이 path는 해당 포스트의 url이 된다. tags와 categories는 Hexo에서 쓰던 방식과 Gatsby에서 쓰는 방식이 다른 것 같아 일단 주석처리 해두었다. 여기서 title, description, path는 SEO 데이터로도 사용할 수 있다.
 
+### Install
+
+markdown 파일을 읽기 위해서는 gatsby-source-filesystem 플러그인이 필요하고 markdown 파일을 해석하기 위해서는 gatsby-transformer-remark 플러그인이 필요하다.
+
 ```
 yarn add gatsby-source-filesystem gatsby-transformer-remark
 
 ```
-
-markdown 파일을 읽기 위해서는 gatsby-source-filesystem 플러그인이 필요하고 markdown 파일을 해석하기 위해서는 gatsby-transformer-remark 플러그인이 필요하다.
 
 ### blogTeplate.tsx
 
