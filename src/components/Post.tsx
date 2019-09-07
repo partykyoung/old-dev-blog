@@ -54,6 +54,16 @@ const Wrapper = styled.div`
 
   li {
     margin-top: 0.25em;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-top: calc(0.8125rem / 2);
+      margin-left: 0.6rem;
+      list-style-type: circle;
+    }
   }  
 
   table {
@@ -86,9 +96,12 @@ const Wrapper = styled.div`
 }
 
 .gatsby-highlight {
-  margin-top: 1rem;
-  margin-bottom: 1.8rem;
-  padding-bottom: 1rem;
+  pre {
+    padding: 1.2em;
+    margin: 1.5em 0;
+    overflow: auto;  
+    border-radius: 0.5rem;
+  }
   
   code {
     font-size: ${({ theme }) => theme.font14};
