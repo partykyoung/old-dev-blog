@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 
   h2, h3, h4, h5 {
     font-weight: 600;
-    margin: 2rem 0 0.75rem;
+    margin: 2rem 0 1rem;
   }
   
   h2 {
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
 
   p {
-    margin-bottom: 1.8rem;
+    margin-bottom: 0.9375rem;
   }
 }
 
@@ -109,3 +109,4 @@ const Post: React.SFC<PostProps> = ({ children} ) => {
 }
 
 export default Post;
+``
