@@ -16,6 +16,7 @@ export interface IThemeProps {
   textColor: string; 
 
  // 폰트 크기
+ font30: string;
  font28: string;
  font24: string;
  font20: string;
@@ -69,6 +70,7 @@ const theme: IThemeProps = {
  textColor: "#212529",
 
  // 폰트 크기
+ font30: "1.875rem",
  font28: "1.75rem",
  font24: "1.5rem",
  font20: "1.25rem",

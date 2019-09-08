@@ -9,35 +9,31 @@ const Wrapper = styled.div`
 
   h2, h3, h4, h5 {
     font-weight: 600;
-    margin: 2rem 0 1rem;
+    margin: 2.5rem 0 1rem;
   }
   
   h2 {
-    font-size: ${({ theme }) => theme.font24};
+    font-size: ${({ theme }) => theme.font28};
     padding-bottom: 0.3rem;
   }
   
   h3 {
+    font-size: ${({ theme }) => theme.font24};
+  }
+
+  h4, h5 {
     font-size: ${({ theme }) => theme.font20};
-  }
-
-  h4 {
-    font-size: ${({ theme }) => theme.font18};
-  }
-
-  h5 {
-    font-size: 1.0625rem;
   }
 
   p, li {
     font-size: ${({ theme }) => theme.font16};
     word-break: keep-all;
     overflow-wrap: break-word;
-    line-height: 1.8;
+    line-height: 2;
   }
 
   p {
-    margin-bottom: 0.9375rem;
+    margin-top: 0.9375rem;
   }
 }
 

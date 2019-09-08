@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     color: ${theme.blackColor};
+    font-size: ${theme.font16}
     box-sizing: border-box;
   }
  
