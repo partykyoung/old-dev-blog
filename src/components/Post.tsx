@@ -13,16 +13,16 @@ const Wrapper = styled.div`
   }
   
   h2 {
-    font-size: ${({ theme }) => theme.font28};
+    font-size: ${({ theme }) => theme.font24};
     padding-bottom: 0.3rem;
   }
   
   h3 {
-    font-size: ${({ theme }) => theme.font24};
+    font-size: ${({ theme }) => theme.font20};
   }
 
   h4, h5 {
-    font-size: ${({ theme }) => theme.font20};
+    font-size: ${({ theme }) => theme.font18};
   }
 
   p, li {
@@ -34,6 +34,11 @@ const Wrapper = styled.div`
 
   p {
     margin-top: 0.9375rem;
+
+    code {
+      color: #ff3860;
+      background: transparent;
+    }
   }
 }
 
@@ -91,18 +96,18 @@ const Wrapper = styled.div`
   }
 }
 
-.gatsby-highlight {
-  pre {
-    padding: 1.2em;
-    margin: 1.5em 0;
-    overflow: auto;  
-    border-radius: 0.5rem;
+  .gatsby-highlight {
+    pre {
+      padding: 1.2em;
+      margin: 1.5em 0;
+      overflow: auto;  
+      border-radius: 0.5rem;
+    }
+    
+    code {
+      font-size: ${({ theme }) => theme.font14};
+    }
   }
-  
-  code {
-    font-size: ${({ theme }) => theme.font14};
-  }
-}    
 `;
 
 interface PostProps {

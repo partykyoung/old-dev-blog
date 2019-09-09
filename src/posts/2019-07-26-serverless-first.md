@@ -30,7 +30,7 @@ ex) aws lambda, azure functions, goolge cloud functions
 lambda에서 실행하는 코드를 deploy 하는 과정을 굉장히 쉽게 해준다.
 
 ### serverless 설치 
-```
+```bash
 // serverless 프레임워크를 전역으로 설치한다.
 npm install -g serverless
 ```
@@ -38,20 +38,21 @@ npm install -g serverless
 ### serverless 프로젝트 생성
 Node.js 및 AWS가 익숙하므로 `aws-nodejs`라는 템플릿을 이용하여 프로젝트를 만들 것이다.
 
-```
+```bash
 // 템플릿 종류를 입력하지 않고 명령어를 실행하면 오류가 나면서 사용할 수 있는 템플릿 종류가 출력된다. 
 serverless create --template aws-nodejs
 ```
 
 AWS lambda에 배포를 하기 위해서는 [AWS 사용자 생성 및 추가 설정](https://velopert.com/3549)이 필요하다. 
-```
+
+```bash
 serverless config credentials --provider aws --key 액세스키ID --secret 비밀액세스키
 ```
 
 ### TypeScript 환경 설정
 그냥 js로 작업해도 상관없지만 요즘 핫한 TypeScript를 적용해보자.
 
-```
+```bash
 yarn add serverless-webpack serverless-offline ts-loader typescript webpack
 ```
 
@@ -143,7 +144,7 @@ export async function server (event: any, context: any) {
 
 ## 실행
 풀 명령어(?)를 적긴 했지만 sls이라는 단축 명령어로 아래 명령문을 실행할 수 있다.
-```
+```bash
 // 로컬 실행
 serverless offline
 
