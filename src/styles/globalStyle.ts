@@ -35,13 +35,17 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
 
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
   html,
   body {
     height: 100%;
     padding: 0;
     margin: 0;
     color: ${theme.blackColor};
-    font-size: ${theme.font16}
+    font-size: ${theme.font16};
     box-sizing: border-box;
   }
  

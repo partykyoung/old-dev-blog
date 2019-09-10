@@ -8,13 +8,11 @@ const Wrapper = styled.div`
   border-radius: 4px;
 
   h2, h3, h4, h5 {
-    font-weight: 600;
-    margin: 2.5rem 0 1rem;
+    margin-top: 2.5rem;
   }
   
   h2 {
     font-size: ${({ theme }) => theme.font24};
-    padding-bottom: 0.3rem;
   }
   
   h3 {

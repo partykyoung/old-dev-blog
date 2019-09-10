@@ -13,7 +13,6 @@ import SEO from '../components/SEO';
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.font28};
   line-height: 1.2;
-  font-weight: 600;
 `
 
 const PostData = styled.div`
