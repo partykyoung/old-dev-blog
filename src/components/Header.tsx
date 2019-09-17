@@ -38,7 +38,6 @@ const Image = () => {
     }
   `)
 
-  
   return <img src={data.placeholderImage.childImageSharp.fluid.src} alt="경아 개발 블로그 " />
 }
 
