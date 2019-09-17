@@ -6,5 +6,10 @@
 
 // You can delete this file if you're not using it
 // gatsby-browser.js
+
+// atom highlight
 require("./src/styles/prism-atom-one-dark.css");
  
+
+// custom typefaces
+require('typeface-noto-sans-kr');

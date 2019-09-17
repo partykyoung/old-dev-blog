@@ -8,36 +8,35 @@ const Wrapper = styled.div`
   border-radius: 4px;
 
   h2, h3, h4, h5 {
-    font-weight: 600;
-    margin: 2rem 0 0.75rem;
+    margin-top: 2.5rem;
   }
   
   h2 {
     font-size: ${({ theme }) => theme.font24};
-    padding-bottom: 0.3rem;
   }
   
   h3 {
     font-size: ${({ theme }) => theme.font20};
   }
 
-  h4 {
+  h4, h5 {
     font-size: ${({ theme }) => theme.font18};
-  }
-
-  h5 {
-    font-size: 1.0625rem;
   }
 
   p, li {
     font-size: ${({ theme }) => theme.font16};
     word-break: keep-all;
     overflow-wrap: break-word;
-    line-height: 1.8;
+    line-height: 2;
   }
 
   p {
-    margin-bottom: 1.8rem;
+    margin-top: 0.9375rem;
+
+    code {
+      color: #ff3860;
+      background: transparent;
+    }
   }
 }
 
@@ -95,18 +94,18 @@ const Wrapper = styled.div`
   }
 }
 
-.gatsby-highlight {
-  pre {
-    padding: 1.2em;
-    margin: 1.5em 0;
-    overflow: auto;  
-    border-radius: 0.5rem;
+  .gatsby-highlight {
+    pre {
+      padding: 1.2em;
+      margin: 1.5em 0;
+      overflow: auto;  
+      border-radius: 0.5rem;
+    }
+    
+    code {
+      font-size: ${({ theme }) => theme.font14};
+    }
   }
-  
-  code {
-    font-size: ${({ theme }) => theme.font14};
-  }
-}    
 `;
 
 interface PostProps {
@@ -122,3 +121,4 @@ const Post: React.SFC<PostProps> = ({ children} ) => {
 }
 
 export default Post;
+``
