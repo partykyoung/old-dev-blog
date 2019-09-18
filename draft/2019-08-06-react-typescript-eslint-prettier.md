@@ -26,7 +26,20 @@ yarn add --dev eslint @typescript-eslint/parser eslint-config-prettier prettier
 - eslint-plugin-react: react 규칙을 eslint에 추가해준다.
 - eslint-plugin-react-hooks: react hooks 규칙을 eslint에 추가해준다.
 
+### eslint-config-airbnb
+
+```
+  npm info "eslint-config-airbnb@latest" peerDependencies
+```
+
+```
+yarn add --dev eslint-config-airbnb
+```
+
 ## .eslintrc
+
+```javascript
+```
 
 ## .prettierrc
 
