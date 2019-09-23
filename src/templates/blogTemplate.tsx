@@ -30,9 +30,9 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }: any) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html, id } = markdownRemark
+  const { frontmatter, slug, html, id } = markdownRemark
   const disqusConfig = {
-    url: `${"https://dev.kyoungah.com"+frontmatter.path}`,
+    url: `${"https://dev.kyoungah.com"+slug}`,
     identifier: id,
     title: frontmatter.title,
   };
@@ -43,7 +43,7 @@ export default function Template({
     <SEO 
       title={frontmatter.title}
       description={frontmatter.description}
-      url={`https://dev.kyoungah.com${frontmatter.path}`}
+      url={`https://dev.kyoungah.com${slug}`}
     />
     <Layout>
       <Post>
