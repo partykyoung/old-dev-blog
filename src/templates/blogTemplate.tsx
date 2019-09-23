@@ -66,15 +66,20 @@ export default function Template({
 
 // grapthql을 이용하여 markdown에서 데이터를 가지고 온다.
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      excerpt(pruneLength: 160)
       html
       frontmatter {
-        date(formatString: "YYYY년 MM월 DD일")
-        description
-        path
         title
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
