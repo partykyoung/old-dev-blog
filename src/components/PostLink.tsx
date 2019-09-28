@@ -57,7 +57,7 @@ const Wrapper = styled.div`
 const PostLink: React.SFC<any> = ({post}) => {
   return (
     <Wrapper theme={theme}>
-      <Link to={post.frontmatter.path}>
+      <Link to={post.fields.slug}>
         <div>
         <h2>
           {post.frontmatter.title}
