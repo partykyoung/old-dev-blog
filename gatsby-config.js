@@ -83,7 +83,7 @@ module.exports = {
     },{
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `kyoungah`
+        shortname: `dev-kyoungah-com`
       }
     },{
       resolve: `gatsby-plugin-google-analytics`,
