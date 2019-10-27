@@ -18,7 +18,6 @@ interface EdgeTypes {
     excerpt: string
     frontmatter: {
       date: string
-      path: string
       title: string
     }
   }
@@ -31,6 +30,8 @@ const Index = ({data, pageContext}: any) => {
     return <PostLink key={edge.node.id} post={edge.node} />
   })
 
+  console.log(pageContext);
+
   return (
     <>
       <SEO
@@ -41,7 +42,7 @@ const Index = ({data, pageContext}: any) => {
       <Layout>
         <Wrapper>
           {Posts}
-          <Pagination pageContext={pageContext}/>
+          {/* <Pagination pageContext={pageContext}/> */}
         </Wrapper>
         </Layout>
     </>
@@ -71,7 +72,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
-            path
           }
         }
       }
