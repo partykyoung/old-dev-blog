@@ -23,14 +23,14 @@ interface EdgeTypes {
   }
 }
 
-const Index = ({data, pageContext}: any) => {
+const blogListTemplate = ({globalState, data, pageContext}: any) => {
   const { edges } = data.allMarkdownRemark;
+
+  console.log(globalState);
 
   const Posts = edges.map((edge: EdgeTypes) => {
     return <PostLink key={edge.node.id} post={edge.node} />
   })
-
-  console.log(pageContext);
 
   return (
     <>
@@ -49,7 +49,7 @@ const Index = ({data, pageContext}: any) => {
   )
 }
 
-export default Index;
+export default blogListTemplate;
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {

@@ -1,6 +1,22 @@
 const path = require(`path`);
 const { createFilePath } = require('gatsby-source-filesystem');
 
+
+function createJSON(pageData) {
+  const pathSuffix = pageData.path.substring(1)
+  const dir = "public/paginationJson/"
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+  const filePath = dir+"index"+pathSuffix+".json";
+  const dataToSave = JSON.stringify(pageData.context.pageImages);
+  fs.writeFile(filePath, dataToSave, function(err) {
+    if(err) {
+      return console.log(err);
+    }
+  }); 
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -56,7 +72,20 @@ exports.createPages = ({ actions, graphql }) => {
           currentPage: i + 1
         }
       })
+
+      createJSON({
+        path: i === 0 ? '/' : `/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1
+        }
+      });
     });
+
+    
   })
 }
 
