@@ -1,15 +1,20 @@
 const path = require(`path`);
+const fs = require('fs');
+
 const { createFilePath } = require('gatsby-source-filesystem');
 
-
+// 페이징에 필요한 폴더 및 json 파일을 만든다. 
 function createJSON(pageData) {
-  const pathSuffix = pageData.path.substring(1)
-  const dir = "public/paginationJson/"
+  const pathSuffix = pageData.path.substring(1);
+  const dir = 'public/page/';
+  const filePath = `${dir}page${pathSuffix}.json`;
+
   if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
   }
-  const filePath = dir+"index"+pathSuffix+".json";
-  const dataToSave = JSON.stringify(pageData.context.pageImages);
+
+  const dataToSave = JSON.stringify(pageData.context);
+
   fs.writeFile(filePath, dataToSave, function(err) {
     if(err) {
       return console.log(err);
@@ -31,11 +36,14 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            excerpt
             fields {
               slug
             }
             frontmatter {
-              tags
+              tags,
+              title,
+              date
             }
           }
         }
@@ -45,6 +53,8 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
+    
+    const test = [];
 
     const { edges } = result.data.allMarkdownRemark
 
@@ -55,6 +65,13 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           slug: node.fields.slug
         }, // additional data can be passed via context
+      });
+
+      test.push({
+        slug: node.fields.slug,
+        excerpt: node.excerpt,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date
       });
     });
 
@@ -71,7 +88,7 @@ exports.createPages = ({ actions, graphql }) => {
           numPages,
           currentPage: i + 1
         }
-      })
+      });
 
       createJSON({
         path: i === 0 ? '/' : `/${i + 1}`,
@@ -80,12 +97,11 @@ exports.createPages = ({ actions, graphql }) => {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1
+          currentPage: i + 1,
+          test: test
         }
       });
     });
-
-    
   })
 }
 
