@@ -2,21 +2,27 @@ import React, { useEffect } from 'react';
 
 
 function getPageList(index: number) {
-  fetch('/page/page.json').then( response => response.json()).then((response) => {
+  fetch(`/page/page${index}.json`).then( response => response.json()).then((response) => {
     console.log(response);
   }).catch((e) => {
     console.log(e);
   });
 }
 
-const InfiniteScroll = () => {
+interface InfiniteScrollProps {
+  children: React.ReactNode
+}
+
+const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
+  children
+}) => {
   useEffect(() => {
     getPageList(1);
   }, []);
 
   return (
     <div>
-      ㅇㅇ
+      { children }
     </div>
   )
 }

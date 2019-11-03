@@ -24,7 +24,7 @@ interface EdgeTypes {
   }
 }
 
-const blogListTemplate = () => {
+const Index = () => {
 
   return (
     <>
@@ -46,4 +46,4 @@ const blogListTemplate = () => {
   )
 }
 
-export default blogListTemplate;
+export default Index;

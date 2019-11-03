@@ -5,7 +5,7 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 // 페이징에 필요한 폴더 및 json 파일을 만든다. 
 function createJSON(pageData) {
-  const pathSuffix = pageData.path.substring(1);
+  const pathSuffix = pageData.path;
   const dir = 'public/page/';
   const filePath = `${dir}page${pathSuffix}.json`;
 
@@ -26,7 +26,6 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve('src/templates/blogTemplate.tsx');
-  const blogListTemplate = path.resolve('src/templates/blogListTemplate.tsx');
 
   return graphql(`
     {
@@ -54,11 +53,17 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
     
-    const test = [];
-
-    const { edges } = result.data.allMarkdownRemark
+    const { edges } = result.data.allMarkdownRemark;
+    const posts = [];
 
     edges.forEach(({ node }) => {
+      posts.push({
+        slug: node.fields.slug,
+        excerpt: node.excerpt,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date
+      });
+      
       createPage({
         path: node.fields.slug,
         component: blogPostTemplate,
@@ -67,38 +72,25 @@ exports.createPages = ({ actions, graphql }) => {
         }, // additional data can be passed via context
       });
 
-      test.push({
-        slug: node.fields.slug,
-        excerpt: node.excerpt,
-        title: node.frontmatter.title,
-        date: node.frontmatter.date
-      });
     });
 
     const postsPerPage = 10;
     const numPages = Math.ceil(edges.length / postsPerPage);
 
     Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? '/' : `/${i + 1}`,
-        component: blogListTemplate,
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1
-        }
+      const skip = i * postsPerPage;
+      const pagePosts = posts.filter((_, j) => {
+        return j >= skip && j < skip + 10;
       });
 
       createJSON({
-        path: i === 0 ? '/' : `/${i + 1}`,
-        component: blogListTemplate,
+        path: `${i + 1}`,
         context: {
           limit: postsPerPage,
-          skip: i * postsPerPage,
+          skip,
           numPages,
           currentPage: i + 1,
-          test: test
+          posts: pagePosts
         }
       });
     });
