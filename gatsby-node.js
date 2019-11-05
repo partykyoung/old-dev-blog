@@ -35,6 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            id
             excerpt
             fields {
               slug
@@ -58,6 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     edges.forEach(({ node }) => {
       posts.push({
+        id:  node.id,
         slug: node.fields.slug,
         excerpt: node.excerpt,
         title: node.frontmatter.title,

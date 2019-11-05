@@ -54,17 +54,22 @@ const Wrapper = styled.div`
 //   };
 // }
 
-const PostLink: React.SFC<any> = ({post}) => {
+const PostLink: React.SFC<any> = ({
+  date,
+  excerpt,
+  slug,
+  title
+}) => {
   return (
     <Wrapper theme={theme}>
-      <Link to={post.fields.slug}>
+      <Link to={slug}>
         <div>
         <h2>
-          {post.frontmatter.title}
-          <span>{post.frontmatter.date}</span>
+          {title}
+          <span>{date}</span>
         </h2>
         <p>
-          {post.excerpt}
+          {excerpt}
         </p>
         </div>
       </Link>

@@ -1,4 +1,4 @@
-import React  from "react"
+import React, { useCallback, useEffect, useState }  from "react"
 import { graphql } from "gatsby"
 
 import SEO from "../components/SEO"
@@ -24,8 +24,29 @@ interface EdgeTypes {
   }
 }
 
-const Index = () => {
+async function getPageList(index: number) {
+  const response = await fetch(`/page/page${index}.json`);
+  const posts = response.json();
 
+  return posts;
+}
+
+const Index = () => {
+  const [ posts, setPosts ] = useState<any>([]);
+  const [currentNum, setCurrentNum] = useState(1);
+
+  const handleScroll = () => {
+    setCurrentNum(prevState => prevState + 1);
+  };
+
+  useEffect(() => {    
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+  
   return (
     <>
       <SEO
@@ -36,8 +57,17 @@ const Index = () => {
       <Layout>
         <Wrapper>
         <InfiniteScroll>
-          ㅇㅇ
-          {/* {Posts} */}
+          {
+            posts.map((post: any) => (
+              <PostLink 
+                key={post.id}
+                date={post.date}
+                excerpt={post.excerpt}
+                slug={post.slug}
+                title={post.title}
+              />
+            ))
+          }
           {/* <Pagination pageContext={pageContext}/> */}
           </InfiniteScroll>
         </Wrapper>

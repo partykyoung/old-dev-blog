@@ -1,13 +1,4 @@
-import React, { useEffect } from 'react';
-
-
-function getPageList(index: number) {
-  fetch(`/page/page${index}.json`).then( response => response.json()).then((response) => {
-    console.log(response);
-  }).catch((e) => {
-    console.log(e);
-  });
-}
+import React, { useEffect, useRef } from 'react';
 
 interface InfiniteScrollProps {
   children: React.ReactNode
@@ -16,12 +7,18 @@ interface InfiniteScrollProps {
 const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   children
 }) => {
+  const listRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    getPageList(1);
+    if (!listRef || !listRef.current) {
+      return;
+    }
+
+    const scrollHeight = Math.max(document.body.scrollHeight, listRef.current.scrollHeight);
   }, []);
 
   return (
-    <div>
+    <div ref={listRef}>
       { children }
     </div>
   )
