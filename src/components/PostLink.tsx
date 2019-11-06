@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "gatsby";
-import styled, {theme} from '../styledComponents';
+import styled from "styled-components";
+
+import theme from '../styles/theme';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -22,37 +24,26 @@ const Wrapper = styled.div`
   div {
     width: 100%;
     height: 100%;
-    color: ${({theme}) => theme.blackColor};
+    color: ${theme.black};
     transition: color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
   }
 
   h2 {
     margin-bottom: 0.5rem;
-    font-size: ${({theme}) => theme.font18}
+    font-size: 1.125rem;
   }
 
   span {
     margin-left: 0.5rem;
-    font-size: ${({theme}) => theme.font12};
+    font-size: 0.75rem;
     font-weight: normal;
   }
 
   p {
-    font-size: ${({theme}) => theme.font14};
+    font-size: 0.875rem;
     line-height: 1.5;
   }
 `;
-
-// interface PostLInkProps {
-//   post: {
-//     excerpt: string;
-//     frontmatter: {
-//       date: string;
-//       path: string;
-//       title: string;
-//     };
-//   };
-// }
 
 const PostLink: React.SFC<any> = ({
   date,
@@ -61,7 +52,7 @@ const PostLink: React.SFC<any> = ({
   title
 }) => {
   return (
-    <Wrapper theme={theme}>
+    <Wrapper>
       <Link to={slug}>
         <div>
         <h2>

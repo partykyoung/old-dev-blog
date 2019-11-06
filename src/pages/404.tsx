@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby";
 
-import styled from "../styledComponents";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   position: relative;

@@ -1,5 +1,7 @@
 import React from "react";
-import styled, { theme } from "../styledComponents";
+import styled from "styled-components";
+
+import theme from '../styles/theme';
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -8,24 +10,17 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-const Container = styled.div`
-  width: 100%;
-  min-width: 320px;
-  min-height: ${({ theme }) =>
-    `calc(100vh - (${theme.headerHeight} + ${theme.footerHeight})`});
-`
-
-const Wrapper = styled.div`
+const Main = styled.main`
   width: 100%;
   padding: 1.5rem 1rem;
   margin: 0 auto;
   box-sizing: border-box;
 
-  @media ${({ theme }) => theme.breakPoints.tablet} {
+  @media ${theme.tablet} {
     width: 750px;
   }
 
-  @media ${({ theme }) => theme.breakPoints.desktop} {
+  @media ${theme.desktop} {
     width: 960px;
   }
 `
@@ -34,9 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <Container theme={theme}>
-        <Wrapper theme={theme}>{children}</Wrapper>
-      </Container>
+        <Main>{children}</Main>
       <Footer />
     </>
   )

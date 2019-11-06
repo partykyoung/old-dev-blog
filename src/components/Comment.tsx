@@ -1,11 +1,10 @@
 import React from 'react'
-import styled from '../styledComponents';
+import styled from 'styled-components';
 
 import Post from './Post';
 
 const Wrapper = styled.div`
-  margin-top: 2rem;
-}    
+  margin-top: 2rem;    
 `;
 
 interface PostProps {

@@ -74,7 +74,7 @@ module.exports = {
       options: {
         pathToConfigModule: `src/styles/globalStyle`,
         props: {
-          theme: `src/styledComponents/theme`,
+          theme: `src/styles/theme`,
           other: {
             light: true
           }

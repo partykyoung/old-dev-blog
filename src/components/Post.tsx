@@ -1,10 +1,12 @@
 import React from 'react'
-import styled, {theme} from '../styledComponents';
+import styled from "styled-components";
+
+import theme from '../styles/theme';
 
 const Wrapper = styled.div`
   padding: 1.5rem;
   margin: 0 auto;
-  background-color: ${({ theme }) => theme.whiteColor};
+  background-color: ${theme.white};
   border-radius: 4px;
 
   h2, h3, h4, h5 {
@@ -12,19 +14,19 @@ const Wrapper = styled.div`
   }
   
   h2 {
-    font-size: ${({ theme }) => theme.font24};
+    font-size: 1.5rem;
   }
   
   h3 {
-    font-size: ${({ theme }) => theme.font20};
+    font-size: 1.25rem;
   }
 
   h4, h5 {
-    font-size: ${({ theme }) => theme.font18};
+    font-size: 1.125rem;
   }
 
   p, li {
-    font-size: ${({ theme }) => theme.font16};
+    font-size: 1rem;
     word-break: keep-all;
     overflow-wrap: break-word;
     line-height: 2;
@@ -42,7 +44,7 @@ const Wrapper = styled.div`
 
 .blog-post-content {
   a{
-    color: ${({theme}) => theme.blackColor};
+    color: ${theme.black};
     border-bottom: 2px solid #adc2cb;
   }
 
@@ -87,8 +89,8 @@ const Wrapper = styled.div`
 
   figcaption {
     margin-top: 0.3125rem;
-    color: ${({theme}) => theme.grayColor};
-    font-size: ${({theme}) => theme.font14};
+    color: ${theme.black};
+    font-size: 0.876rem
     text-align: center;
     font-style: italic;
   }
@@ -103,7 +105,7 @@ const Wrapper = styled.div`
     }
     
     code {
-      font-size: ${({ theme }) => theme.font14};
+      font-size: 0.875rem;
     }
   }
 `;

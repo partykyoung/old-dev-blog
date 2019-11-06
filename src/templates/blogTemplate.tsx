@@ -1,42 +1,85 @@
 import React from "react";
 import { graphql } from "gatsby";
-import styled, {theme} from '../styledComponents';
+import styled from 'styled-components';
 import { Disqus } from 'gatsby-plugin-disqus';
 
 import "katex/dist/katex.min.css"
 
+import theme from '../styles/theme';
+
 import Layout from '../components/Layout';
 import Comment from '../components/Comment';
-import Post from '../components/Post';
 import SEO from '../components/SEO';
 
-const Title = styled.h1`
-  font-size: ${({ theme }) => theme.font28};
-  line-height: 1.2;
-`
+const PostHeader = styled.div`
+  margin: 2.5rem 0;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #eae9f1;
 
-const PostData = styled.div`
-  margin: 0.5rem 0 1.5rem;
-  color: #b3b3b3;
-  font-size: ${({ theme }) => theme.font14};
-  line-height: 1.5;
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  span {
+    font-size: 1.125rem;
+    color: ${theme.gray};
+  }
 `;
 
-const Date = styled.span`
-  font-size: ${({ theme }) => theme.font13};
+const PostArticle = styled.article`
+  font-size: 1.125rem;
+  line-height: 1.75;
+
+  h2, h3 {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-top: 2.375rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-weight: 400;
+  }
+
+  ul {
+    margin: 1.5rem 0;
+    list-style-position: inside;
+    list-style-type: disc;
+  }
+
+  .gatsby-highlight {
+    margin: 1.75rem 0;
+    font-size: 0.875rem;
+  }
+`;
+
+const PostComment = styled.div`
+  
+  #disqus_thread {
+    width: 100%;
+    margin: 3rem auto 0;
+  }
 `;
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data
 }: any) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+  const { markdownRemark } = data
   const { frontmatter, slug, html, id } = markdownRemark
   const disqusConfig = {
     url: `${"https://dev.kyoungah.com"+slug}`,
     identifier: id,
     title: frontmatter.title,
   };
-
 
   return (
     <>
@@ -46,19 +89,19 @@ export default function Template({
       url={`https://dev.kyoungah.com${slug}`}
     />
     <Layout>
-      <Post>
-        <Title theme={theme}>{frontmatter.title}</Title>
-        <PostData theme={theme}>
-          <Date>{frontmatter.date}</Date>
-        </PostData>
+      <PostArticle>
+        <PostHeader>
+          <h1>{frontmatter.title}</h1>
+          <span>{frontmatter.date}</span>
+        </PostHeader>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-      </Post>
-      <Comment>
+      </PostArticle>
+      <PostComment>
         <Disqus config={disqusConfig} />
-      </Comment>
+      </PostComment>
     </Layout>
     </>
   )

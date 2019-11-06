@@ -4,9 +4,8 @@ import { graphql } from "gatsby"
 import SEO from "../components/SEO"
 import Layout from "../components/Layout"
 import PostLink from "../components/PostLink"
-// import Pagination from '../components/Pagination';
 
-import styled from '../styledComponents';
+import styled from 'styled-components';
 import InfiniteScroll from "../components/InfiniteScroll"
 
 const Wrapper = styled.div`
@@ -39,14 +38,16 @@ const Index = () => {
     setCurrentNum(prevState => prevState + 1);
   };
 
-  useEffect(() => {    
-    window.addEventListener('scroll', handleScroll);
+  const handleGetPages = async () => {
+    const response: any = await getPageList(currentNum);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
-  
+    setPosts(posts.concat(response.posts));
+  }
+
+  useEffect(() => {    
+    handleGetPages();
+  }, [currentNum]);
+
   return (
     <>
       <SEO
@@ -56,7 +57,9 @@ const Index = () => {
       />
       <Layout>
         <Wrapper>
-        <InfiniteScroll>
+        <InfiniteScroll
+          onLoadMore={handleScroll}
+        >
           {
             posts.map((post: any) => (
               <PostLink 
@@ -68,7 +71,6 @@ const Index = () => {
               />
             ))
           }
-          {/* <Pagination pageContext={pageContext}/> */}
           </InfiniteScroll>
         </Wrapper>
         </Layout>

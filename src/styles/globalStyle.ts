@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "@nfront/global-styles"
-import theme from "../styledComponents/theme"
+
+import theme from '../styles/theme';
 
 const GlobalStyle = createGlobalStyle`
   html, body, 
@@ -22,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
   body,
   input,
   textarea,
@@ -31,24 +33,20 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.25em;
   }
 
-  html {
-    font-size: 16px;
-  }
-
-  body {
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-
   html,
   body {
     height: 100%;
     padding: 0;
     margin: 0;
-    color: ${theme.blackColor};
-    font-size: ${theme.font16};
+    color: ${theme.black};
+    font-size: 16px;
     box-sizing: border-box;
   }
  
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
   img,
   fieldset {
     border: 0;

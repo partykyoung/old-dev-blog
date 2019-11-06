@@ -1,15 +1,16 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import styled, { theme } from '../styledComponents';
+import styled from 'styled-components';
+
+import theme from '../styles/theme';
 
 const Wrapper = styled.header`
   display: flex;
   width: 100%;
-  height: ${({theme}) => theme.headerHeight};
+  height: ${theme.headerHeight};
   padding: 0 1rem;
-  min-width: 320px;
   align-items: center;
-  background-color: ${({theme}) => theme.whiteColor};
+  background-color: ${theme.white};
   box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 `;
@@ -43,7 +44,7 @@ const Image = () => {
 
 const Header = () => {
   return (
-    <Wrapper theme={theme}>
+    <Wrapper>
         <StyledLink to="/" >
           <Image />
         </StyledLink>
