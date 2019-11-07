@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import theme from '../styles/theme';
 
-const Wrapper = styled.div`
+const Wrapper = styled.li`
   width: 100%;
   margin-bottom: 1rem;
   padding: 1.5rem;

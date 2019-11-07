@@ -11,7 +11,6 @@ interface LayoutProps {
 }
 
 const Main = styled.main`
-  width: 100%;
   padding: 1.5rem 1rem;
   margin: 0 auto;
   box-sizing: border-box;

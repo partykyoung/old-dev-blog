@@ -9,23 +9,22 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   children,
   onLoadMore
 }) => {
-  const listRef = useRef<HTMLDivElement>(null);
-
   const handleScroll = () => {
-    if (!listRef || !listRef.current) {
+    const { body, documentElement } = document;
+
+    if (!body || !documentElement) {
       return;
     }
 
-    const scrollHeight = Math.max(document.body.scrollHeight, listRef.current.scrollHeight);
-    const scrollTop = Math.max(document.body.scrollTop, listRef.current.scrollTop);
-    const clientHeight = listRef.current.clientHeight;
-
-    console.log(listRef.current.scrollHeight, document.body.scrollHeight);
+    const scrollHeight = Math.max(documentElement.scrollHeight, body.scrollHeight);
+    const scrollTop = Math.max(documentElement.scrollTop, body.scrollTop);
+    const clientHeight = documentElement.clientHeight;
 
     if (scrollTop + clientHeight === scrollHeight) {
       onLoadMore();
     }
   }
+
   useEffect(() => {    
     window.addEventListener('scroll', handleScroll);
 
@@ -35,9 +34,9 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   }, []);  
 
   return (
-    <div ref={listRef}>
+    <ul>
       { children }
-    </div>
+    </ul>
   )
 }
 

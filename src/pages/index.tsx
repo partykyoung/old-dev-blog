@@ -8,10 +8,6 @@ import PostLink from "../components/PostLink"
 import styled from 'styled-components';
 import InfiniteScroll from "../components/InfiniteScroll"
 
-const Wrapper = styled.div`
-  padding: 2rem 1rem;
-`;
-
 interface EdgeTypes {
   node: {
     id: string
@@ -33,6 +29,7 @@ async function getPageList(index: number) {
 const Index = () => {
   const [ posts, setPosts ] = useState<any>([]);
   const [currentNum, setCurrentNum] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
   const handleScroll = () => {
     setCurrentNum(prevState => prevState + 1);
@@ -40,13 +37,20 @@ const Index = () => {
 
   const handleGetPages = async () => {
     const response: any = await getPageList(currentNum);
+    const totalPage = response.numPages;
 
+  
+    setHasMore(totalPage > currentNum);
     setPosts(posts.concat(response.posts));
   }
 
-  useEffect(() => {    
+  useEffect(() => {  
+    if (!hasMore) {
+      return;
+    }  
+
     handleGetPages();
-  }, [currentNum]);
+  }, [currentNum, hasMore]);
 
   return (
     <>
@@ -56,7 +60,6 @@ const Index = () => {
         description="배우고 익혔던 것들을 기록하고 있습니다."
       />
       <Layout>
-        <Wrapper>
         <InfiniteScroll
           onLoadMore={handleScroll}
         >
@@ -72,7 +75,6 @@ const Index = () => {
             ))
           }
           </InfiniteScroll>
-        </Wrapper>
         </Layout>
     </>
   )
