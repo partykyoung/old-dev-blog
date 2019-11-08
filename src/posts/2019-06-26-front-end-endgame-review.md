@@ -14,9 +14,7 @@ path: /etc/gdg-frontend-endgame
 ## 세션 후기
 
 ### 여러분이 앵귤러를 안해봤다면 살아갈 이유가 하나 더 있는 겁니다.
-
 PUBG에서 일하시는 분의 세션이었는데 회사 옆건물에 PUBG가 있어서 그런지 괜히 반가웠다 ㅎ. 주로 앵귤러에 대해서 발표하셨는데 그 중에서 리액트와 앵귤러의 철학이 꽤 인상깊었다.
-
 - React의 철학은 '철저한 방목형'.
   - 상태관리는 redux, mobx, 서버 통신은 fetch, axios, 그 외 Babel, webpack 등등.. React는 우리는 개발자로 바라보고 있다.
   - setState는 React의 모든 것의 시작.
@@ -24,10 +22,8 @@ PUBG에서 일하시는 분의 세션이었는데 회사 옆건물에 PUBG가 �
 - Angular의 철학은 '철저한 사육형'
   - NgZone, Change Detection 등... 앱 상태 변화가 일어날 것 같으면 앵귤러가 알아서 동기화 해준다.
 - React vs Angular (or Vue)
-
   - 상황에 맞춰 아무거나 골라 쓰면 된다.
     - 아니면 사다리 타기 해라.
-
 - Angular 단점.
   - 처음 시작하기엔 진입장벽이 높다.
     - 알아야 될 것이 많다.

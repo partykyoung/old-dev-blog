@@ -30,20 +30,22 @@ const PostArticle = styled.article`
   font-size: 1.125rem;
   line-height: 1.75;
 
-  h2, h3 {
-    margin-bottom: 1rem;
+  h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
   }
 
   h2 {
-    margin-top: 2.375rem;
     font-size: 1.5rem;
     font-weight: 600;
   }
 
   h3 {
-    margin-top: 1rem;
     font-size: 1.25rem;
     font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 2.625rem;
   }
 
   h4 {
@@ -54,6 +56,10 @@ const PostArticle = styled.article`
     margin: 1.5rem 0;
     list-style-position: inside;
     list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
   }
 
   .gatsby-highlight {
