@@ -31,6 +31,7 @@ const PostArticle = styled.article`
   line-height: 1.75;
 
   h2, h3, h4, h5, h6 {
+    margin-top: 2.625rem;
     margin-bottom: 0.5rem;
   }
 
@@ -45,7 +46,7 @@ const PostArticle = styled.article`
   }
 
   p {
-    margin-bottom: 2.625rem;
+   
   }
 
   h4 {
@@ -60,6 +61,12 @@ const PostArticle = styled.article`
 
   li {
     margin-bottom: 0.5rem;
+  }
+
+  figcaption {
+    color: ${theme.gray};
+    font-size: 0.875rem;
+    text-align: center;
   }
 
   .gatsby-highlight {

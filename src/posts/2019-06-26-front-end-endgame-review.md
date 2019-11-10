@@ -15,31 +15,42 @@ path: /etc/gdg-frontend-endgame
 
 ### 여러분이 앵귤러를 안해봤다면 살아갈 이유가 하나 더 있는 겁니다.
 PUBG에서 일하시는 분의 세션이었는데 회사 옆건물에 PUBG가 있어서 그런지 괜히 반가웠다 ㅎ. 주로 앵귤러에 대해서 발표하셨는데 그 중에서 리액트와 앵귤러의 철학이 꽤 인상깊었다.
-- React의 철학은 '철저한 방목형'.
+
+- React의 철학은 철저한 방목형
   - 상태관리는 redux, mobx, 서버 통신은 fetch, axios, 그 외 Babel, webpack 등등.. React는 우리는 개발자로 바라보고 있다.
   - setState는 React의 모든 것의 시작.
-    - 동기화 하는 시점을 개발자에게 맡긴다.
+  - 동기화 하는 시점을 개발자에게 맡긴다.
+
 - Angular의 철학은 '철저한 사육형'
   - NgZone, Change Detection 등... 앱 상태 변화가 일어날 것 같으면 앵귤러가 알아서 동기화 해준다.
-- React vs Angular (or Vue)
-  - 상황에 맞춰 아무거나 골라 쓰면 된다.
-    - 아니면 사다리 타기 해라.
+  - React vs Angular (or Vue)
+- 상황에 맞춰 아무거나 골라 쓰면 된다.
+  - 아니면 사다리 타기 해라.
+
+* Gatsby
+  * docs
+- Gatsby
+  - docs
++ Gatsby
+  + docs
+
 - Angular 단점.
   - 처음 시작하기엔 진입장벽이 높다.
-    - 알아야 될 것이 많다.
-      - Ex) template 문법, TypeScript, RxJS
-    - 제약사항이 많다.
+  - 알아야 될 것이 많다.
+    - Ex) template 문법, TypeScript, RxJS
+  - 제약사항이 많다.
+
 - Angular 장점.
   - 제약사항이 많다는 것은 잘못된 길로 빠지는것을 방지한다.
     - Ex) React는 폴더구조, 로직 구분 등이 다 다른 반면 Angular는 폴더 구성, 로직 구분 등이 공식 도큐먼트에 잘 써져 있다.
-  - TypeScript
-    - 여러명의 개발자가 js로 개발할 경우 변수 타입 때문에 큰 혼란이 온다. TypeScript로 타입을 미리 정해주면 이러한 혼란을 줄일 수 있다.
-  - RxJS
-    - Angular를 하려면 RxJS는 무조건 해야한다.
-    - 데이터의 흐름을 한 곳에서 조작할 수 있다.
-      - 앞으로 웹 애플리케이션은 점점 더 복잡해질 것. 서버에서 하고 있던 일도 프론트엔드로 가지고 오는 추세.
-    - 비동기 스트림의 lodash
-      - 비동기 스트림으로 데이터 조작을 하고 싶을 때 Rxjs로 언제든 구현할 수 있다.
+- TypeScript
+  - 여러명의 개발자가 js로 개발할 경우 변수 타입 때문에 큰 혼란이 온다. TypeScript로 타입을 미리 정해주면 이러한 혼란을 줄일 수 있다.
+- RxJS
+  - Angular를 하려면 RxJS는 무조건 해야한다.
+  - 데이터의 흐름을 한 곳에서 조작할 수 있다.
+  - 앞으로 웹 애플리케이션은 점점 더 복잡해질 것. 서버에서 하고 있던 일도 프론트엔드로 가지고 오는 추세.
+  - 비동기 스트림의 lodash
+  - 비동기 스트림으로 데이터 조작을 하고 싶을 때 Rxjs로 언제든 구현할 수 있다.
   - Dependency Injection
 
 ## UX빼면 시체, 프론트엔드.
@@ -48,9 +59,7 @@ PUBG에서 일하시는 분의 세션이었는데 회사 옆건물에 PUBG가 �
 UX에 대해 발표하셨는데 신기했고 조금 더 UX에 신경을 써야겠다는 느낌이 들었다.
 
 - 웹 기술은 사용자가 웹을 이용할 때 풍부한 정보를 빠르고 우아하게 제공하기 위해서 발전함.
-
 - 성능 최적화
-
   - 초기 로딩 최적화
     - Code minification -> 웹팩, 로더 등...
     - Code splitting
@@ -63,9 +72,7 @@ UX에 대해 발표하셨는데 신기했고 조금 더 UX에 신경을 써야�
   - 부드러운 애니메이션
     - Intersection Observer
     - requestAnimation
-
 - 예상 가능한 동작
-
   - 스크롤 복원 (봤던 거 보여주기)
     - with session storage
       - 페이지 이동 시 현재 scroll 위치를 session storage에 저장한 후 다시 이전 페이지로 되돌아 왔을 때 storage에 값을 꺼내서 그 위치로 스크롤을 이동시켜주면 된다.
