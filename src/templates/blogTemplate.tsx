@@ -45,22 +45,24 @@ const PostArticle = styled.article`
     font-weight: 500;
   }
 
-  p {
-   
-  }
-
   h4 {
     font-weight: 400;
   }
 
   ul {
     margin: 1.5rem 0;
-    list-style-position: inside;
+    padding-left: 1.5rem;
     list-style-type: disc;
+
   }
 
   li {
-    margin-bottom: 0.5rem;
+     margin-bottom: 0.5rem;
+
+     ul {
+       margin-top: 0.5rem;
+       list-style-type: circle;
+     }
   }
 
   figcaption {
@@ -135,7 +137,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY년 MM월 DD일")
       }
     }
   }

@@ -41,13 +41,11 @@
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.1",
     "typeface-noto-sans-kr": "^0.0.63",
-    "yarn": "^1.19.1"
+    "typescript": "^3.7.2"
   },
   "devDependencies": {
-    "@types/styled-components": "^4.1.16",
-    "gh-pages": "^2.0.1",
-    "prettier": "^1.18.2",
-    "typescript": "^3.5.2"
+    "@types/styled-components": "^4.4.0",
+    "gh-pages": "^2.1.1"
   },
   "keywords": [
     "gatsby"

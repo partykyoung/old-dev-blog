@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: 'https://dev.kyoungah.com'
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -53,8 +52,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -67,8 +64,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-global-styles`,
       options: {
@@ -91,6 +86,11 @@ module.exports = {
         trackingId: "UA-80236732-4"
       }
     },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

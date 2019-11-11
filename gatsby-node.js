@@ -43,7 +43,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               tags,
               title,
-              date
+              date(formatString: "YYYY년 MM월 DD일")
             }
           }
         }
