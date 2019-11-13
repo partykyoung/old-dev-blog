@@ -81,7 +81,7 @@ void quickSort(int arr[], int leftIndex, int rightIndex) {
 
 ### 분할 함수 수행 시간
 
-피벗을 제외한 배열의 원소들은 피벗과 최대 2번 비교 하게 된다. 전체적으로는 입력 크기 n에 비례하는 Θ(n) 시간이 걸린다.
+피벗을 제외한 배열의 원소들은 피벗과 최대 2번 비교 하게 된다. 전체적으로는 입력 크기 n에 비례하는 $\Theta$(n) 시간이 걸린다.
 
 ### 퀵 정렬 수행 시간
 
@@ -96,11 +96,11 @@ void quickSort(int arr[], int leftIndex, int rightIndex) {
 - 피벗이 항상 부분배열의 최솟값, 또는 최댓값이 되는 경우
 - 입력 데이터가 정렬되어 있고 피벗을 배열의 처음 원소로 지정한 경우
 
-T(n) = T(n-1) + T(0) + Θ(n) (n > 0) // 한쪽은 데이터가 없으므로 T(0)
-T(0) = 0
+T(n) = T(n-1) + T($\Theta$) + $\Theta$(n) (n > $\Theta$) // 한쪽은 데이터가 없으므로 T($\Theta$)
+T($\Theta$) = $\Theta$
 
-=> T(n) = T(n - 1) + Θ(n)
-=> T(n) = O($n^2$)
+=> T(n) = T(n - 1) + $\Theta$(n)
+=> T(n) = $\Omicron$($n^2$)
 
 ### 최선의 경우
 
@@ -109,11 +109,11 @@ T(0) = 0
 - 피벗을 중심으로 항상 동일한 크기의 두 부분배열로 분할되는 경우
 - 피벗이 항상 부분배열의 중간값이 되는 경우
 
-T(n) = T($\frac{n}{2}$) + T($\frac{n}{2}$) + Θ(n) (n > 1)
+T(n) = T($\frac{n}{2}$) + T($\frac{n}{2}$) + $\Theta$(n) (n > 1)
 T(1) = 1
 
-=> T(n) = 2T($\frac{n}{2}$) + Θ(n)
-=> T(n) = O($n log n$)
+=> T(n) = 2T($\frac{n}{2}$) + $\Theta$(n)
+=> T(n) = $\Omicron$($n log n$)
 
 ### 평균적인 경우
 
@@ -121,10 +121,10 @@ T(1) = 1
 
 - 피벗은 동일한 확률로서 분할 후 배열의 어느 곳에나 위치 가능
 
-T(1) = T(0) = 0
-T(n) = $\frac{1}{n}\sum\_{i = 1}^{n}(T(i - 1) + T(n - i)) + O(n) (n >= 2)$
+T(1) = T($\Theta$) = $\Theta$
+T(n) = $\frac{1}{n}\sum\_{i = 1}^{n}(T(i - 1) + T(n - i)) + \Omicron(n) (n >= 2)$
 
-=> T(n) = O($n log n$)
+=> T(n) = $\Omicron$($n log n$)
 
 ## 특징
 

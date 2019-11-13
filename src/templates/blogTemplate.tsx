@@ -32,15 +32,16 @@ const PostArticle = styled.article`
   h2, h3, h4, h5, h6 {
     margin-top: 2.625rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
   }
 
   h2 {
     font-size: 1.5rem;
+    font-weight: 600;
   }
 
   h3 {
     font-size: 1.25rem;
+    font-weight: 600;
   }
 
   h4, h5, h6 {
@@ -87,7 +88,6 @@ const PostArticle = styled.article`
     border-width: 0 0 1px;
     vertical-align: middle;
   }
-}
 
   figcaption {
     color: ${theme.gray};
@@ -98,6 +98,15 @@ const PostArticle = styled.article`
   .gatsby-highlight {
     margin: 1.75rem 0;
     font-size: 0.875rem;
+  }
+
+  .katex-display {
+    margin: 1rem 0;
+    text-align: left;
+
+    .katex {
+      text-align: left;
+    }
   }
 `;
 

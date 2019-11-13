@@ -97,17 +97,17 @@ void mergeSort (int arr[], int sorted[], int leftIndex, int rightIndex) {
 - 최대 비교횟수: ($\frac{n}{2}$ + $\frac{n}{2}$ - 1) = n - 1;
   => 입력 데이터 개수만큼의 저장 장소가 추가로 필요하다.
 
-결국 합병을 하는데 걸리는 시간은 입력 크기 n에 비례하므로 Θ(n)이 된다.
+결국 합병을 하는데 걸리는 시간은 입력 크기 n에 비례하므로 $\Theta$(n)이 된다.
 
 ### 합병 정렬 수행 시간
 
 합병 정렬 수행시간 = 크기 n/2인 두번의 합병 정렬 순환 호출 + 한번의 합병
 
 T(1) = 1;
-T(n) = T($\frac{n}{2}$) + T($\frac{n}{2}$) + Θ(n);
+T(n) = T($\frac{n}{2}$) + T($\frac{n}{2}$) + $\Theta$(n);
 
-=> T(n) = 2T($\frac{n}{2}$) + Θ(n)
-=> T(n) = O($n log n$)
+=> T(n) = 2T($\frac{n}{2}$) + $\Theta$(n)
+=> T(n) = $\Omicron$($n log n$)
 
 ## Reference
 
