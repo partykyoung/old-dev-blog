@@ -95,6 +95,15 @@ const PostArticle = styled.article`
     text-align: center;
   }
 
+  code {
+    &.language-text {
+      color: #ff3860;
+      background: transparent;
+      padding: 0 0.15em;
+  
+    }
+  }
+
   .gatsby-highlight {
     margin: 1.75rem 0;
     font-size: 0.875rem;

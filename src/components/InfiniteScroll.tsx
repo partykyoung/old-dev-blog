@@ -1,12 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
+
+import Loading from '../components/Loading';
 
 interface InfiniteScrollProps {
   children: React.ReactNode;
+  isLoading: boolean;
   onLoadMore: () => void;
 }
 
 const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   children,
+  isLoading,
   onLoadMore
 }) => {
   const handleScroll = () => {
@@ -34,9 +38,14 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   }, []);  
 
   return (
-    <ul>
-      { children }
-    </ul>
+    <>
+      <ul>
+        { children }
+      </ul>
+      {
+        isLoading && <Loading />
+      }
+    </>
   )
 }
 

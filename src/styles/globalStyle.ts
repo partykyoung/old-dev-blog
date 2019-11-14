@@ -35,6 +35,8 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
+    width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
     color: ${theme.black};
@@ -44,6 +46,12 @@ const GlobalStyle = createGlobalStyle`
  
   body {
     font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  main {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: ${theme.footerHeight};  
   }
 
   img,
@@ -72,6 +80,10 @@ const GlobalStyle = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+
+  #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
   }
 `
 

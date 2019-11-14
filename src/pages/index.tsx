@@ -1,11 +1,9 @@
-import React, { useCallback, useEffect, useState }  from "react"
-import { graphql } from "gatsby"
+import React, { useEffect, useState }  from "react"
 
-import SEO from "../components/SEO"
-import Layout from "../components/Layout"
-import PostLink from "../components/PostLink"
+import SEO from "../components/SEO";
+import Layout from "../components/Layout";
+import PostLink from "../components/PostLink";
 
-import styled from 'styled-components';
 import InfiniteScroll from "../components/InfiniteScroll"
 
 interface EdgeTypes {
@@ -27,7 +25,8 @@ async function getPageList(index: number) {
 }
 
 const Index = () => {
-  const [ posts, setPosts ] = useState<any>([]);
+  const [isLoading, setLoadings] = useState(false);
+  const [posts, setPosts ] = useState<any>([]);
   const [currentNum, setCurrentNum] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
@@ -42,13 +41,14 @@ const Index = () => {
   
     setHasMore(totalPage > currentNum);
     setPosts(posts.concat(response.posts));
+    setLoadings(false);
   }
 
   useEffect(() => {  
     if (!hasMore) {
       return;
     }  
-
+    setLoadings(true);
     handleGetPages();
   }, [currentNum, hasMore]);
 
@@ -61,6 +61,7 @@ const Index = () => {
       />
       <Layout>
         <InfiniteScroll
+          isLoading={isLoading}
           onLoadMore={handleScroll}
         >
           {
