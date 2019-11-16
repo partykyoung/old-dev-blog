@@ -39,6 +39,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
+    "smooth-scroll": "^16.1.0",
     "styled-components": "^4.4.1",
     "typeface-noto-sans-kr": "^0.0.63",
     "typescript": "^3.7.2"
