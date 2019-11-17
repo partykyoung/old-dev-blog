@@ -45,6 +45,7 @@
     "typescript": "^3.7.2"
   },
   "devDependencies": {
+    "@types/smooth-scroll": "^16.1.0",
     "@types/styled-components": "^4.4.0",
     "gh-pages": "^2.1.1"
   },

@@ -51,10 +51,6 @@ const Index = () => {
 
     setLoadings(true);
     handleGetPages();
-
-    return () => {
-      localStorage.setItem('scrollHeight', `${document.documentElement.scrollHeight}`);
-    }
   }, [currentNum, hasMore]);
 
   return (
