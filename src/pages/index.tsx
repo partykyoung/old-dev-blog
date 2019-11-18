@@ -26,7 +26,7 @@ async function getPageList(index: number) {
 
 const Index = () => {
   const [isLoading, setLoadings] = useState(false);
-  const [posts, setPosts ] = useState<any>([]);
+  const [posts, setPosts] = useState<any>([]);
   const [currentNum, setCurrentNum] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
@@ -38,7 +38,6 @@ const Index = () => {
     const response: any = await getPageList(currentNum);
     const totalPage = response.numPages;
 
-  
     setHasMore(totalPage > currentNum);
     setPosts(posts.concat(response.posts));
     setLoadings(false);
