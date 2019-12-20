@@ -128,6 +128,9 @@ render 메서드를 호출한 후 DOM에 변화를 반영하기 바로 직전에
 
 자손 컴포넌트에서 오류가 발생했을 경우 호출된다. 자식 컴포넌트에서 발생하는 에러만 잡아낼 수 있고, 자신의 에러는 잡아낼수 없다.
 
+## 마무리 
+React v16.8 부터 hooks가 도입되면서 class 컴포넌트 보다는 functional 컴포넌트가 대세가 되어가고 있지만 아직까지는 hooks로 모든 React lifecycle을 대체할 수는 없기 때문에 알고 있는게 좋다고 생각한다. 
+
 ## Reference
 - [리액트를 다루는 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791160505238&orderClick=LAG&Kc=)
 - [React.Component](https://ko.reactjs.org/docs/react-component.html)
