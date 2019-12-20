@@ -104,6 +104,10 @@ const PostArticle = styled.article`
     }
   }
 
+  iframe {
+    margin-bottom: 1rem;
+  }
+
   .gatsby-highlight {
     margin: 1.75rem 0;
     font-size: 0.875rem;
