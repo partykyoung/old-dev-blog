@@ -9,13 +9,41 @@ async function getTitle() {
       name: 'title',
       message: '포스트 타이틀을 입력해주세요.',
     }
-  ])
+  ]);
 
   return title;
 }
 
-function getCategory() {
-  return '';
+async function setCategory(categories) {
+  if (categories.length >= 3) {
+    console.log('카테고리는 최대 3개까지 입력할 수 있습니다.');
+
+    return;
+  };
+
+  await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'category',
+      message: '카테고리를 입력해주세요. (n을 입력하면 종료합니다.)',
+    }
+  ]).then(async ({ category }) => {
+    if (!category || category === 'n' || category === 'N') {
+      return;
+    }
+
+    categories.push(category);
+
+    await setCategory(categories);
+  });
+}
+
+async function getCategories() {
+  const categories = [];
+
+  await setCategory(categories);
+
+  return categories;
 }
 
 function getDate() {
@@ -27,18 +55,25 @@ function getDate() {
   };
 }
 
-function getContent(title, date, category) {
-  return `---\ntitle: ${title}\ndate: ${date}\ncategory: ${category}\ndescription:\ntags:\n---`;
+function getContent(title, date, categories) {
+  const customCategories = categories.map((category) => {
+    return `- ${category}`
+  });
+
+  return `---\ntitle: ${title}\ndate: ${date}\ncategories:\n${customCategories.join('\n')}\ndescription:\ntags:\n---`;
 }
 
 async function createNewPost() {
   const cwd = process.cwd();
   const title = await getTitle();
-  const category = getCategory();
+  const categories = await getCategories();
   const date = getDate();
-  const content = getContent(title, date.detailDate, category);
+  const content = getContent(title, date.detailDate, categories);
+  
+  const lastCategory = categories.length - 1 >= 0 ? categories[categories.length - 1]: 'no-category';
+  const customCategory = lastCategory.replace(/\./, '').toLowerCase();
 
-  fs.writeFile(`${cwd}/src/posts/${date.summaryDate}-${category}-${title}.md`, content, (err) => {
+  fs.writeFile(`${cwd}/draft/${date.summaryDate}-${customCategory}-${title}.md`, content, (err) => {
     if (err) {
       console.log(err, 'error: 포스트 생성에 실패하였습니다. X_X');
 
