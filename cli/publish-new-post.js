@@ -13,7 +13,6 @@ async function getPost() {
   return post;
 }
 
-
 async function publishNewPost() {
   const cwd = process.cwd();
   const post = await getPost();

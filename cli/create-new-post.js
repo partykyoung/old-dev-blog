@@ -2,6 +2,9 @@ const fs = require('fs');
 const { DateTime } = require("luxon");
 const inquirer = require('inquirer');
 
+/**
+ * 포스트 제목을 입력받아 return 해주는 함수.
+ */
 async function getTitle() {
   const { title } = await inquirer.prompt([
     {
@@ -14,6 +17,10 @@ async function getTitle() {
   return title;
 }
 
+/**
+ * 포스트 카테고리를 입력받는 함수. 최대 3개까지의 카테고리를 입력할 수 있으므로 최대 3번 재귀호출을 한다.
+ * @param {*} categories 입력한 카테고리 값을 담을 배열
+ */
 async function setCategory(categories) {
   if (categories.length >= 3) {
     console.log('카테고리는 최대 3개까지 입력할 수 있습니다.');
@@ -38,6 +45,9 @@ async function setCategory(categories) {
   });
 }
 
+/**
+ * 카테고리를 입력받아 return 해주는 함수.
+ */
 async function getCategories() {
   const categories = [];
 
