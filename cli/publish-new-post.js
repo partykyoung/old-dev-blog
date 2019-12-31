@@ -6,7 +6,7 @@ async function getPost() {
     {
       type: 'input',
       name: 'post',
-      message: '발행할 포스트 파일명을 입력해주세요.',
+      message: '발행할 포스트를 입력해주세요.',
     }
   ]);
 
@@ -17,8 +17,8 @@ async function publishNewPost() {
   const cwd = process.cwd();
   const post = await getPost();
 
-  const draftPost = `${cwd}/draft/${post}`;
-  const publishPost = `${cwd}/src/posts/${post}`;
+  const draftPost = `${cwd}/draft/${post}.md`;
+  const publishPost = `${cwd}/src/posts/${post}.md`;
 
   fs.rename(draftPost, publishPost, (error) => {
     if (error) {

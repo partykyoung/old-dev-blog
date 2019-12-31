@@ -65,6 +65,12 @@ function getDate() {
   };
 }
 
+/**
+ * 
+ * @param {*} title 
+ * @param {*} date 
+ * @param {*} categories 
+ */
 function getContent(title, date, categories) {
   const customCategories = categories.map((category) => {
     return `- ${category}`
