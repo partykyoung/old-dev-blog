@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
 const Wrapper = styled.li`
   width: 100%;
@@ -45,27 +45,34 @@ const Wrapper = styled.li`
   }
 `;
 
-const PostLink: React.SFC<any> = ({
+interface PostsLinkProps {
+  date: string;
+  excerpt: string;
+  slug: string;
+  title: string;
+}
+
+const PostList = ({
   date,
   excerpt,
   slug,
   title
-}) => {
+}: PostsLinkProps): JSX.Element => {
   return (
     <Wrapper>
       <Link to={slug}>
         <div>
-        <h2>
-          {title}
-          <span>{date}</span>
-        </h2>
-        <p>
-          {excerpt}
-        </p>
+          <h2>
+            {title}
+            <span>{date}</span>
+          </h2>
+          <p>
+            {excerpt}
+          </p>
         </div>
       </Link>
-    </Wrapper>
-  );
+  </Wrapper>
+  )
 }
 
-export default PostLink
+export default PostList;

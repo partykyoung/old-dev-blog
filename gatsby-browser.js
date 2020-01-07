@@ -7,9 +7,12 @@
 // You can delete this file if you're not using it
 // gatsby-browser.js
 
-// atom highlight
-require("./src/styles/prism-atom-one-dark.css");
- 
+import React from "react";
+import { GlobalContextProvider } from './src/components/GlobalContext';
 
-// custom typefaces
-require('typeface-noto-sans-kr');
+import "./src/styles/prism-atom-one-dark.css";
+import 'typeface-noto-sans-kr';
+
+export const wrapRootElement = ({ element }) => (
+  <GlobalContextProvider>{element}</GlobalContextProvider>
+)

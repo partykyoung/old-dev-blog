@@ -39,9 +39,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
 
   return (
     <>
-      <ul>
-        { children }
-      </ul>
+      { children }
       {
         isLoading && <Loading />
       }

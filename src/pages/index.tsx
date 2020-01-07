@@ -1,21 +1,11 @@
-import React, { useEffect, useState }  from "react"
+import React, { useEffect, useState }  from "react";
 
-import SEO from "../components/SEO";
-import Layout from "../components/Layout";
-import PostLink from "../components/PostLink";
-
+import { useGlobalDispatch, useGlobalState, GlobalContextProvider } from '../components/GlobalContext';
 import InfiniteScroll from "../components/InfiniteScroll"
+import Layout from "../components/Layout";
+import PostLink from '../components/index/PostLink';
+import SEO from "../components/SEO";
 
-interface EdgeTypes {
-  node: {
-    id: string
-    excerpt: string
-    frontmatter: {
-      date: string
-      title: string
-    }
-  }
-}
 
 async function getPageList(index: number) {
   const response = await fetch(`/page/page${index}.json`);
@@ -25,21 +15,35 @@ async function getPageList(index: number) {
 }
 
 const Index = () => {
+  const dispatch = useGlobalDispatch();
+  const { currentPage, hasMore, posts } = useGlobalState();
   const [isLoading, setLoadings] = useState(false);
-  const [posts, setPosts] = useState<any>([]);
-  const [currentNum, setCurrentNum] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
 
   const handleScroll = () => {
-    setCurrentNum(prevState => prevState + 1);
+    if (!dispatch) {
+      return;
+    }
+
+    dispatch({
+      type: 'page',
+      currentPage: currentPage + 1
+    });
   };
 
   const handleGetPages = async () => {
-    const response: any = await getPageList(currentNum);
-    const totalPage = response.numPages;
+    const response: any = await getPageList(currentPage);
+    const { numPages: totalPage, posts } = response;
 
-    setHasMore(totalPage > currentNum);
-    setPosts(posts.concat(response.posts));
+    if (!dispatch) {
+      return;
+    }
+
+    dispatch({
+      type: 'posts',
+      hasMore: totalPage > currentPage,
+      posts: posts
+    })
+
     setLoadings(false);
   }
 
@@ -50,10 +54,10 @@ const Index = () => {
 
     setLoadings(true);
     handleGetPages();
-  }, [currentNum, hasMore]);
+  }, [currentPage]);
 
   return (
-    <>
+    <GlobalContextProvider>
       <SEO
         url="https://dev.kyoungah.com"
         title="경아 개발 블로그"
@@ -64,20 +68,22 @@ const Index = () => {
           isLoading={isLoading}
           onLoadMore={handleScroll}
         >
-          {
-            posts.map((post: any) => (
-              <PostLink 
-                key={post.id}
-                date={post.date}
-                excerpt={post.excerpt}
-                slug={post.slug}
-                title={post.title}
-              />
-            ))
-          }
+          <ul>
+            {
+              posts.map((post: any) => (
+                <PostLink 
+                  key={post.id}
+                  date={post.date}
+                  excerpt={post.excerpt}
+                  slug={post.slug}
+                  title={post.title}
+                />
+              ))
+            }
+          </ul>
           </InfiniteScroll>
         </Layout>
-    </>
+    </GlobalContextProvider>
   )
 }
 
