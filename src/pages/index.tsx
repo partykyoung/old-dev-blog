@@ -1,11 +1,10 @@
 import React, { useEffect, useState }  from "react";
 
-import { useGlobalDispatch, useGlobalState, GlobalContextProvider } from '../components/GlobalContext';
+import { useGlobalDispatch, useGlobalState } from '../components/GlobalContext';
 import InfiniteScroll from "../components/InfiniteScroll"
 import Layout from "../components/Layout";
 import PostLink from '../components/index/PostLink';
 import SEO from "../components/SEO";
-
 
 async function getPageList(index: number) {
   const response = await fetch(`/page/page${index}.json`);
@@ -25,18 +24,23 @@ const Index = () => {
     }
 
     dispatch({
-      type: 'page',
-      currentPage: currentPage + 1
+      type: 'page'
     });
   };
 
   const handleGetPages = async () => {
-    const response: any = await getPageList(currentPage);
-    const { numPages: totalPage, posts } = response;
+    if (!hasMore) {
+      return;
+    }
 
     if (!dispatch) {
       return;
     }
+
+    setLoadings(true);
+
+    const response: any = await getPageList(currentPage);
+    const { numPages: totalPage, posts } = response;
 
     dispatch({
       type: 'posts',
@@ -48,16 +52,11 @@ const Index = () => {
   }
 
   useEffect(() => {  
-    if (!hasMore) {
-      return;
-    }  
-
-    setLoadings(true);
     handleGetPages();
-  }, [currentPage]);
+  }, [currentPage, hasMore]);
 
   return (
-    <GlobalContextProvider>
+    <>
       <SEO
         url="https://dev.kyoungah.com"
         title="경아 개발 블로그"
@@ -83,7 +82,7 @@ const Index = () => {
           </ul>
           </InfiniteScroll>
         </Layout>
-    </GlobalContextProvider>
+    </>
   )
 }
 

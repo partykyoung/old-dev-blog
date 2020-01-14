@@ -25,6 +25,12 @@ const GlobalDispatchContext = createContext<Dispatch<Action> | undefined>(undefi
 
 function globalReducer(state: GlobalState, action: Action): GlobalState {
   if (action.type === 'page') {
+    if (!state.hasMore) {
+      return {
+        ...state
+      };
+    }
+
     return {
       ...state,
       currentPage: state.currentPage + 1
@@ -34,7 +40,7 @@ function globalReducer(state: GlobalState, action: Action): GlobalState {
   if (action.type === 'posts') {
     return {
       ...state,
-      hasMore: action.hasMore || true,
+      hasMore: action.hasMore || false,
       posts: state.posts.concat(action.posts)
     }
   }
@@ -60,16 +66,11 @@ export const GlobalContextProvider = ({children}: {
   )
 };
 
-
 export function useGlobalState () {
   const state = useContext(GlobalStateContext);
 
   if (!state) {
-    return {
-      currentPage: 1,
-      hasMore: false,
-      posts: []
-    };
+    throw new Error('Error, state is undefined X_X');
   }
 
   return state;
@@ -79,7 +80,7 @@ export function useGlobalDispatch() {
   const dispatch = useContext(GlobalDispatchContext);
 
   if (!dispatch) {
-    return null;
+    throw new Error('Error, dispatch is undefined X_X');
   }
 
   return dispatch;
