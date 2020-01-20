@@ -9,13 +9,13 @@ import React from "react"
 import Helmet from "react-helmet"
 // import { useStaticQuery, graphql } from "gatsby"
 
-interface SEOProps {
+interface SeopProps {
   description: string
   title: string
   url: string
 }
 
-const SEO: React.SFC<SEOProps> = ({ description, title, url }) => {
+const Seo: React.SFC<SeopProps> = ({ description, title, url }) => {
   return (
     <Helmet title={title}>
       <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -49,10 +49,10 @@ const SEO: React.SFC<SEOProps> = ({ description, title, url }) => {
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   description: ``,
   title: "",
   url: "",
 }
 
-export default SEO
+export default Seo

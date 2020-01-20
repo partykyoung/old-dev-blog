@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components";
 
-import Layout from "../components/Layout"
-import Post from "../components/Post";
+import PageTemplate from "../components/template/PageTemplate";
+import Post from "../components/post/Post";
 
 const Title = styled.h2`
   font-size: 1.75rem;
@@ -13,22 +13,21 @@ const Title = styled.h2`
 const ListWrapper = styled.ul`
   margin-top: 1rem;
   padding-left: 0;
-`
+`;
 
 const List = styled.li`
   list-style: none;
   margin-bottom: 0.5rem;
   padding-left: 0;
 
-
   svg {
     margin-right: 0.3125rem;
   }
-`
+`;
 
 const About = () => {
   return (
-    <Layout>
+    <PageTemplate>
       <Post>
         <Title>About Me</Title>
         <p>
@@ -73,8 +72,8 @@ const About = () => {
           </List>
         </ListWrapper>
       </Post>
-    </Layout>
+    </PageTemplate>
   )
 }
 
-export default About
+export default About;

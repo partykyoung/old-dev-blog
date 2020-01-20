@@ -1,10 +1,10 @@
 import React, { useEffect, useState }  from "react";
 
-import { useGlobalDispatch, useGlobalState } from '../components/GlobalContext';
-import InfiniteScroll from "../components/InfiniteScroll"
-import Layout from "../components/Layout";
+import { useGlobalDispatch, useGlobalState } from '../components/context/GlobalContext';
+import InfiniteScroll from "../components/ui/InfiniteScroll"
+import Layout from "../components/template/PageTemplate";
 import PostLink from '../components/index/PostLink';
-import SEO from "../components/SEO";
+import SEO from "../components/layout/Seo";
 
 async function getPageList(index: number) {
   const response = await fetch(`/page/page${index}.json`);

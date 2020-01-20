@@ -7,8 +7,8 @@ import "katex/dist/katex.min.css"
 
 import theme from '../styles/theme';
 
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import PageTemplate from '../components/template/PageTemplate';
+import Seo from '../components/layout/Seo';
 
 const PostHeader = styled.div`
   margin: 2.5rem 0;
@@ -144,12 +144,12 @@ export default function Template({
 
   return (
     <>
-    <SEO 
+    <Seo 
       title={frontmatter.title}
       description={frontmatter.description}
       url={`https://dev.kyoungah.com${slug}`}
     />
-    <Layout>
+    <PageTemplate>
       <PostArticle>
         <PostHeader>
           <h1>{frontmatter.title}</h1>
@@ -163,7 +163,7 @@ export default function Template({
       <PostComment>
         <Disqus config={disqusConfig} />
       </PostComment>
-    </Layout>
+    </PageTemplate>
     </>
   )
 }

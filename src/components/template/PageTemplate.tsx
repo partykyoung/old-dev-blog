@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 interface LayoutProps {
   children: React.ReactNode
@@ -22,9 +22,9 @@ const Main = styled.main`
   @media ${theme.desktop} {
     width: 960px;
   }
-`
+`;
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
@@ -34,4 +34,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   )
 }
 
-export default Layout
+export default PageTemplate;
