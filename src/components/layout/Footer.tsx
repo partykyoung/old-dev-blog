@@ -1,15 +1,19 @@
 import React from "react";
 import styled from 'styled-components';
 
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
 const Wrapper = styled.footer`
+  position: absolute;
   width: 100%;
   height: ${theme.footerHeight};
   font-size: 0.875rem;
   background-color: ${theme.white};
   line-height: ${theme.footerHeight};
   text-align: center;
+  right: 0;
+  bottom: 0;
+  left: 0;
 `
 
 const Footer = () => {

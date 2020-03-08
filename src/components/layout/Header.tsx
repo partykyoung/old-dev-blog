@@ -2,13 +2,16 @@ import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import styled from 'styled-components';
 
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
 const Wrapper = styled.header`
   display: flex;
   width: 100%;
   height: ${theme.headerHeight};
-  padding: 0 1rem;
+  padding-top: 0;
+  padding-right: 1rem;
+  padding-bottom: 0;
+  padding-left: 1rem;
   align-items: center;
   background-color: ${theme.white};
   box-sizing: border-box;

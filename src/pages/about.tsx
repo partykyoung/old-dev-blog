@@ -1,79 +1,138 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
+import theme from "../styles/theme";
+
 import PageTemplate from "../components/template/PageTemplate";
-import Post from "../components/post/Post";
 
-const Title = styled.h2`
-  font-size: 1.75rem;
-  font-weight: 600;
+const AboutWrapper = styled.section`
+  margin-top: 1.875rem;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding-top: 1.875rem;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
   line-height: 1.5;
+
+  h1 {
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 `;
 
-const ListWrapper = styled.ul`
-  margin-top: 1rem;
-  padding-left: 0;
-`;
+const AboutLinkTable = styled.table`
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  border-collapse: collapse;
 
-const List = styled.li`
-  list-style: none;
-  margin-bottom: 0.5rem;
-  padding-left: 0;
+  tr {
+    &:last-of-type {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
 
-  svg {
-    margin-right: 0.3125rem;
+  th,
+  td {
+    padding: 0.5em 0.75em;
+    border-bottom: 1px solid #dbdbdb;
+    text-align: left;
+  }
+
+  th {
+    border-width: 0 0 2px;
+  }
+
+  td {
+    border-width: 0 0 1px;
+    padding: 0.5em 0.75em;
+    vertical-align: top;
+  }
+
+  strong {
+    font-weight: 600;
   }
 `;
 
 const About = () => {
   return (
     <PageTemplate>
-      <Post>
-        <Title>About Me</Title>
+      <AboutWrapper>
+        <h1>박유경</h1>
         <p>
           웹 프론트엔드 개발자 박유경 입니다.
           <br />
-          공부한 내용이나 새로 익힌 지식, 일하면서 겪은 이슈 등을 정리해서 올리고
-          있습니다.
+          공부한 내용이나 새로 익힌 지식, 일하면서 겪은 이슈 등을 정리해서
+          올리고 있습니다.
           <br />
           질문, 잘못된 내용, 오타 등의 피드백은 언제든 환영합니다!
         </p>
-        <ListWrapper>
-          <List>
-            <a href="mailto:kyoungah@kyoungah.com" target="_blank">
-              kyoungah@kyoungah.com
-            </a>
-          </List>
-          <List>
-            <a href="https://github.com/partykyoung" target="_blank">
-              github
-            </a>
-          </List>
-          <List>
-            <a
-              href="https://stackoverflow.com/users/11596797/youkyoung-park?tab=profile"
-              target="_blank"
-            >
-              stackoverflow
-            </a>
-          </List>
-          <List>
-            <a
-              href="https://www.linkedin.com/in/you-kyoung-park-240060104/"
-              target="_blank"
-            >
-              linkedin
-            </a>
-          </List>
-          <List>
-            <a href="https://daily.kyoungah.com" target="_blank">
-              daily blog
-            </a>
-          </List>
-        </ListWrapper>
-      </Post>
+        <AboutLinkTable>
+          <thead>
+            <tr>
+              <th>Site</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Contact</strong>
+              </td>
+              <td>
+                <a
+                  href="mailto:kyoungah@kyoungah.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  kyoungah@kyoungah.com
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Github</strong>
+              </td>
+              <td>
+                <a
+                  href="https://github.com/partykyoung"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://github.com/partyKyoung
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Daily Blog</strong>
+              </td>
+              <td>
+                <a
+                  href="https://daily.kyoungah.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://daily.kyoungah.com
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </AboutLinkTable>
+      </AboutWrapper>
     </PageTemplate>
-  )
-}
+  );
+};
 
 export default About;

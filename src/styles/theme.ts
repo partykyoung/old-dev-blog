@@ -7,6 +7,7 @@ export interface IThemeProps {
   white: string;
   black: string;
   gray: string;
+  border: string;
 
   // 레이아웃
   headerHeight: string;
@@ -24,6 +25,7 @@ const theme: IThemeProps = {
   // 메인 색상
   primary: "#44b3f8",
   primary2: "adc2cb",
+  border: "#f8f8f9",
 
   // 색상
   white: "#FFFFFF",

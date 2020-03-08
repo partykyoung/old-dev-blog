@@ -1,37 +1,48 @@
 import React from "react";
 import styled from "styled-components";
 
-import theme from '../../styles/theme';
+import theme from "../../styles/theme";
 
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-const Main = styled.main`
-  padding: 1.5rem 1rem;
-  margin: 0 auto;
-  box-sizing: border-box;
+const PageTemplateWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  padding-bottom: ${theme.footerHeight};
+  min-height: 100%;  
 
-  @media ${theme.tablet} {
-    width: 750px;
+  div {
+    margin-top: 1.875rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
   }
 
-  @media ${theme.desktop} {
-    width: 960px;
+  section {
+    width: 750px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    padding-top: 1.875rem;
   }
 `;
 
 const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <PageTemplateWrapper>
       <Header />
-        <Main>{children}</Main>
+        <div>
+        {children}
+        </div>
       <Footer />
-    </>
-  )
-}
+    </PageTemplateWrapper>
+  );
+};
 
 export default PageTemplate;
