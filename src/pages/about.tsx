@@ -68,7 +68,6 @@ const AboutLinkTable = styled.table`
 const About = () => {
   return (
     <PageTemplate>
-      <AboutWrapper>
         <h1>박유경</h1>
         <p>
           웹 프론트엔드 개발자 박유경 입니다.
@@ -130,7 +129,6 @@ const About = () => {
             </tr>
           </tbody>
         </AboutLinkTable>
-      </AboutWrapper>
     </PageTemplate>
   );
 };

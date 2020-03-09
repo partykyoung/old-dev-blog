@@ -24,12 +24,16 @@ const PageTemplateWrapper = styled.div`
   }
 
   section {
-    width: 750px;
+    width: 100%;
     margin-top: 0;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0;
     padding-top: 1.875rem;
+
+    @media ${theme.tablet} {
+      width: 750px;
+    }
   }
 `;
 
@@ -38,7 +42,9 @@ const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
     <PageTemplateWrapper>
       <Header />
         <div>
-        {children}
+          <section>
+            {children}
+          </section>
         </div>
       <Footer />
     </PageTemplateWrapper>
