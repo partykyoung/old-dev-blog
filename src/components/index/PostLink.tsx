@@ -6,8 +6,7 @@ import theme from '../../styles/theme';
 
 const Wrapper = styled.li`
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 4px; 
   box-sizing: border-box;
   min-height: 65px;

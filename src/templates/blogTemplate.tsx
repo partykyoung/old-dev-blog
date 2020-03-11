@@ -135,9 +135,9 @@ export default function Template({
   data
 }: any) {
   const { markdownRemark } = data
-  const { frontmatter, slug, html, id } = markdownRemark
+  const { fields, frontmatter, html, id } = markdownRemark
   const disqusConfig = {
-    url: `${"https://dev.kyoungah.com"+slug}`,
+    url: `https://dev.kyoungah.com${fields.slug}`,
     identifier: id,
     title: frontmatter.title,
   };
@@ -147,7 +147,7 @@ export default function Template({
     <Seo 
       title={frontmatter.title}
       description={frontmatter.description}
-      url={`https://dev.kyoungah.com${slug}`}
+      url={`https://dev.kyoungah.com${fields.slug}`}
     />
     <PageTemplate>
       <PostArticle>
@@ -184,6 +184,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "YYYY년 MM월 DD일")
+      }
+      fields {
+        slug
       }
     }
   }
