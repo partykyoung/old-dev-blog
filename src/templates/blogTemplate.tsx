@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from 'styled-components';
-import { Disqus } from 'gatsby-plugin-disqus';
+import { DiscussionEmbed } from "disqus-react"
 
 import "katex/dist/katex.min.css"
 
@@ -124,7 +124,6 @@ const PostArticle = styled.article`
 `;
 
 const PostComment = styled.div`
-  
   #disqus_thread {
     width: 100%;
     margin: 3rem auto 0;
@@ -137,9 +136,12 @@ export default function Template({
   const { markdownRemark } = data
   const { fields, frontmatter, html, id } = markdownRemark
   const disqusConfig = {
-    url: `https://dev.kyoungah.com${fields.slug}`,
-    identifier: id,
-    title: frontmatter.title,
+    shortname: 'dev-kyoungah-com',
+    config: {
+      url: `${process.env.BLOG_URL}${fields.slug}`,
+      identifier: fields.slug,
+      title: frontmatter.title 
+    }
   };
 
   return (
@@ -147,7 +149,7 @@ export default function Template({
     <Seo 
       title={frontmatter.title}
       description={frontmatter.description}
-      url={`https://dev.kyoungah.com${fields.slug}`}
+      url={`${process.env.BLOG_URL}${fields.slug}`}
     />
     <PageTemplate>
       <PostArticle>
@@ -161,7 +163,7 @@ export default function Template({
         />
       </PostArticle>
       <PostComment>
-        <Disqus config={disqusConfig} />
+      <DiscussionEmbed {...disqusConfig} />
       </PostComment>
     </PageTemplate>
     </>

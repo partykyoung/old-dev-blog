@@ -76,11 +76,6 @@ module.exports = {
         }
       },
     },{
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `dev-kyoungah-com`
-      }
-    },{
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-80236732-4"
