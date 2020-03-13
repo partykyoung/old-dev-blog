@@ -134,7 +134,7 @@ export default function Template({
   data
 }: any) {
   const { markdownRemark } = data
-  const { fields, frontmatter, html, id } = markdownRemark
+  const { fields, frontmatter, html } = markdownRemark
   const disqusConfig = {
     shortname: 'dev-kyoungah-com',
     config: {

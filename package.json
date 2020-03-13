@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "author": "partyKyoung <partykyoung@gmail.com>",
   "dependencies": {
-    "@nfront/global-styles": "^1.2.1",
     "@types/node": "^12.12.7",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
@@ -17,9 +16,7 @@
     "gatsby": "^2.17.10",
     "gatsby-image": "^2.2.30",
     "gatsby-paginate": "^1.1.0",
-    "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-feed": "^2.3.28",
-    "gatsby-plugin-global-styles": "^1.0.17",
     "gatsby-plugin-google-analytics": "^2.1.37",
     "gatsby-plugin-manifest": "^2.2.26",
     "gatsby-plugin-offline": "^3.0.18",

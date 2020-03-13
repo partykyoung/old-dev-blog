@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     author: "Kyoungah",
     title: `Kyoungah's dev blog.`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    siteUrl: 'https://dev.kyoungah.com'
+    description: `경아 개발 블로그`,
+    siteUrl: process.env.BLOG_URL
   },
   plugins: [
     {
@@ -65,17 +65,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-global-styles`,
-      options: {
-        pathToConfigModule: `src/styles/globalStyle`,
-        props: {
-          theme: `src/styles/theme`,
-          other: {
-            light: true
-          }
-        }
-      },
-    },{
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-80236732-4"

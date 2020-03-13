@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import GlobalStyles from '../../styles/GlobalStyles';
 import theme from "../../styles/theme";
 
 import Header from "../layout/Header";
@@ -39,6 +40,8 @@ const PageTemplateWrapper = styled.div`
 
 const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
   return (
+    <>
+    <GlobalStyles theme={theme} />
     <PageTemplateWrapper>
       <Header />
         <div>
@@ -48,6 +51,7 @@ const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
         </div>
       <Footer />
     </PageTemplateWrapper>
+    </>
   );
 };
 

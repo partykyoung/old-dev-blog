@@ -10,7 +10,7 @@
 import React from "react";
 import { GlobalContextProvider } from './src/components/context/GlobalContext';
 
-import "./src/styles/prism-atom-one-dark.css";
+import "./src/css/prism-atom-one-dark.css";
 import 'typeface-noto-sans-kr';
 
 export const wrapRootElement = ({ element }) => (
