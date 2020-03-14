@@ -1,30 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import theme from "../styles/theme";
-
 import PageTemplate from "../components/template/PageTemplate";
 
-const AboutWrapper = styled.section`
-  margin-top: 1.875rem;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
-  padding-top: 1.875rem;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  line-height: 1.5;
+const AboutTitle = styled.h1`
+margin-bottom: 0.75rem;
+font-size: 1.75rem;
+font-weight: 400;
+`;
 
-  h1 {
-    margin-bottom: 0.75rem;
-    font-size: 1.75rem;
-    font-weight: 400;
-  }
-
-  p {
-    font-size: 1rem;
-  }
+const AboutContent = styled.p`
+font-size: 1rem;
 `;
 
 const AboutLinkTable = styled.table`
@@ -68,15 +54,15 @@ const AboutLinkTable = styled.table`
 const About = () => {
   return (
     <PageTemplate>
-        <h1>박유경</h1>
-        <p>
+        <AboutTitle>박유경</AboutTitle>
+        <AboutContent>
           웹 프론트엔드 개발자 박유경 입니다.
           <br />
           공부한 내용이나 새로 익힌 지식, 일하면서 겪은 이슈 등을 정리해서
           올리고 있습니다.
           <br />
           질문, 잘못된 내용, 오타 등의 피드백은 언제든 환영합니다!
-        </p>
+        </AboutContent>
         <AboutLinkTable>
           <thead>
             <tr>

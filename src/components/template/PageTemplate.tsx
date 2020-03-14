@@ -16,25 +16,25 @@ const PageTemplateWrapper = styled.div`
   width: 100%;
   padding-bottom: ${theme.footerHeight};
   min-height: 100%;  
+`;
 
-  div {
-    margin-top: 1.875rem;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 0;
-  }
+const Container = styled.div`
+  margin-top: 1.875rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
+`;
 
-  section {
-    width: 100%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 0;
-    padding-top: 1.875rem;
+const Content = styled.section`
+  width: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
+  padding-top: 1.875rem;
 
-    @media ${theme.tablet} {
-      width: 750px;
-    }
+  @media ${theme.tablet} {
+    width: 750px;
   }
 `;
 
@@ -44,11 +44,11 @@ const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
     <GlobalStyles theme={theme} />
     <PageTemplateWrapper>
       <Header />
-        <div>
-          <section>
+        <Container>
+          <Content>
             {children}
-          </section>
-        </div>
+          </Content>
+        </Container>
       <Footer />
     </PageTemplateWrapper>
     </>

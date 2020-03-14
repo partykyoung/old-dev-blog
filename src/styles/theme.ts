@@ -33,8 +33,8 @@ const theme: IThemeProps = {
   gray: "#9b99a9",
 
   // 레이아웃
-  headerHeight: "50px",
-  footerHeight: "50px",
+  headerHeight: "3.5rem",
+  footerHeight: "3.5rem",
 
   // 미디어쿼리
   mobileS: '(max-width: 320px)',

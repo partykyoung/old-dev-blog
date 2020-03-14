@@ -14,8 +14,6 @@ const Wrapper = styled.header`
   padding-left: 1rem;
   align-items: center;
   background-color: ${theme.white};
-  box-sizing: border-box;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 `;
 
 const StyledLink = styled(Link)`
