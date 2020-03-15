@@ -18,8 +18,8 @@ const Wrapper = styled.header`
 
 const StyledLink = styled(Link)`
   display: block;
-  width: 152px;
-  height: 25px;
+  width: 165px;
+  height: 28px;
   margin-right: auto;
 `;
 
@@ -33,7 +33,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "kyoungah.png" }) {
         childImageSharp {
-          fluid(maxWidth: 152) {
+          fluid(maxWidth: 165) {
             ...GatsbyImageSharpFluid
           }
         }

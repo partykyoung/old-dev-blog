@@ -6,10 +6,12 @@ import theme from '../../styles/theme';
 
 const Wrapper = styled.li`
   width: 100%;
-  padding: 1rem 1.5rem;
-  border-radius: 4px; 
-  box-sizing: border-box;
-  min-height: 65px;
+  padding: 1.5rem 1rem;
+  min-height: 3.5rem;
+
+  &:first-child {
+    padding-top: 0;
+  }
 
   a {
     &:hover {      
@@ -40,7 +42,7 @@ const Wrapper = styled.li`
 
   p {
     font-size: 0.875rem;
-    line-height: 1.5;
+    line-height: 1.75;
   }
 `;
 
