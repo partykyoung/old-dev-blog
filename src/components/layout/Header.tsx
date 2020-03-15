@@ -9,22 +9,23 @@ const Wrapper = styled.header`
   width: 100%;
   height: ${theme.headerHeight};
   padding-top: 0;
-  padding-right: 1rem;
+  padding-right: 2.625rem;
   padding-bottom: 0;
-  padding-left: 1rem;
+  padding-left: 2.625rem;
   align-items: center;
   background-color: ${theme.white};
 `;
 
 const StyledLink = styled(Link)`
   display: block;
-  width: 146px;
-  height: 24px;
+  width: 152px;
+  height: 25px;
   margin-right: auto;
 `;
 
 const Nav = styled.nav`
   margin-left: auto;
+  font-size: 1.25rem;
 `;
 
 const Image = () => {
@@ -32,7 +33,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "kyoungah.png" }) {
         childImageSharp {
-          fluid(maxWidth: 146) {
+          fluid(maxWidth: 152) {
             ...GatsbyImageSharpFluid
           }
         }

@@ -1,12 +1,10 @@
 export interface IThemeProps {
-  // 메인 색상
-  primary: string;
-  primary2: string;
-
-  // 색상
+    // 색상
   white: string;
   black: string;
   gray: string;
+  primary: string;
+  link: string;
   border: string;
 
   // 레이아웃
@@ -22,15 +20,13 @@ export interface IThemeProps {
 }
 
 const theme: IThemeProps = {
-  // 메인 색상
-  primary: "#44b3f8",
-  primary2: "adc2cb",
-  border: "#f8f8f9",
-
   // 색상
   white: "#FFFFFF",
   black: "#1e1d29",
   gray: "#9b99a9",
+  primary: "#44b3f8",
+  link: "#009dff",
+  border: "#eae9f1",
 
   // 레이아웃
   headerHeight: "3.5rem",

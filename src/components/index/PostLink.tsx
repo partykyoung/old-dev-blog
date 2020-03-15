@@ -14,7 +14,7 @@ const Wrapper = styled.li`
   a {
     &:hover {      
       div {
-        color: #adc2cb;
+        color: ${({theme}) => theme.link};
         transition: color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
       }
     }  
@@ -23,7 +23,7 @@ const Wrapper = styled.li`
   div {
     width: 100%;
     height: 100%;
-    color: ${theme.black};
+    color: ${({theme}) => theme.black};
     transition: color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
   }
 

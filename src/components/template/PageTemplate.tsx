@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
 import GlobalStyles from '../../styles/GlobalStyles';
 import theme from "../../styles/theme";
@@ -15,7 +15,7 @@ const PageTemplateWrapper = styled.div`
   position: relative;
   width: 100%;
   padding-bottom: ${theme.footerHeight};
-  min-height: 100%;  
+  min-height: 100vh;  
 `;
 
 const Container = styled.div`
@@ -32,16 +32,21 @@ const Content = styled.section`
   margin-left: auto;
   margin-bottom: 0;
   padding-top: 1.875rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 
   @media ${theme.tablet} {
     width: 750px;
+    padding-right: 0;
+    padding-left: 0;
   }
 `;
 
 const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-    <GlobalStyles theme={theme} />
+    <GlobalStyles />
+    <ThemeProvider theme={theme}>
     <PageTemplateWrapper>
       <Header />
         <Container>
@@ -51,6 +56,7 @@ const PageTemplate: React.FC<LayoutProps> = ({ children }) => {
         </Container>
       <Footer />
     </PageTemplateWrapper>
+    </ThemeProvider>
     </>
   );
 };

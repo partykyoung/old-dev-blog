@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import theme from './theme';
+
 const  GlobalStyles = createGlobalStyle`
   html,
   body,
@@ -119,6 +121,7 @@ const  GlobalStyles = createGlobalStyle`
   html,
   body {
     font-size: 16px;
+    color: ${theme.black};
   }
 
   body {
@@ -155,6 +158,7 @@ const  GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
+    color: ${theme.link};
   }
 
   input {
