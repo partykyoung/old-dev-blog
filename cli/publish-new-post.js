@@ -27,7 +27,7 @@ async function publishNewPost() {
       return;
     }
 
-    console.log('발생 완료!');
+    console.log('발행 완료!');
   });
 }
 
