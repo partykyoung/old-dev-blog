@@ -24,7 +24,7 @@ const theme: IThemeProps = {
   white: "#FFFFFF",
   black: "#1e1d29",
   gray: "#9b99a9",
-  primary: "#44b3f8",
+  primary: "#009dff",
   link: "#009dff",
   border: "#eae9f1",
 
