@@ -29,6 +29,31 @@ Redux는 React 또는 다른 JavaScript 라이브러리와 함께 사용할 수 
 Action은 애플리케이션에서 Store로 데이터를 보내는 데이터 묶음이다. Store의 유일한 정보원이 된다.
 store.dispatch() 를 사용하여 Action을 Store로 보낼 수 있다.
 
+액션 객체는 type 필드를 필수적으로 가지고 있어야 한다.
+
+```javascript
+{
+  type: 'ADD_TODO',
+  data: {
+    id: 1,
+    text: 'Redux study'
+  }
+}
+```
+
+```javascript
+// action types
+const ADD_TODO = 'ADD_TODO';
+
+// action creators
+export function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    text
+  }
+}}
+```
+
 ### Reducers
 
 Reducer은 store에서 전송된 작업에 대응하여 state가 어떻게 변하는지를 지정한다.

@@ -10,7 +10,7 @@ tags:
 
 ## JWT(Json Web Token)
 
-- 두 개체 간의 정보를 안전하게 JSON 객체로 전송하기 위한 간결하고 독립적인 방법을 정의하는 개방형 표준([RFC 7519](https://tools.ietf.org/html/rfc7519).
+- 두 개체 간의 정보를 안전하게 JSON 객체로 전송하기 위한 간결하고 독립적인 방법을 정의하는 개방형 표준([RFC 7519](https://tools.ietf.org/html/rfc7519))
   - 정보는 디지털 서명이 되어 있기 때문에 신뢰할 수 있다.
   - HMAC 알고리즘을 사용한 비밀키 또는 RAS이나 ECDSA를 사용하는 공개 / 개인키 쌍을 사용하여 서명할 수 있다.
 
