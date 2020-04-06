@@ -29,11 +29,51 @@ const PostHeader = styled.header`
 `;
 
 const PostArticle = styled.article`
-  * {
+  h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.85;
     word-break: keep-all;
     overflow-wrap: break-word;
+  }
+
+  p + h2, p + h3, p + h4, p + h6,
+  ul + h2, ul + h3, ul + h4, ul + h5, ul + h6 {
+    margin-top: 3.5rem;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+
+    ul {
+      margin-bottom: 0;
+
+      &:nth-of-type(2n - 1) {
+        list-style-type: circle;
+      }
+
+      &:nth-of-type(2n){
+        list-style-type: disc;
+      }
+    }
+  }
+
+  li {
+    font-size: 1rem;
+    line-height: 2;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 `;
 
