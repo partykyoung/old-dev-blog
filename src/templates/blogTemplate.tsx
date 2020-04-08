@@ -85,7 +85,8 @@ const PostArticle = styled.article`
   }
 
   .gatsby-resp-image-figure {
-    margin-bottom: 1.25rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
   }
 
   .gatsby-resp-image-figcaption {
