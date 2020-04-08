@@ -32,7 +32,7 @@ const AboutLinkTable = styled.table`
   th,
   td {
     padding: 0.5em 0.75em;
-    border-bottom: 1px solid ${({theme}) => theme.border};
+    border-bottom: 1px solid ${({theme}) => theme.subPrimary};
     text-align: left;
   }
 

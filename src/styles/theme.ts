@@ -5,6 +5,7 @@ export interface IThemeProps {
   gray: string;
   primary: string;
   link: string;
+  subPrimary: string;
   border: string;
 
   // 레이아웃
@@ -24,8 +25,9 @@ const theme: IThemeProps = {
   white: "#FFFFFF",
   black: "#1e1d29",
   gray: "#9b99a9",
-  primary: "#009dff",
   link: "#009dff",
+  primary: "#009dff",
+  subPrimary: "#b5cbd3",
   border: "#eae9f1",
 
   // 레이아웃

@@ -13,17 +13,17 @@ PropTypes 속성의 종류는 [React 공식 문서](https://reactjs.org/docs/typ
 #### 부모 컴포넌트
 
 ```javascript
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Child from "./Child"
+import Child from "./Child";
 
 class Parent extends Component {
   render() {
-    return <Child singer="Nell" song="Home" />
+    return <Child singer="Nell" song="Home" />;
   }
 }
 
-export default Parent
+export default Parent;
 ```
 
 props값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서만 설정할 수 있다.
@@ -32,21 +32,21 @@ props값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에
 
 ```javascript
 // 자식 컴포넌트
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 class Child extends Component {
   render() {
-    const { singer, song } = this.props
+    const { singer, song } = this.props;
 
     return (
       <div>
         지금 듣고 있는 노래는 {singer}의 {song}입니다.
       </div>
-    )
+    );
   }
 }
 
-export default Child
+export default Child;
 ```
 
 props에 접근할 때는 this 키워드를 사용하여 접근한다.
@@ -60,8 +60,8 @@ props에 접근할 때는 this 키워드를 사용하여 접근한다.
 ### propTypes
 
 ```javascript
-import React, { Component } from "react"
-import PropTypes from "prop-types"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Child extends Component {
   // ... 생략
@@ -70,9 +70,9 @@ class Child extends Component {
 Child.propTypes = {
   singer: PropTypes.string,
   song: PropTypes.string.isRequired, // 필수적으로 존재해야 한다.
-}
+};
 
-export default Child
+export default Child;
 ```
 
 컴포넌트의 필수 props를 지정하거나 props 타입을 지정할 때는 propTypes를 사용한다. propTypes를 지정하려면 **prop-types** 모듈이 필요하다.
@@ -81,18 +81,19 @@ export default Child
 ```javascript
 export default class Parent extends Component {
   render() {
-    return <Child singer={123} song="Home" />
+    return <Child singer={123} song="Home" />;
   }
 }
 ```
 
 ![잘못된 타입으로 props를 넘겨줘 보았다.](../images/frontend/reactjs-props-3.png)
+
 props의 타입을 propTypes에서 설정한 타입과 다른 타입으로 넘겨주면 렌더링은 되나 개발자 도구에 오류 메시지가 출력된다.
 
 ```javascript
 export default class Parent extends Component {
   render() {
-    return <Child singer="Nell" />
+    return <Child singer="Nell" />;
   }
 }
 ```
@@ -103,8 +104,8 @@ export default class Parent extends Component {
 ### defaultProps
 
 ```javascript
-import React, { Component } from "react"
-import PropTypes from "prop-types"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Child extends Component {
   // ... 생략
@@ -113,14 +114,14 @@ class Child extends Component {
 Child.propTypes = {
   singer: PropTypes.string,
   song: PropTypes.string.isRequired,
-}
+};
 
 Child.defaultProps = {
   singer: "Hoobastank",
   song: "Without A Fight",
-}
+};
 
-export default Child
+export default Child;
 ```
 
 defaultProps를 사용해서 prop의 기본 값을 설정할 수 있다. defaultProps는 prop-types 모듈이 필요 없다.
@@ -128,7 +129,7 @@ defaultProps를 사용해서 prop의 기본 값을 설정할 수 있다. default
 ```javascript
 export default class Parent extends Component {
   render() {
-    return <Child />
+    return <Child />;
   }
 }
 ```
@@ -139,32 +140,32 @@ props를 지정해주지 않으면 defaultProps에 있는 기본 값이 적용�
 ### transform-class-properties
 
 ```javascript
-import React, { Component } from "react"
-import PropTypes from "prop-types"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Child extends Component {
   static propTypes = {
     singer: PropTypes.string,
     song: PropTypes.string.isRequired,
-  }
+  };
 
   static defaultProps = {
     singer: "Hoobastank",
     song: "Without A Fight",
-  }
+  };
 
   render() {
-    const { singer, song } = this.props
+    const { singer, song } = this.props;
 
     return (
       <div>
         지금 듣고 있는 노래는 {singer}의 {song}입니다.
       </div>
-    )
+    );
   }
 }
 
-export default Child
+export default Child;
 ```
 
 propTypes, defaulProps를 클래스 내부에서 정의할 수도 있다. 이 문법을 사용하려면 transform-class-properties babel 플러그인이 필요한데 create-react-app으로 생성한 프로젝트는 기본적으로 적용되어 있기 때문에 따로 설정할 필요가 없다.
@@ -174,7 +175,7 @@ propTypes, defaulProps를 클래스 내부에서 정의할 수도 있다. 이 �
 typeScript를 사용하여 props에 타입을 줘보자.
 
 ```javascript
-import * as React from "react"
+import * as React from "react";
 
 interface ChildProps {
   singer: string;
@@ -187,20 +188,20 @@ class Child extends React.Component<ChildProps, ChildState> {
   static defaultProps = {
     singer: "Hoobastank",
     song: "Without A Fight",
-  }
+  };
 
   render() {
-    const { singer, song } = this.props
+    const { singer, song } = this.props;
 
     return (
       <div>
         지금 듣고 있는 노래는 {singer}의 {song}입니다.
       </div>
-    )
+    );
   }
 }
 
-export default Child
+export default Child;
 ```
 
 ![잘못된 타입을 지정했더니 렌더링 조차 되지 않고 오류를 출력한다.](../images/frontend/reactjs-props-6.png)

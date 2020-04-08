@@ -43,14 +43,18 @@ const PostArticle = styled.article`
   }
 
   p + h2, p + h3, p + h4, p + h6,
-  ul + h2, ul + h3, ul + h4, ul + h5, ul + h6 {
+  ul + h2, ul + h3, ul + h4, ul + h5, ul + h6,
+  ol + h2, ol + h3, ol + h4, ol + h5, ol + h6 {
     margin-top: 3.5rem;
+  }
+
+  ol, ul {
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
   }
 
   ul {
     list-style-type: disc;
-    margin-bottom: 1rem;
-    padding-left: 2.5rem;
 
     ul {
       margin-bottom: 0;
@@ -63,6 +67,10 @@ const PostArticle = styled.article`
         list-style-type: disc;
       }
     }
+  }
+
+  ol {
+    list-style-type: decimal;
   }
 
   li {
@@ -85,12 +93,16 @@ const PostArticle = styled.article`
   }
 
   .gatsby-resp-image-figure {
-    margin-top: 1.75rem;
-    margin-bottom: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .gatsby-resp-image-figcaption {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: ${({theme}) => theme.subPrimary};
     text-align: center;
   }
 `;
