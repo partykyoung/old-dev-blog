@@ -22,8 +22,6 @@ Mobx도 있긴 하나 Mobx를 제대로 알려면 Redux를 좀 더 제대로 알
 
 Redux는 javaScript App을 위한 상태관리 라이브러리 이다.
 
-Redux는 React 또는 다른 JavaScript 라이브러리와 함께 사용할 수 있다.
-
 ### Actions
 
 Action은 애플리케이션에서 Store로 데이터를 보내는 데이터 묶음이다. Store의 유일한 정보원이 된다.

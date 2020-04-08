@@ -75,6 +75,23 @@ const PostArticle = styled.article`
       margin-bottom: 0;
     }
   }
+
+  pre[class*=language-] {
+    overflow: auto;
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .gatsby-resp-image-figure {
+    margin-bottom: 1.25rem;
+  }
+
+  .gatsby-resp-image-figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
 `;
 
 const PostComment = styled.div`
