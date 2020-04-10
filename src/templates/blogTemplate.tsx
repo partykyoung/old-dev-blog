@@ -122,7 +122,7 @@ export default function Template({
   const disqusConfig = {
     shortname: 'dev-kyoungah-com',
     config: {
-      url: `${process.env.BLOG_URL}${fields.slug}`,
+      url: `${process.env.GATSBY_BLOG_URL}${fields.slug}`,
       identifier: fields.slug,
       title: frontmatter.title 
     }
@@ -133,7 +133,7 @@ export default function Template({
     <Seo 
       title={frontmatter.title}
       description={frontmatter.description}
-      url={`${process.env.BLOG_URL}${fields.slug}`}
+      url={`${process.env.GATSBY_BLOG_URL}${fields.slug}`}
     />
     <PageTemplate>
       <PostArticle>

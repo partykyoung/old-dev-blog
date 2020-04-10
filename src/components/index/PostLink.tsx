@@ -6,12 +6,9 @@ import theme from '../../styles/theme';
 
 const Wrapper = styled.li`
   width: 100%;
+  margin-bottom: 1.25rem;
   padding: 1.5rem 1rem;
   min-height: 3.5rem;
-
-  &:first-child {
-    padding-top: 0;
-  }
 
   a {
     &:hover {      

@@ -36,7 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
-            excerpt
+            excerpt(truncate: true, pruneLength: 200)
             fields {
               slug
             }
