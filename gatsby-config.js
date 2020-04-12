@@ -40,9 +40,17 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: false,
               showCaptions: true
             },
           }, 
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              margin: 32,
+              scrollOffset: 0,
+            }
+          },
           {
             resolve: `gatsby-remark-katex`,
             options: {
