@@ -32,8 +32,25 @@ const PostArticle = styled.article`
   h2, h3, h4, h5, h6 {
     line-height: 1.5;
     margin-bottom: 1rem;
+    font-weight: 600;
   }
-  
+ 
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5, h6 {
+    font-size: 1rem;
+  }
+
   p {
     margin-bottom: 1rem;
     font-size: 1rem;
@@ -80,6 +97,19 @@ const PostArticle = styled.article`
     overflow-wrap: break-word;
 
     p {
+      margin-bottom: 0;
+    }
+  }
+
+  blockquote {
+    background-color: #f9f9f9;
+    border-left: 4px solid ${({theme}) => theme.primary};
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+
+    ul {
       margin-bottom: 0;
     }
   }

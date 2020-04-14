@@ -103,10 +103,7 @@ Header 인코딩값, Payload 인코딩값, 서명을 .로 구분하면서 모두
 
 ## Reference
 
-https://jwt.io/introduction/
-
-https://velopert.com/2389
-
-https://icarus8050.tistory.com/12
-
-https://bcho.tistory.com/999
+> - [Introduction to JSON Web Tokens](https://jwt.io/introduction/)
+> - [[JWT] JSON Web Token 소개 및 구조](https://velopert.com/2389)
+> - [JWT에 대한 간단 정리](https://icarus8050.tistory.com/12)
+> - [REST JWT(JSON Web Token)소개 - #1 개념 소개](https://bcho.tistory.com/999)

@@ -23,7 +23,7 @@ export interface IThemeProps {
 const theme: IThemeProps = {
   // 색상
   white: "#FFFFFF",
-  black: "#1e1d29",
+  black: "#212121",
   gray: "#9b99a9",
   link: "#009dff",
   primary: "#009dff",
