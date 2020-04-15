@@ -1,19 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
-import styled from 'styled-components';
-import { DiscussionEmbed } from "disqus-react"
+import styled from "styled-components";
+import { DiscussionEmbed } from "disqus-react";
 
-import "katex/dist/katex.min.css"
+import "katex/dist/katex.min.css";
 
-import theme from '../styles/theme';
+import theme from "../styles/theme";
 
-import PageTemplate from '../components/template/PageTemplate';
-import Seo from '../components/layout/Seo';
+import PageTemplate from "../components/template/PageTemplate";
+import Seo from "../components/layout/Seo";
 
 const PostHeader = styled.header`
   margin: 1.875rem 0;
   padding-bottom: 1.75rem;
-  border-bottom: 1px solid ${({theme}) => theme.border};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 
   h1 {
     margin-bottom: 1rem;
@@ -24,17 +24,21 @@ const PostHeader = styled.header`
 
   span {
     font-size: 1rem;
-    color: #72707F;
+    color: #72707f;
   }
 `;
 
 const PostArticle = styled.article`
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     line-height: 1.5;
     margin-bottom: 1rem;
     font-weight: 600;
   }
- 
+
   h2 {
     font-size: 1.75rem;
   }
@@ -47,7 +51,8 @@ const PostArticle = styled.article`
     font-size: 1.25rem;
   }
 
-  h5, h6 {
+  h5,
+  h6 {
     font-size: 1rem;
   }
 
@@ -59,13 +64,25 @@ const PostArticle = styled.article`
     overflow-wrap: break-word;
   }
 
-  p + h2, p + h3, p + h4, p + h6,
-  ul + h2, ul + h3, ul + h4, ul + h5, ul + h6,
-  ol + h2, ol + h3, ol + h4, ol + h5, ol + h6 {
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h6,
+  ul + h2,
+  ul + h3,
+  ul + h4,
+  ul + h5,
+  ul + h6,
+  ol + h2,
+  ol + h3,
+  ol + h4,
+  ol + h5,
+  ol + h6 {
     margin-top: 3.5rem;
   }
 
-  ol, ul {
+  ol,
+  ul {
     margin-bottom: 1rem;
     padding-left: 2.5rem;
   }
@@ -80,7 +97,7 @@ const PostArticle = styled.article`
         list-style-type: circle;
       }
 
-      &:nth-of-type(2n){
+      &:nth-of-type(2n) {
         list-style-type: disc;
       }
     }
@@ -103,7 +120,7 @@ const PostArticle = styled.article`
 
   blockquote {
     background-color: #f9f9f9;
-    border-left: 4px solid ${({theme}) => theme.primary};
+    border-left: 4px solid ${({ theme }) => theme.primary};
     padding-top: 0.5rem;
     padding-right: 1rem;
     padding-bottom: 0.5rem;
@@ -114,12 +131,20 @@ const PostArticle = styled.article`
     }
   }
 
-  pre[class*=language-] {
+  pre[class*="language-"] {
     overflow: auto;
     margin-top: 1.25rem;
     margin-bottom: 1.5rem;
     padding: 1rem;
     border-radius: 8px;
+  }
+
+  :not(pre) > code[class*="language-"], {
+    background: transparent;
+    color: #f14668;
+    font-size: 0.875rem;
+    font-weight: normal;
+    padding: 0.25rem 0.5rem 0.25rem;
   }
 
   .gatsby-resp-image-figure {
@@ -132,7 +157,7 @@ const PostArticle = styled.article`
   .gatsby-resp-image-figcaption {
     margin-top: 1rem;
     font-size: 0.875rem;
-    color: ${({theme}) => theme.subPrimary};
+    color: ${({ theme }) => theme.subPrimary};
     text-align: center;
   }
 `;
@@ -144,44 +169,42 @@ const PostComment = styled.div`
   }
 `;
 
-export default function Template({
-  data
-}: any) {
-  const { markdownRemark } = data
-  const { fields, frontmatter, html } = markdownRemark
+export default function Template({ data }: any) {
+  const { markdownRemark } = data;
+  const { fields, frontmatter, html } = markdownRemark;
   const disqusConfig = {
-    shortname: 'dev-kyoungah-com',
+    shortname: "dev-kyoungah-com",
     config: {
       url: `${process.env.GATSBY_BLOG_URL}${fields.slug}`,
       identifier: fields.slug,
-      title: frontmatter.title 
-    }
+      title: frontmatter.title,
+    },
   };
 
   return (
     <>
-    <Seo 
-      title={frontmatter.title}
-      description={frontmatter.description}
-      url={`${process.env.GATSBY_BLOG_URL}${fields.slug}`}
-    />
-    <PageTemplate>
-      <PostArticle>
-        <PostHeader>
-          <h1>{frontmatter.title}</h1>
-          <span>{frontmatter.date}</span>
-        </PostHeader>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </PostArticle>
-      <PostComment>
-      <DiscussionEmbed {...disqusConfig} />
-      </PostComment>
-    </PageTemplate>
+      <Seo
+        title={frontmatter.title}
+        description={frontmatter.description}
+        url={`${process.env.GATSBY_BLOG_URL}${fields.slug}`}
+      />
+      <PageTemplate>
+        <PostArticle>
+          <PostHeader>
+            <h1>{frontmatter.title}</h1>
+            <span>{frontmatter.date}</span>
+          </PostHeader>
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </PostArticle>
+        <PostComment>
+          <DiscussionEmbed {...disqusConfig} />
+        </PostComment>
+      </PageTemplate>
     </>
-  )
+  );
 }
 
 // grapthql을 이용하여 markdown에서 데이터를 가지고 온다.
@@ -206,4 +229,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
