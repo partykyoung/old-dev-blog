@@ -5,8 +5,6 @@ import { DiscussionEmbed } from "disqus-react";
 
 import "katex/dist/katex.min.css";
 
-import theme from "../styles/theme";
-
 import PageTemplate from "../components/template/PageTemplate";
 import Seo from "../components/layout/Seo";
 
@@ -36,7 +34,7 @@ const PostArticle = styled.article`
   h6 {
     line-height: 1.5;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   h2 {
@@ -137,14 +135,6 @@ const PostArticle = styled.article`
     margin-bottom: 1.5rem;
     padding: 1rem;
     border-radius: 8px;
-  }
-
-  :not(pre) > code[class*="language-"], {
-    background: transparent;
-    color: #f14668;
-    font-size: 0.875rem;
-    font-weight: normal;
-    padding: 0.25rem 0.5rem 0.25rem;
   }
 
   .gatsby-resp-image-figure {
