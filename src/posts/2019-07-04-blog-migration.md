@@ -60,9 +60,9 @@ module.exports = {
 
   plugins: [
     // 생략...
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
     // 생략...
-  ]
+  ],
 };
 ```
 
@@ -83,9 +83,9 @@ module.exports = {
   // 생략...
   plugins: [
     // 생략...
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
     // 생략...
-  ]
+  ],
 };
 ```
 
@@ -119,7 +119,7 @@ markdown 파일에서 가져온 정보를 뿌려주기 위한 템플릿을 만�
 // 생략...
 
 export default function Template({
-  data // this prop will be injected by the GraphQL query below.
+  data, // this prop will be injected by the GraphQL query below.
 }: any) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
@@ -167,12 +167,12 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/마크다운 파일이 있는 폴더명`
-      }
+        path: `${__dirname}/src/마크다운 파일이 있는 폴더명`,
+      },
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
     // 생략...
-  ]
+  ],
 };
 ```
 
@@ -204,7 +204,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
@@ -214,8 +214,8 @@ exports.createPages = ({ actions, graphql }) => {
         path: node.fields.slug,
         component: blogPostTemplate,
         context: {
-          slug: node.fields.slug
-        } // additional data can be passed via context
+          slug: node.fields.slug,
+        }, // additional data can be passed via context
       });
     });
   });
@@ -231,7 +231,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     });
   }
 };
@@ -264,15 +264,15 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
-              noInlineHighlight: false
-            }
-          }
+              noInlineHighlight: false,
+            },
+          },
           // 생략...
-        ]
-      }
-    }
+        ],
+      },
+    },
     // 생략...
-  ]
+  ],
 };
 ```
 
@@ -339,7 +339,7 @@ netlify를 사용하면 자동배포를 할 수 있다고 하는데 마이너한
 
 ## Reference
 
-- [gatsbyjs plugins](https://www.gatsbyjs.org/plugins/)
-- [정적 사이트 생성기 Gatsby](https://blog.outsider.ne.kr/1426)
-- [Getting started with Typescript on Gatsby](https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27)
-- [heejongahn/blog](https://github.com/heejongahn/blog)
+> - [gatsbyjs plugins](https://www.gatsbyjs.org/plugins/)
+> - [정적 사이트 생성기 Gatsby](https://blog.outsider.ne.kr/1426)
+> - [Getting started with Typescript on Gatsby](https://medium.com/maxime-heckel/getting-started-with-typescript-on-gatsby-8544b47c1d27)
+> - [heejongahn/blog](https://github.com/heejongahn/blog)
