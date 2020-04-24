@@ -147,7 +147,7 @@ const PostArticle = styled.article`
   .gatsby-resp-image-figcaption {
     margin-top: 1rem;
     font-size: 0.875rem;
-    color: ${({ theme }) => theme.subPrimary};
+    color: #b2b2b2;
     text-align: center;
   }
 `;

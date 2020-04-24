@@ -28,7 +28,7 @@ const theme: IThemeProps = {
   link: "#009dff",
   primary: "#009dff",
   subPrimary: "#b5cbd3",
-  border: "#eae9f1",
+  border: "#e5e5e5",
 
   // 레이아웃
   headerHeight: "3.5rem",
