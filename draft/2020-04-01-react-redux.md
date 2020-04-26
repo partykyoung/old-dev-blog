@@ -1,5 +1,5 @@
 ---
-title: redux
+title: Redux
 date: 2020-04-01 23:26:04
 categories:
   - front-end
@@ -10,46 +10,42 @@ tags:
   - etc
 ---
 
-## 굳이 Redux를 배워야하나?
-
-옛날의 React였다면 글로벌 상태관리에 Redux가 필수 였지만 지금은 아니다. Context API도 있고 hooks도 있어서 잘 조합해서 사용하면 리덕스 대신에 사용할 수 있다. 내 블로그 역시 context api와 hooks를 조합하여 redux 대신에 사용하고 있다.
-
-하지만 좀 더 큰 서비스에서 제대로 글로벌 상태관리를 하려면 리덕스가 아직까지는 좋은 것 같다. 생태계도 잘 구축되어 있고 redux-thunk, redux-saga 처럼 잘 만들어진 모듈이 있기 때문이다.
-
-Mobx도 있긴 하나 Mobx를 제대로 알려면 Redux를 좀 더 제대로 알아야 하는것 같다. 때문에 다시 한번 Redux에 대해 제대로 집고 넘어가보려 한다.
-
 ## Redux란?
 
-Redux는 javaScript App을 위한 상태관리 라이브러리 이다.
+Redux는 JavaScript App을 위한 상태관리 라이브러리 이다.
 
 ### Actions
 
-Action은 애플리케이션에서 Store로 데이터를 보내는 데이터 묶음이다. Store의 유일한 정보원이 된다.
-store.dispatch() 를 사용하여 Action을 Store로 보낼 수 있다.
-
-액션 객체는 type 필드를 필수적으로 가지고 있어야 한다.
+Action은 Application에서 Store로 데이터를 보내는 데이터 묶음이다.
 
 ```javascript
+// type
+const ADD_TODO = 'ADD_TODO'
+
+// action
 {
-  type: 'ADD_TODO',
-  data: {
-    id: 1,
-    text: 'Redux study'
-  }
+  type: ADD_TODO,
+  text: 'Redux - Actions 정리'
 }
 ```
 
-```javascript
-// action types
-const ADD_TODO = 'ADD_TODO';
+Action은 JavaScript 객체이다.
 
-// action creators
-export function addTodo(text) {
+- 수행 중인 작업의 유형을 나타내는 type 속성이 필요하다.
+  - type은 대게 string 형식으로 정의한다.
+- type을 제외한 그 외의 값들은 개발자 마음대로 넣어줄 수 있다.
+
+### Action Creators
+
+Action Creators는 Action을 생성하는 함수이다. Parameter을 받아와서 액션을 만들어 반환한다.
+
+```javascript
+function addTodo(text) {
   return {
     type: ADD_TODO,
-    text
-  }
-}}
+    text,
+  };
+}
 ```
 
 ### Reducers
@@ -69,4 +65,5 @@ Store은 Action과 Reducer을 가지고 오는 객체이다.
 
 Redux에서는 단 하나만의 store를 가질 수 있다.
 
-https://redux.js.org/basics/basic-tutorial
+> - [Redux Basics](https://redux.js.org/basics/basic-tutorial)
+> - [Redux (1) 소개 및 개념정리](https://velog.io/@velopert/Redux-1-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC-zxjlta8ywt)
