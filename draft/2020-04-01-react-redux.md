@@ -63,6 +63,13 @@ function reducer(state = initialState, action) {
 }
 ```
 
+Reducer는 이전 state와 action을 받아 새로운 state를 반환하는 `순수한 함수` 이다. Reducer를 순수하게 유지하는 것은 매우 중요하기 때문에 다음 사항들은 절대로 Reducer 안에서 하면 안된다.
+
+- argument의 변경이 일어나서는 안된다.
+- API 호출이나 라우팅 변환 같은 사이드 이펙트를 일으키면 안된다.
+- 똑같은 파라미터로 호출된 리듀서 함수는 언제나 똑같은 값을 반환해야 한다.
+  - 때문에 실행 떄마다 다른 결과 값을 반환하는 Date.now(), Math.random() 같은 순수하지못한 함수들은 reducer 안에서 호출하면 안된다.
+
 ### Store
 
 Store은 Action과 Reducer을 가지고 오는 객체이다.
