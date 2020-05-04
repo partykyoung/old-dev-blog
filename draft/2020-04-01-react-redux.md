@@ -17,6 +17,7 @@ Redux는 JavaScript App을 위한 상태관리 라이브러리 이다.
 ### Actions
 
 Action은 Application에서 Store로 데이터를 보내는 데이터 묶음이다. JavaScript 객체로 표현된다.
+Action은 일어난 일만 명세할 뿐 state가 어떻게 변하는지는 명세하지 않는다.
 
 ```javascript
 // type
@@ -47,7 +48,6 @@ function addTodo(text) {
 ### Reducers
 
 Reducer는 Store로 보낸 Action에 응답하여 state가 어떻게 변하는지를 정의한다.
-Action은 일어난 일만 명세할 뿐 state가 어떻게 변하는지는 명세하지 않는다.
 
 ```javascript
 function reducer(state = initialState, action) {
@@ -72,7 +72,7 @@ Reducer는 이전 state와 action을 받아 새로운 state를 반환하는 `순
 
 ### Store
 
-Store은 Action과 Reducer을 가지고 오는 객체이다.
+Store은 Action과 Reducer을 가지고 오는 객체이다. Store 안에는 현재의 앱상태와 리듀서가 들어있고 추가적으로 몇가지 내장함수들이 있다.
 
 - 애플리케이션의 상태를 저장한다.
 - getState() 메소드로 state 접근을 할 수 있다.
