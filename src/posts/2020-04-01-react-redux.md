@@ -72,15 +72,26 @@ Reducer는 이전 state와 action을 받아 새로운 state를 반환하는 `순
 
 ### Store
 
-Store은 Action과 Reducer을 가지고 오는 객체이다. Store 안에는 현재의 앱상태와 리듀서가 들어있고 추가적으로 몇가지 내장함수들이 있다.
+```javascript
+import { createStore } from "redux";
+import reducer from "./reducer";
+
+const store = createStore(reducer);
+```
+
+Store은 Action과 Reducer를 함께 제공해주는 객체이다. Store 안에는 App의 현재 상태와 Reducer가 들어있고 추가적으로 몇가지 내장함수들이 있다.
+
+Store는 다음과 같은 일들을 한다.
 
 - 애플리케이션의 상태를 저장한다.
-- getState() 메소드로 state 접근을 할 수 있다.
-- dispatch(action) 메소드로 state 업데이트를 할 수 있다.
+- getState() 메소드로 state에 접근할 수 있다.
+- dispatch(action) 메소드로 state를 업데이트 할 수 있다.
 - subscribe(listner) 메소드로 listener를 등록할 수 있다.
   - subscribe(listner) 메소드에서 반환된 메소드로 listner 해제를 핸들링 할 수 있다.
 
 Redux에서는 단 하나만의 store를 가질 수 있다.
+
+## Reference
 
 > - [Redux Basics](https://redux.js.org/basics/basic-tutorial)
 > - [Redux (1) 소개 및 개념정리](https://velog.io/@velopert/Redux-1-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC-zxjlta8ywt)
