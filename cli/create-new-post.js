@@ -3,6 +3,19 @@ const { DateTime } = require("luxon");
 const inquirer = require('inquirer');
 
 /**
+ * 파일명을 입력받아 return 해주는 함수
+ */
+async function getFileName() {
+  const { fileName } = await inquirer.prompt([{
+    type: 'input',
+    name: 'fileName',
+    message: '파일명을 입력해주세요.'
+  }]);
+
+  return fileName;
+}
+
+/**
  * 포스트 제목을 입력받아 return 해주는 함수.
  */
 async function getTitle() {
@@ -81,6 +94,7 @@ function getContent(title, date, categories) {
 
 async function createNewPost() {
   const cwd = process.cwd();
+  const fileName = await getFileName();
   const title = await getTitle();
   const categories = await getCategories();
   const date = getDate();
@@ -89,7 +103,7 @@ async function createNewPost() {
   const lastCategory = categories.length - 1 >= 0 ? categories[categories.length - 1]: 'no-category';
   const customCategory = lastCategory.replace(/\./, '').toLowerCase();
 
-  fs.writeFile(`${cwd}/draft/${date.summaryDate}-${customCategory}-${title}.md`, content, (err) => {
+  fs.writeFile(`${cwd}/draft/${date.summaryDate}-${customCategory}-${fileName}.md`, content, (err) => {
     if (err) {
       console.log(err, 'error: 포스트 생성에 실패하였습니다. X_X');
 

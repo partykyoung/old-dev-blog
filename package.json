@@ -5,10 +5,10 @@
   "version": "0.1.0",
   "author": "partyKyoung <partykyoung@gmail.com>",
   "dependencies": {
-    "@types/node": "^12.12.7",
+    "@types/node": "^14.0.14",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
-    "@types/react-helmet": "^5.0.14",
+    "@types/react-helmet": "^6.0.0",
     "add": "^2.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "disqus-react": "^1.0.7",
@@ -22,7 +22,7 @@
     "gatsby-plugin-offline": "^3.0.18",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-plugin-react-svg": "^2.1.2",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-plugin-styled-components": "^3.1.11",
     "gatsby-plugin-typescript": "^2.1.15",
@@ -40,16 +40,16 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.1.0",
     "smooth-scroll": "^16.1.0",
-    "styled-components": "^4.4.1",
+    "styled-components": "^5.1.1",
     "typeface-noto-sans-kr": "^0.0.63",
     "typescript": "^3.7.2"
   },
   "devDependencies": {
     "@types/smooth-scroll": "^16.1.0",
-    "@types/styled-components": "^4.4.0",
-    "gh-pages": "^2.1.1"
+    "@types/styled-components": "^5.1.0",
+    "gh-pages": "^3.1.0"
   },
   "keywords": [
     "gatsby"
@@ -63,7 +63,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "DEPLOY_ENV=production gatsby clean && gatsby build --no-cache && gh-pages -d public -b master -r https://github.com/partyKyoung/partyKyoung.github.io",
+    "deploy": "DEPLOY_ENV=production yarn run clean && yarn run build --no-cache && gh-pages -d public -b master -r https://github.com/partyKyoung/partyKyoung.github.io",
     "new-post": " node ./cli/create-new-post.js",
     "publish-post": " node ./cli/publish-new-post.js"
   },
