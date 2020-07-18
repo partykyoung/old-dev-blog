@@ -50,8 +50,6 @@ context2();
 
 https://ui.dev/javascript-visualizer/
 
-## Reference
-
+https://poiemaweb.com/js-execution-context## Reference
 https://www.youtube.com/watch?v=Nt-qa_LlUH0
-https://velog.io/@04_miffy/2020-01-21-0201-%EC%9E%91%EC%84%B1%EB%90%A8
 http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/
