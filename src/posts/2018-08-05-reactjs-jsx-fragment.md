@@ -2,7 +2,6 @@
 title: Fragment
 date: 2018-08-05 06:06:13
 path: /front-end/reactjs/fragment
-description: JSX와 Fragment가 무엇인지 알아봅시다.
 ---
 
 ## JSX

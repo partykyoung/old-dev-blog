@@ -4,7 +4,6 @@ date: 2020-07-05 20:37:22
 categories:
   - front-end
   - javaScript
-description: JavaScript 실행 컨텍스트
 tags:
   - front-end
   - javaScript

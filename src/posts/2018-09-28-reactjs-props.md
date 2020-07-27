@@ -2,7 +2,6 @@
 title: props
 path: /front-end/reactjs/props
 date: 2018-09-28 11:28:25
-description: props는 Component 속성을 설정할 때 사용하는 요소이다.
 ---
 
 ## props

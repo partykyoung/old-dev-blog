@@ -1,7 +1,6 @@
 ---
 title: Hexo 에서 Gatsby로 블로그 마이그레이션 하기 2
 date: 2019-07-21
-description: Hexo에서 Gatsby로 블로그 마이그레이션 하는 과정을 정리하였습니다.
 ---
 
 [Hexo에서 Gatsby로 블로그 마이그레이션 작업](/etc/blog-migration/)을 계속 이어 하면서 과정을 한번 더 정리 하였다. 직접 이것 저것 원하는대로 다 커스터마이징 하려다 보니 끝이 없는 것 같다 ㅠ.

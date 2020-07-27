@@ -138,8 +138,8 @@ const PostArticle = styled.article`
   }
 
   .gatsby-resp-image-figure {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.75rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -161,7 +161,7 @@ const PostComment = styled.div`
 
 export default function Template({ data }: any) {
   const { markdownRemark } = data;
-  const { fields, frontmatter, html } = markdownRemark;
+  const { excerpt, fields, frontmatter, html } = markdownRemark;
   const disqusConfig = {
     shortname: "dev-kyoungah-com",
     config: {
@@ -175,7 +175,7 @@ export default function Template({ data }: any) {
     <>
       <Seo
         title={frontmatter.title}
-        description={frontmatter.description}
+        description={excerpt}
         url={`${process.env.GATSBY_BLOG_URL}${fields.slug}`}
       />
       <PageTemplate>

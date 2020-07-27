@@ -1,7 +1,6 @@
 ---
 title: GDG FRONT-ENDGAME 컨퍼런스 후기
 date: 2019-06-26 23:33:12
-description: GDG FRONT-ENDGAME 컨퍼런스에서 들은 세션 내용들을 정리했습니다.
 path: /etc/gdg-frontend-endgame
 ---
 
