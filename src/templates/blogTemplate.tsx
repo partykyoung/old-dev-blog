@@ -139,7 +139,7 @@ const PostArticle = styled.article`
 
   .gatsby-resp-image-figure {
     margin-top: 3rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -147,7 +147,7 @@ const PostArticle = styled.article`
   .gatsby-resp-image-figcaption {
     margin-top: 1rem;
     font-size: 0.875rem;
-    color: #b2b2b2;
+    color: #757575;
     text-align: center;
   }
 `;
