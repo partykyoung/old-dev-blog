@@ -169,14 +169,63 @@ AWS CLI 설정과 S3 설정이 완료 되었으므로 이제 배포를 하면 �
 좀 더 편한 배포를 위해 package.json 파일의 scripts 부분에 deploy 명령어를 추가한다.
 
 ```
-yarn build
-yarn deploy
+yarn build && yarn deploy
 ```
 이제 프로젝트 빌드 후 deploy 명령어로 배포까지 한 후 엔드포인트로 접속해보면 정상적으로 페이지가 뜨는 것을 확인할 수 있다.
 
 ### CloudFront 설정하기
+AWS CloudFront란 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하도록 지원하는 CDN 서비스이다. 
 
-Amazon S3는 웹 사이트 엔드포인트에 대한 HTTPS 액세스를 지원하지 않는다. HTTPS를 사용하려는 경우 CloudFront를 사용하여 Amazon S3에서 호스팅되는 정적 웹 사이트를 제공할 수 있습니다.
+S3로 구축한 정적 웹 사이트에 HTTPS를 사용하려면 CloudFront를 사용해야 한다. HTTPS 지원 뿐만 아니라 CloudFront를 사용하면 커스텀 도메인 사용도 가능하며 S3에 직접 액세스 하는 것 보다 요금도 저렴하다.  
+
+
+![AWS 서비스 메뉴](../images/etc/aws-s3-hosting-19.png)
+
+AWS 서비스 메뉴에서 CloudFront를 검색하여 CloudFront 메뉴로 이동한다.
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-20.png)
+
+Create Distribution 버튼을 클릭한다. 
+
+![Create Distribution - step 1](../images/etc/aws-s3-hosting-21.png)
+
+Web 부분에 있는 Get Started 버튼을 클릭한다.
+
+![Create Distribution - step 2](../images/etc/aws-s3-hosting-22.png)
+
+Origion Domain Name 항목의 input 박스를 클릭하면 방금 만든 S3 버킷이 나타난다. 해당 S3 항목을 선택한다.
+
+Viewer Protocol Policy 항목에서는 Redirect Http to Https 를 선택하고 화면을 쭉 내려서 Create Distribution을 클릭한다.
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-23.png)
+
+완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다. 
+
+CloudFront로 파일을 배포하면 S3에서 파일을 업데이트 해도 캐시가 남아있기 떄문에 업데이트 이전의 파일을 보여준다. 캐시 유지 시간은 24시이다. 캐시 시간에 상관없이 강제로 파일을 업데이트 하고 싶으면 Invaldiation 작업이 필요하다. 배포할 때 파일도 강제로 업데이트 할 수 있도록 작업을 해보자.
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-24.png)
+
+IAM 항목으로 가서 첫번쨰 단계에 만들었던 IAM 사용자에 CloudFrontFullAccess 권한을 추가해야한다.
+
+```json
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "deploy": "aws s3 sync ./build s3://버킷 이름 --profile=IAM 이름",
+    "invalidate": "aws cloudfront create-invalidation --profile=sample-deploy-s3 --distribution-id 위에서 생성한 ColudFront distribution Id --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
+  },
+```
+
+s3에 배포한 React 프로젝트의 package.json 파일의 scripts 항목에 invalidate 명령어를 추가 해준다. 
+
+```
+yarn build && yarn deploy && yarn invalidate
+```
+
+이제 배포할 때 invalidate 명령어를 사용해주면 된다.
+
+## 마무리
 
 ## Reference
 
@@ -188,3 +237,4 @@ Amazon S3는 웹 사이트 엔드포인트에 대한 HTTPS 액세스를 지원�
 > - [리액트 앱 AWS S3, CloudFront 에 배포하기](https://react-etc.vlpt.us/08.deploy-s3.html)
 > - [pushState를 사용하는 SPA를 S3와 CloudFront로 서비스하기](https://blog.outsider.ne.kr/1394)
 > - [SPA를 AWS S3 정적 웹 호스팅시 문제 해결](https://jaroinside.tistory.com/46)
+> - [CloudFront를 이용해 HTTPS로 정적 리소스 배포하기](https://musma.github.io/2019/06/29/publish-static-assets-over-https-using-cloudfront.html)
