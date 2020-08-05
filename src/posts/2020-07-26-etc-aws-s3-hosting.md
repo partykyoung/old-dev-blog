@@ -151,12 +151,13 @@ S3 버킷 목록으로 돌아오면 방금 생성한 버킷이 보인다. 이 �
 
 ![인덱스 문서 구성](../images/etc/aws-s3-hosting-18.png)
 
-S3에 업로드 하려는 웹 콘텐츠 파일들이 React로 작업한 SPA 구조를 가지고 있기 때문에 인덱스 문서와 오류 문서에 index.html을 입력해준다. 
+S3에 업로드 하려는 웹 콘텐츠 파일들이 React로 작업한 SPA 구조를 가지고 있기 때문에 인덱스 문서와 오류 문서에 index.html을 입력해준다.
 
 SPA는 최초 요청에서 index.html을 받은 후 js, css 등 필요한 파일들을 로드하여 앱을 초기화 한다. 때문에 인덱스 주소(/)로 접속한 후 다른 페이지로 이동하면 문제가 없으나 하위 url을 복사해서 접속하거나 인덱스 페이지에서 다른 페이지로 이동 후 새로고침을 하면 해당 url에 맞는 html파일을 찾을 수 없기 때문에 404 페이지가 나오게 된다. 이 문제를 해결하려면 하위 url로 접근해도 index.html을 반환하도록 하게 하면 된다. 그래서 오류 문서에도 index.html을 입력하는 것이다.
 
 ### 배포
-AWS CLI 설정과 S3 설정이 완료 되었으므로 이제 배포를 하면 된다. 
+
+AWS CLI 설정과 S3 설정이 완료 되었으므로 이제 배포를 하면 된다.
 
 ```json
   "scripts": {
@@ -166,18 +167,20 @@ AWS CLI 설정과 S3 설정이 완료 되었으므로 이제 배포를 하면 �
     "deploy": "aws s3 sync ./build s3://버킷 이름 --profile=IAM 이름"
   },
 ```
+
 좀 더 편한 배포를 위해 package.json 파일의 scripts 부분에 deploy 명령어를 추가한다.
 
 ```
 yarn build && yarn deploy
 ```
+
 이제 프로젝트 빌드 후 deploy 명령어로 배포까지 한 후 엔드포인트로 접속해보면 정상적으로 페이지가 뜨는 것을 확인할 수 있다.
 
 ### CloudFront 설정하기
-AWS CloudFront란 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하도록 지원하는 CDN 서비스이다. 
 
-S3로 구축한 정적 웹 사이트에 HTTPS를 사용하려면 CloudFront를 사용해야 한다. HTTPS 지원 뿐만 아니라 CloudFront를 사용하면 커스텀 도메인 사용도 가능하며 S3에 직접 액세스 하는 것 보다 요금도 저렴하다.  
+AWS CloudFront란 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하도록 지원하는 CDN 서비스이다.
 
+S3로 구축한 정적 웹 사이트에 HTTPS를 사용하려면 CloudFront를 사용해야 한다. HTTPS 지원 뿐만 아니라 CloudFront를 사용하면 커스텀 도메인 사용도 가능하며 S3에 직접 액세스 하는 것 보다 요금도 저렴하다.
 
 ![AWS 서비스 메뉴](../images/etc/aws-s3-hosting-19.png)
 
@@ -185,7 +188,7 @@ AWS 서비스 메뉴에서 CloudFront를 검색하여 CloudFront 메뉴로 이�
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-20.png)
 
-Create Distribution 버튼을 클릭한다. 
+Create Distribution 버튼을 클릭한다.
 
 ![Create Distribution - step 1](../images/etc/aws-s3-hosting-21.png)
 
@@ -199,7 +202,7 @@ Viewer Protocol Policy 항목에서는 Redirect Http to Https 를 선택하고 �
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-23.png)
 
-완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다. 
+완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다.
 
 CloudFront로 파일을 배포하면 S3에서 파일을 업데이트 해도 캐시가 남아있기 떄문에 업데이트 이전의 파일을 보여준다. 캐시 유지 시간은 24시이다. 캐시 시간에 상관없이 강제로 파일을 업데이트 하고 싶으면 Invaldiation 작업이 필요하다. 배포할 때 파일도 강제로 업데이트 할 수 있도록 작업을 해보자.
 
@@ -213,11 +216,11 @@ IAM 항목으로 가서 첫번쨰 단계에 만들었던 IAM 사용자에 CloudF
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "deploy": "aws s3 sync ./build s3://버킷 이름 --profile=IAM 이름",
-    "invalidate": "aws cloudfront create-invalidation --profile=sample-deploy-s3 --distribution-id 위에서 생성한 ColudFront distribution Id --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
+    "invalidate": "aws cloudfront create-invalidation --profile=위에서 생성한 iam 사용자 이름--distribution-id 위에서 생성한 ColudFront distribution Id --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
   },
 ```
 
-s3에 배포한 React 프로젝트의 package.json 파일의 scripts 항목에 invalidate 명령어를 추가 해준다. 
+s3에 배포한 React 프로젝트의 package.json 파일의 scripts 항목에 invalidate 명령어를 추가 해준다.
 
 ```
 yarn build && yarn deploy && yarn invalidate
