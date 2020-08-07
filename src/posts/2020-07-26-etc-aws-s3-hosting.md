@@ -204,7 +204,8 @@ Viewer Protocol Policy 항목에서는 Redirect Http to Https 를 선택하고 �
 
 완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다.
 
-CloudFront로 파일을 배포하면 S3에서 파일을 업데이트 해도 캐시가 남아있기 떄문에 업데이트 이전의 파일을 보여준다. 캐시 유지 시간은 24시이다. 캐시 시간에 상관없이 강제로 파일을 업데이트 하고 싶으면 Invaldiation 작업이 필요하다. 배포할 때 파일도 강제로 업데이트 할 수 있도록 작업을 해보자.
+CloudFront로 파일을 배포하면 S3에서 파일을 업데이트 해도 캐시가 남아있기 떄문에 업데이트 이전의 파일을 보여준다. 캐시 유지 시간이 24시이기 때문에 파일을 업데이트 한후 24시간 이후에 업데이트 한 파일이 적용된다. 
+캐시 시간에 상관없이 강제로 파일을 업데이트 하고 싶으면 Invaldiation 작업이 필요하다. 배포할 때 파일도 강제로 업데이트 할 수 있도록 작업을 해보자.
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-24.png)
 
@@ -229,6 +230,7 @@ yarn build && yarn deploy && yarn invalidate
 이제 배포할 때 invalidate 명령어를 사용해주면 된다.
 
 ## 마무리
+S3에 React 프로젝트를 업로드 하여 정적 웹 호스팅을 하고 CloudFront 까지 적용해봤다. 정적 웹 호스팅 작업을 하면서 일단은 인덱스 문서, 오류 문서에 둘다 index.html을 적용하는 방식으로 작업을 했는데 왠만하면 오류 문서는 에러 처리 파일로 대체하는것이 나을 것 같다. 나중에 시간 나면 이 방법도 한번 찾아봐야겠다.
 
 ## Reference
 
