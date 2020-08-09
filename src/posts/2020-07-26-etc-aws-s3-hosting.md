@@ -202,12 +202,24 @@ Viewer Protocol Policy 항목에서는 Redirect Http to Https 를 선택하고 �
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-23.png)
 
-완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다.
+완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다. 해
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-23.png)
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-24.png)
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-25.png)
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-26.png)
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-27.png)
+
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-28.png)
 
 CloudFront로 파일을 배포하면 S3에서 파일을 업데이트 해도 캐시가 남아있기 떄문에 업데이트 이전의 파일을 보여준다. 캐시 유지 시간이 24시이기 때문에 파일을 업데이트 한후 24시간 이후에 업데이트 한 파일이 적용된다. 
 캐시 시간에 상관없이 강제로 파일을 업데이트 하고 싶으면 Invaldiation 작업이 필요하다. 배포할 때 파일도 강제로 업데이트 할 수 있도록 작업을 해보자.
 
-![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-24.png)
+![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-29.png)
 
 IAM 항목으로 가서 첫번쨰 단계에 만들었던 IAM 사용자에 CloudFrontFullAccess 권한을 추가해야한다.
 
@@ -243,3 +255,4 @@ S3에 React 프로젝트를 업로드 하여 정적 웹 호스팅을 하고 Clou
 > - [pushState를 사용하는 SPA를 S3와 CloudFront로 서비스하기](https://blog.outsider.ne.kr/1394)
 > - [SPA를 AWS S3 정적 웹 호스팅시 문제 해결](https://jaroinside.tistory.com/46)
 > - [CloudFront를 이용해 HTTPS로 정적 리소스 배포하기](https://musma.github.io/2019/06/29/publish-static-assets-over-https-using-cloudfront.html)
+> - [CloudFront로 React앱 배포하기 - 2](https://velog.io/@_junukim/CloudFront%EB%A1%9C-React%EC%95%B1-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-2)
