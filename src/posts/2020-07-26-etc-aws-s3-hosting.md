@@ -202,19 +202,28 @@ Viewer Protocol Policy 항목에서는 Redirect Http to Https 를 선택하고 �
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-23.png)
 
-완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다. 해
+완료 후 다시 CloudFront Distribition 목록으로 돌아오면 방금 생성한 CloudFront가 보인다. 항목에 있는 Domain Name 값으로 S3에 배포한 React 앱에 접속할 수 있다. Custom Domain도 설정할 수 있으나 적용할 도메인이 없어서 일단 이 과정은 패스 하겠다.
 
-![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-23.png)
+![403 Error](../images/etc/aws-s3-hosting-24.png)
 
-![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-24.png)
+하지만 CloudFront에서 제공한 url로 접속시 403 에러가 뜬다. 하위 url이 아니라 root url로 접속해도 403 error가 뜨는데 왜 그런지는 잘 모르겠다 ㅠ.. 그래도 다행히 해결법은 있다.
 
-![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-25.png)
+![CloudFront Error Page 추가](../images/etc/aws-s3-hosting-25.png)
+ColudFront Distributions 목록에서 S3와 연결되어 있는 항목의 ID를 클릭한 후 Error Pages 탭을 클릭한다. 그리고 Create Custom error Response 버튼을 클릭한다.
 
-![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-26.png)
+![CloudFront Error](../images/etc/aws-s3-hosting-26.png)
+
+HTTP Error Code에서 403을 선택한다. Error Caching Minimum TTL 항목은 CloudFront에서 오리진 서버로부터 오류 응답을 캐싱하려는 최소 시간을 설정하는 항목인데 얼마를 입력해야 좋을지 몰라서 일단 0을 입력했다. Response Page Path는 /index.html, Response Code는 200으로 설정한다. 
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-27.png)
 
+403 에러 뿐만 아니라 404 에러도 같은 방법으로 만들어 주었다.
+
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-28.png)
+
+약 1분이 지난 후 새로고침을 해보면 정상 접속이 잘 되는 것을 확인할 수 있다.
+
+#### CloudFront 캐시 무효화
 
 CloudFront로 파일을 배포하면 S3에서 파일을 업데이트 해도 캐시가 남아있기 떄문에 업데이트 이전의 파일을 보여준다. 캐시 유지 시간이 24시이기 때문에 파일을 업데이트 한후 24시간 이후에 업데이트 한 파일이 적용된다. 
 캐시 시간에 상관없이 강제로 파일을 업데이트 하고 싶으면 Invaldiation 작업이 필요하다. 배포할 때 파일도 강제로 업데이트 할 수 있도록 작업을 해보자.
@@ -239,10 +248,10 @@ s3에 배포한 React 프로젝트의 package.json 파일의 scripts 항목에 i
 yarn build && yarn deploy && yarn invalidate
 ```
 
-이제 배포할 때 invalidate 명령어를 사용해주면 된다.
+이재 배포할 때 invalidate 명령어를 같이 사용하주면 캐시가 무효화 되면서 새로운 배포 파일이 적용 된다.
 
 ## 마무리
-S3에 React 프로젝트를 업로드 하여 정적 웹 호스팅을 하고 CloudFront 까지 적용해봤다. 정적 웹 호스팅 작업을 하면서 일단은 인덱스 문서, 오류 문서에 둘다 index.html을 적용하는 방식으로 작업을 했는데 왠만하면 오류 문서는 에러 처리 파일로 대체하는것이 나을 것 같다. 나중에 시간 나면 이 방법도 한번 찾아봐야겠다.
+S3에 React 프로젝트를 업로드 하여 정적 웹 호스팅을 하고 CloudFront 까지 적용해봤다. 나중에 젠킨스를 사용하여 자동 배포까지 적용해 보고 싶다. 부지런히 공부하고 실습해야겠다.
 
 ## Reference
 

@@ -49,8 +49,7 @@ Root 사용자로 로그인 한 후 검색창에서 IAM을 입력하거나 서�
 
 ![IAM 사용자 추가 - 사용자 정보 설정](../images/etc/aws-iam-4.png)
 
-추가할 사용자의 이름과 액세스 유형을 설정한다. 액세스 유형은 프로그래밍 방식 액세스와 AWS Management Console 액세스가 있으며 나중에 변경이 가능하다. 프로그래밍 방식 액세스는 
-AWS S3에 정적호스팅을 하거나 Serverless 프레임워크를 통해 AWS Lambda에 작업한 것을 배포하는 등 필요한 작업에 권한을 설정하기 위해 액세스 키를 생성하는 방식이고 AWS Managemet Console 액세스는 로그인 가능한 사용자를 생성하는 방식이다.
+추가할 사용자의 이름과 액세스 유형을 설정한다. 액세스 유형은 프로그래밍 방식 액세스와 AWS Management Console 액세스가 있으며 나중에 변경이 가능하다. 프로그래밍 방식 액세스는 AWS CLI나 API등에 엑세스 하기 위해 액세스 키만 생성하는 방식이고 AWS Managemet Console 액세스는 로그인 가능한 사용자를 생성하는 방식이다.
 나는 AWS를 관리할 사용자가 필요하므로 AWS Management Console 액세스를 선택했다.
 
 ![IAM 사용자 추가 - 사용자 권한 설정](../images/etc/aws-iam-5.png)
