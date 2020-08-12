@@ -48,10 +48,18 @@ const Index = () => {
       posts: posts
     })
 
+    sessionStorage.setItem('currentPage', `${currentPage}`);
+
     setLoadings(false);
   }
 
-  useEffect(() => {  
+  useEffect(() => { 
+    const storedPage = sessionStorage.getItem('currentPage');
+
+    if (storedPage && Number.parseInt(storedPage, 10) === currentPage) {
+      return
+    }
+
     handleGetPages();
   }, [currentPage, hasMore]);
 
