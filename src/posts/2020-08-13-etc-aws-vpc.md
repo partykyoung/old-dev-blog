@@ -33,7 +33,16 @@ VPC 이름과 Ipv4 CIDR 블록을 입력해준다.
 
 - [CIDR (Classless Inter-Domain Routing)](https://cidr.xyz/): 클래스 없는 도메인 간 라우팅 기법. 
   - CIDR이 도입되기 이전에는 클래스 개념으로 IP를 할당했는데 IP 주소가 부족해지는 등의 한계가 있어서 클래스 개념을 없앤 CIDR 개념을 도입하였다.
+  - IP 주소(IPv4 기준)는 32bit로 구성되어 있고 각각 8bit씩 끊어 4개의 구간으로 나눈다. 1개의 구간을 옥텟이라 부르는데 각각의 옥텟들은 0 ~ 255 사이의 값을 가지며 이 값을 10진수로 표현하고 마침표(.)로 옥텟들을 구분한다. (ex: 127.0.0.1)  
   
+  IPv4 사이더 블록은 IPv4 주소와 비슷한 형태를 지니며, 점과 숫자로 이루어진 4부분의 주소와 ‘/’뒤의 0에서 32까지의 숫자로 이루어진다. (ex: 127.0.0.1/16) / 뒤의 숫자를 접두어 길이 라고 한다.
+
+네트워크 주소 / 호스트 주소
+
+8, 16, 24, 32
+
+앞에서 부터 8비트가 네트워크 주소라는 뜻
+
 ![AWS 서비스 메뉴](../images/etc/aws-vpc-4.png)
 
 다시 VPC 목록으로 돌아오면 새로운 VPC가 생성된 것을 확인할 수 있다.
@@ -50,3 +59,5 @@ DNS 호스트 이름 활성화를 체크한 후 저장 버튼을 누른다.
 ## Reference 
 > - [만들면서 배우는 아마존 버추얼 프라이빗 클라우드(Amazon VPC)](https://www.44bits.io/ko/post/understanding_aws_vpc)
 > - [AWS VPC basic](https://blog.2dal.com/2017/09/12/aws-vpc-basic/)
+> - [AWS VPC지정을 위한 CIDR 형식 주소값 계산 방법](https://blog.voidmainvoid.net/363)
+> - [IP 주소를 묶는 방법, CIDR란?](https://www.youtube.com/watch?v=kYiQGpPVnyI)
