@@ -89,7 +89,7 @@ function getContent(title, date, categories) {
     return `- ${category}`
   });
 
-  return `---\ntitle: ${title}\ndate: ${date}\ncategories:\n${customCategories.join('\n')}\ndescription:\ntags:\n---`;
+  return `---\ntitle: ${title}\ndate: ${date}\ncategories:\n${customCategories.join('\n')}\ntags:\n---`;
 }
 
 async function createNewPost() {
