@@ -8,12 +8,12 @@ tags:
 
 ## AWS Route 53
 
-높은 가용성과 확장성이 뛰어난 클라우드 Domain Name System (DNS) 웹 서비스. 도메인 이름을 등록하거나 소유한 도메인 이름에 IP 주소를 매칭시키거나 EC2, S3, CloudFront 등의 리소스에 도메인을 연결할 수 있고 도메인을 이용하여 여러개의 서비스로 부하를 분산시키는 로드밸런싱 작업도 할 수 있다.
+높은 가용성과 확장성이 뛰어난 클라우드 Domain Name System (DNS) 웹 서비스. 도메인을 등록하거나 소유한 도메인에 IP 주소를 매칭시킬수 있으며 EC2, S3, CloudFront 등의 리소스에 도메인 이름을 매핑할 수도 있는 등 도메인에 관련된 서비스를 제공한다.
 
 > DNS (Domain Name System): 네트워크에 연결된 호스트들은 각각 IP 주소들을 가지고 있다. 이 IP 주소는 사람이 이해하고 기억하기 어렵기 때문에 각 IP 주소마다 도메인 이름을 부여한다. DNS 서비스는 도메인 이름을 컴퓨터가 이해할 수 있게 IP 주소로 변환해준다. 사용자가 도메인 이름을 입력하면 클라이언트가 DNS 서버로 도메인 이름에 대한 IP 주소를 요청하고 DNS 서버는 요청한 도메인 이름에 해당하는 IP주소를 클라이언트로 전달한다.
 
 
-Route 53은 프리티어가 없다.
+Route 53은 프리티어 대상이 아니므로 매달 사용한 만큼 요금이 빠져나간다. 다행히 요금은 저렴한 편이다.
 
 ## Route 53 도메인 등록
 
@@ -48,8 +48,6 @@ private 호스트 영역은 AWS내에서만 동작한다.
 ### serverless api gateway
 
 ## Reference
-
-https://www.youtube.com/watch?v=AnViePe2mj8&list=PLuHgQVnccGMCas8a4f0uIg5X4uERoG6gb
 
 https://velog.io/@minholee_93/AWS-Route-53-DNS-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-8lk40vfqt4#2-route-53-%EB%8F%84%EB%A9%94%EC%9D%B8-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0
 https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/dns-configuring.html
