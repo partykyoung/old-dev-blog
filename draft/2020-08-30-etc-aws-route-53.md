@@ -50,12 +50,31 @@ DNS 관리에서 호스팅 영역 생성 버튼을 클릭한다.
 
 Route 53을 이용하면 S3, CloudFront, EC2, ELB 등 몇몇 AWS 리소스에 도메인을 쉽게 연동할 수 있다. Route 53에 도메인 등록 하는 작업을 완료 했으니 기존에 사이드 프로젝트로 사용하고 있던 CloudFront, Api gateway에 도메인을 한번 연동해보자.
 
+### SSL 설정
+
+![](../images/etc/aws-route-53-6.png)
+![](../images/etc/aws-route-53-7.png)
+![](../images/etc/aws-route-53-8.png)
+![](../images/etc/aws-route-53-9.png)
+![](../images/etc/aws-route-53-10.png)
+![](../images/etc/aws-route-53-11.png)
+![](../images/etc/aws-route-53-12.png)
+![](../images/etc/aws-route-53-13.png)
+![](../images/etc/aws-route-53-14.png)
+![](../images/etc/aws-route-53-15.png)
+![](../images/etc/aws-route-53-16.png)
+
 ### CloudFront
 
+![](../images/etc/aws-route-53-17.png)
+
 ### Serverless Api gateway
+
+![](../images/etc/aws-route-53-18.png)
 
 ## Reference
 > - [Amazon Route53 101 - 서태호 | 강남비기너모임 : AWS Community Day](https://www.youtube.com/watch?v=Nr7nLwfvT3Y)
 > - [많이 혼돈하시는 네임서버와 DNS](https://xetown.com/topics/1125037)
 > - [AWS Route 53 DNS 서비스 사용하기](https://velog.io/@minholee_93/AWS-Route-53-DNS-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-8lk40vfqt4#2-route-53-%EB%8F%84%EB%A9%94%EC%9D%B8-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0)
 > - [리액트 앱 AWS S3, CloudFront 에 배포하기](https://react-etc.vlpt.us/08.deploy-s3.html)
+> - [Serverless Domain Manager](https://www.serverless.com/plugins/serverless-domain-manager)
