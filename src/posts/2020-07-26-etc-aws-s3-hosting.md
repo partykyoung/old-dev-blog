@@ -221,7 +221,7 @@ HTTP Error Code에서 403을 선택한다. Error Caching Minimum TTL 항목은 C
 
 ![CloudFront Distribution 목록](../images/etc/aws-s3-hosting-28.png)
 
-약 1분이 지난 후 새로고침을 해보면 정상 접속이 잘 되는 것을 확인할 수 있다.
+약 1분이 지난 후 새로고침을 해보면 접속이 잘 되는 것을 확인할 수 있다.
 
 #### CloudFront 캐시 무효화
 

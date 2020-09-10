@@ -100,11 +100,21 @@ DNS 검증 항목을 선택한 후 다음 버튼을 클릭한다.
 
 성공 메시지가 뜨면 완료가 된 것이다. 검증이 완료 되려면 최대 30분 정도 걸릴 수 있다고 했지만 체감상 1 ~ 2분 걸렸던 것 같다.
 
-아쉽게도 인증서를 한번 발급하면 하면 모든 리전에 다 적용되는 것은 아니고 사용할 리전마다 새로운 인증서를 각각 요청해야 한다. 때문에 나는 아시아 태평양 (서울, ap-northeast-2), 미국 동부(버지니아 북부, us-east-1) 리전에 각각 인증서를 발급해 놓았다.
+### CloudFront 커스텀 도메인 설정
 
-### CloudFront
+저번에 현재 진행하고 있는 [사이드 프로젝트를 S3에 업로드 한 후 CloudFront 설정](/2020-07-26-etc-aws-s3-hosting/)까지 했었다. CloudFront를 사용하여 S3에 올라가있는 웹페이지에 커스텀 도메인을 연결해보자.
 
-![](../images/etc/aws-route-53-17.png)
+AWS 서비스 메뉴에서 CloudFront를 검색하여 해당 서비스로 이동하면 CloudFront Distributions 목록을 확인할 수 있다. 도메인 연결을 원하는 Distribution 항목의 ID를 클릭하여 상세 페이지로 이동한 후 General 탭에 있는 Edit 버튼을 눌러 편집 화면으로 이동할 수 있다.
+
+![클라우드 프론트 커스텀 도메인 설정](../images/etc/aws-route-53-17.png)
+
+Alternate Domain Names 항목에서 Route 53에 등록된 도메인을 입력한다. SSL Certificate 항목에서 Custom SSL Certificate 항목을 선택하고 인증서를 선택한 후 스크롤을 쭉 내려 Edit 버튼을 클릭해주면 도메인 연결이 끝난다.
+
+CloudFront에서 ssl 인증서를 적용하려면 미국 동부(버지니아 북부, us-east-1) 리전에도 SSL 인증서가 있어야 한다. 다행히 Certificate Manager 서비스는 무료이므로 미국 동부 리전을 선택한 후 Certificate Manager 서비스로 똑같이은 방법으로 SSL 인증서를 발급받을 수 있다. 
+
+![커스텀 도메인 설정 완료](../images/etc/aws-route-53-18.png)
+
+약 1분이 지난후 웹브라우저 url에 커스텀 도메인을 입력하면 접속이 잘 되는 것을 확인할 수 있다.
 
 ### Serverless Api gateway
 
