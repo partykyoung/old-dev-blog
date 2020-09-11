@@ -116,9 +116,60 @@ CloudFront에서 ssl 인증서를 적용하려면 미국 동부(버지니아 북
 
 약 1분이 지난후 웹브라우저 url에 커스텀 도메인을 입력하면 접속이 잘 되는 것을 확인할 수 있다.
 
-### Serverless Api gateway
+### API Gateway 도메인 설정 (feat. Serverless)
 
-![](../images/etc/aws-route-53-18.png)
+현재 Serverless 프레임워크를 사용하여 Lambda + API Gateway 서비스로 백엔드를 돌리고 있다. 여기에도 도메인을 설정할 수 있나 싶어 찾아보니 serverless-domain-manager를 사용하면 쉽게 도메인을 설정할 수 있었다.
+
+serverless-domain-manager를 사용하려면 아래의 IAM 권한이 필요하다.
+
+```
+acm:ListCertificates                *
+apigateway:GET                      /domainnames/*
+apigateway:GET                      /domainnames/*/basepathmappings
+apigateway:DELETE                   /domainnames/*
+apigateway:POST                     /domainnames
+apigateway:POST                     /domainnames/*/basepathmappings
+apigateway:PATCH                    /domainnames/*/basepathmapping
+cloudformation:GET                  *
+cloudfront:UpdateDistribution       *
+route53:ListHostedZones             *
+route53:ChangeResourceRecordSets    hostedzone/{HostedZoneId}
+route53:GetHostedZone               *
+route53:ListResourceRecordSets      *
+iam:CreateServiceLinkedRole         arn:aws:iam::${AWS::AccountId}: role/aws-service-role/ops.ap
+```
+
+![IAM 권한 설정](../images/etc/aws-route-53-19.png)
+
+Serverless lambda를 배포하기 위해 만들어놓은 IAM 계정에 위의 이미지처럼 권한을 줬다. 저기서 어떤 권한을 줘야하는지 잘 몰라서 일단은 관련된 권한을 찾은 후 FullAcess 권한을 주긴 했는데 좀 더 안전한 보안을 위해서 나중에 다시 수정할 예정이다.
+
+```
+npm install serverless-domain-manager --save-dev
+
+```
+
+```yml
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: api.wolfonair.com
+    stage: ${self:provider.stage}
+    certificateName: "*.wolfonair.com"
+    createRoute53Record: true
+    endpointType: regional
+    securityPolicy: tls_1_2
+    apiType: rest
+```
+
+```
+sls create_domain
+sls deploy
+```
 
 ## Reference
 > - [Amazon Route53 101 - 서태호 | 강남비기너모임 : AWS Community Day](https://www.youtube.com/watch?v=Nr7nLwfvT3Y)
