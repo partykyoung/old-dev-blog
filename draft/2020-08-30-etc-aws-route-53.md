@@ -50,7 +50,7 @@ DNS 관리에서 호스팅 영역 생성 버튼을 클릭한다.
 
 Route 53을 이용하면 S3, CloudFront, EC2, ELB 등 몇몇 AWS 리소스에 도메인을 쉽게 연동할 수 있다. Route 53에 도메인 등록 하는 작업을 완료 했으니 기존에 사이드 프로젝트로 사용하고 있던 CloudFront, Api gateway에 도메인을 한번 연동해보자.
 
-### AWS Certificate Manager 설정
+## AWS Certificate Manager 설정
 
 Route 53에 도메인을 등록하면 AWS Certificate Manageer을 사용하여 무료로 SSL 인증서를 발급받을 수 있다.
 
@@ -100,7 +100,7 @@ DNS 검증 항목을 선택한 후 다음 버튼을 클릭한다.
 
 성공 메시지가 뜨면 완료가 된 것이다. 검증이 완료 되려면 최대 30분 정도 걸릴 수 있다고 했지만 체감상 1 ~ 2분 걸렸던 것 같다.
 
-### CloudFront 커스텀 도메인 설정
+## CloudFront 커스텀 도메인 설정
 
 저번에 현재 진행하고 있는 [사이드 프로젝트를 S3에 업로드 한 후 CloudFront 설정](/2020-07-26-etc-aws-s3-hosting/)까지 했었다. CloudFront를 사용하여 S3에 올라가있는 웹페이지에 커스텀 도메인을 연결해보자.
 
@@ -116,11 +116,9 @@ CloudFront에서 ssl 인증서를 적용하려면 미국 동부(버지니아 북
 
 약 1분이 지난후 웹브라우저 url에 커스텀 도메인을 입력하면 접속이 잘 되는 것을 확인할 수 있다.
 
-### API Gateway 도메인 설정 (feat. Serverless)
+## API Gateway 도메인 설정 (feat. Serverless)
 
-현재 Serverless 프레임워크를 사용하여 Lambda + API Gateway 서비스로 백엔드를 돌리고 있다. 여기에도 도메인을 설정할 수 있나 싶어 찾아보니 serverless-domain-manager를 사용하면 쉽게 도메인을 설정할 수 있었다.
-
-serverless-domain-manager를 사용하려면 아래의 IAM 권한이 필요하다.
+AWS에서 제공하는 Lambda와 API Gateway 서비스를 같이 사용하면 서버리스 아키텍처로 백엔드 서버를 운영할 수 있다. Serverless 프레임워크를 사용하면 아주 간편하게 Lambda 작성 및 배포까지 가능한데 serverless-domain-manager 플러그인을 추가로 사용하면 커스텀 도메인 설정까지 가능하다.
 
 ```
 acm:ListCertificates                *
@@ -139,14 +137,18 @@ route53:ListResourceRecordSets      *
 iam:CreateServiceLinkedRole         arn:aws:iam::${AWS::AccountId}: role/aws-service-role/ops.ap
 ```
 
+serverless-domain-manager 플러그인을 사용하려면 Serverless에 연동되어 있는 IAM 권한에 위의 권한이 추가로 더 필요하다.
+
 ![IAM 권한 설정](../images/etc/aws-route-53-19.png)
 
-Serverless lambda를 배포하기 위해 만들어놓은 IAM 계정에 위의 이미지처럼 권한을 줬다. 저기서 어떤 권한을 줘야하는지 잘 몰라서 일단은 관련된 권한을 찾은 후 FullAcess 권한을 주긴 했는데 좀 더 안전한 보안을 위해서 나중에 다시 수정할 예정이다.
+일단은 관련된 권한을 찾은 후 FullAccess 권한을 주긴 했는데 좀 더 안전한 보안을 위해서 나중에 다시 수정할 예정이다.
 
 ```
 npm install serverless-domain-manager --save-dev
 
 ```
+
+serverless-domain-manager 플러그인을 설치한다. 
 
 ```yml
 plugins:
@@ -166,10 +168,21 @@ custom:
     apiType: rest
 ```
 
+serverless.yml파일에서 위와 같이 plugins, custom 항목에 추가를 해준다.
+
 ```
 sls create_domain
 sls deploy
 ```
+
+위의 명령어를 실행해주면 도메인 설정이 끝난다.
+
+![API Gateway 사용자 지정 도메인 이름](../images/etc/aws-route-53-20.png)
+
+AWS API Gateway 서비스에 직접 들어가 사용자 지정 도메인 이름 항목을 클릭해보면 도메인이 정상 등록 된 것을 확인할 수 있다.
+
+## 마무리
+Ec2에도 SSL 인증서를 적용해 커스텀 도메인을 달고 싶었는데 로드밸런서가 유료라서 달지 못했다. 다음엔 무료로 Ec2에 SSL 인증서를 한번 달아보겠다. 
 
 ## Reference
 > - [Amazon Route53 101 - 서태호 | 강남비기너모임 : AWS Community Day](https://www.youtube.com/watch?v=Nr7nLwfvT3Y)
