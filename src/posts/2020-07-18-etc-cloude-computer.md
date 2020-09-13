@@ -4,20 +4,24 @@ date: 2020-07-18 17:28:26
 categories:
   - etc
 tags:
+  - etc
 ---
 
 ## 클라우드 컴퓨팅
 
-- 플랫폼, 서버, 애플리케이션 등의 IT 리소스를 인터넷을 통해 [온디맨드](https://terms.naver.com/entry.nhn?docId=3342918&cid=42107&categoryId=42107)로 제공하고 사용한 만큼만 비용을 지불하는 서비스.
-- 정보처리, 저장 등의 작업이 제 3의 공간(클라우드)에서 이루어지는 컴퓨팅 시스템.
+- 플랫폼, 서버, 애플리케이션 등의 IT 리소스를 인터넷을 통해 온디맨드로 제공하고 사용한 만큼만 비용을 지불하는 서비스.
+- 확장 가능하고 측정된 IT 리소스를 원격으로 프로비저닝 하기 위해 설계된 IT 환경.
 - 사용자는 필요한 자원을 클라우드에 요청할 뿐, 물리적인 컴퓨터를 구성하거나 구입할 필요가 없다.
 
-## 클라우드 컴퓨팅의 조건
+> **온디맨드**: 모바일을 포함한 정보통신기술(ICT) 인프라를 통해 소비자의 수요에 맞춰 즉각적으로 맞춤형 제품 및 서비스를 제공하는 경제 활동.
 
-1. 클라우드는 자원들을 통합하여 관리해야 한다.
-2. 클라우드는 탄력성이 보장되어야 한다.
-3. 클라우드는 사용한 자원만큼만 요금을 지불해야 한다.
-4. 사용자가 원할 때 서비스를 항상 제공받을 수 있어야 한다.
+> **프로비저닝**: IT 리소스를 실시간으로 사용 가능한 상태로 만드는, 또는 규격품 형태로 패키징 하는 기술.
+
+### 클라우드 컴퓨팅의 특징
+
+- 확장성과 유연성: 사용자가 서비스에 따라, 혹은 시간에 따라 컴퓨팅 자원을 탄력적으로 확대 및 축소가 가능하다.
+- 즉시성과 가용성: 사용자가 요구하는 자원의 양을 즉시 충족할 수 있다. 공급 중심이 아닌 수요가 모든 것을 결정한다.
+- PAY-AS-YOU-GO: 사용한 만큼 비용을 지불한다.
 
 ## 클라우드 컴퓨팅 유형
 
@@ -40,27 +44,31 @@ tags:
 
 ## 클라우드 컴퓨팅 종류
 
-### 공용 클라우드 (Public cloude)
+### 공용 클라우드 (Public Cloud)
 
 - 일반 기업이나 사용자를 대상으로 하는 클라우드 서비스.
 - 실제 사용한 서비스에 대해서만 비용을 지불하면 된다.
 - 리소스나 유지보수 등을 클라우드 서비스 공급자가 담당하기 때문에 시스템 관리에 관여하지 않아도 된다.
 
-### 사설 클라우드 (Private cloude)
+### 사설 클라우드 (Private Cloud)
 
 - 특정 기업이나 특정 사용자를 대상으로 하는 클라우드 서비스.
 - 직접 클라우드를 관리하고 커스터마이징 할 수 있다.
 - 직접 클라우드를 관리 및 유지보수 해야 하기 떄문에 관리 비용이 든다.
 
-### 하이브리드 클라우드 (Hybride cloude)
+### 하이브리드 클라우드 (Hybride Cloud)
 
 - 공용 클라우드와 사설 클라우드의 혼합형.
 - 중요한 데이터 및 작업은 사설 클라우드로 관리하고 중요하지 않은 데이터 및 작업은 공용 클라우드로 관리할 수 있다.
 
+### 커뮤니티 클라우드 (Community Cloud)
+
+- 공통의 목적을 가진 특정 기업들이 퍼블릭 클라우드와 유사하게 공동으로 데이터 센터를 구축하여 운영하는 형태.
+
 ## Reference
 
-https://ko.wikipedia.org/wiki/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C_%EC%BB%B4%ED%93%A8%ED%8C%85
-https://aws.amazon.com/ko/what-is-cloud-computing/
-https://azure.microsoft.com/ko-kr/overview/what-is-cloud-computing/
-https://bcho.tistory.com/528
-[Public Cloud vs Private Cloud vs Hybrid Cloud](https://www.youtube.com/watch?v=3WIJ4axzFlU)
+> - [클라우드 컴퓨팅](https://ko.wikipedia.org/wiki/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C_%EC%BB%B4%ED%93%A8%ED%8C%85)
+> - [클라우드 컴퓨팅이란 무엇입니까?](https://aws.amazon.com/ko/what-is-cloud-computing/)
+> - [클라우드 컴퓨팅이란?](https://azure.microsoft.com/ko-kr/overview/what-is-cloud-computing/)
+> - [클라우드 서비스의 개념과 분류](https://bcho.tistory.com/528)
+> - [Public Cloud vs Private Cloud vs Hybrid Cloud](https://www.youtube.com/watch?v=3WIJ4axzFlU)
