@@ -119,13 +119,22 @@ const PostArticle = styled.article`
   blockquote {
     background-color: #f9f9f9;
     border-left: 4px solid ${({ theme }) => theme.primary};
-    padding-top: 0.5rem;
-    padding-right: 1rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.5rem;
-
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    
     ul {
-      margin-bottom: 0;
+      :first-of-type, :last-of-type {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      :first-of-type, :last-of-type {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
 
