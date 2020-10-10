@@ -13,10 +13,13 @@ tags:
 ## HTTPS
 
 ## 적용하기
+
+### EC2
+
 ### Certbot 발급
 
 ```
-certbot-auto certonly --manual --preferred-challenges=dns --email partykyoung@gmail.com  --server https://acme-v02.api.letsencrypt.org/directory --agree-tos --debug --no-bootstrap -d wolfonair.com -d *.wolfonair.com 
+certbot-auto certonly --manual --preferred-challenges=dns --email partykyoung@gmail.com  --server https://acme-v02.api.letsencrypt.org/directory --agree-tos --debug --no-bootstrap -d wolfonair.com -d *.wolfonair.com
 ```
 
 ### nginx 설정
@@ -59,9 +62,8 @@ server {
     proxy_set_header Connection "upgrade";
     proxy_http_version 1.1;
   }
-}                       
+}
 ```
-
 
 ## Reference
 
