@@ -14,7 +14,33 @@ tags:
 
 ## 적용하기
 
-### EC2
+### EC2 탄력적 IP 설정하기
+
+![](../images/etc/aws-ec2-lets-encrypt-1.png)
+
+탄력적 IP 주소를 발급받는다
+
+![](../images/etc/aws-ec2-lets-encrypt-2.png)
+
+할당 버튼을 누른다.
+
+![](../images/etc/aws-ec2-lets-encrypt-3.png)
+
+이 탄력적 IP 주소 연결을 클릭한다.
+
+![](../images/etc/aws-ec2-lets-encrypt-4.png)
+
+인스턴스를 선택하고 연결 버튼을 누른다.
+
+![](../images/etc/aws-ec2-lets-encrypt-5.png)
+
+aws route 53 서비스로 이동하여 ip주소를 입력한다.
+
+![aws 메일](../images/frontend/html-email-template-03.png)
+
+![aws 메일](../images/frontend/html-email-template-03.png)
+
+![aws 메일](../images/frontend/html-email-template-03.png)
 
 ### Certbot 발급
 
