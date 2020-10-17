@@ -8,17 +8,27 @@ tags:
   - aws
 ---
 
-## SSH 인증서
-
 ## HTTPS
+
+HTTP(Hypertext Transfer Protocol)란 HTML로 작성된 문서를 주고받기 위한 통신규약을 의미한다. 웹브라우저가 HTTP를 통하여 서버로부터 웹페이지를 요청하면 서버는 이 요청에 응답하여 필요한 정보를 웹브라우저에게 전달하게 된다.
+
+하지만 HTTP는 보안에 취약하다. 평문 통신이기 때문에 도청이 가능하며 통신 상대를 확인하지 않기 때문에 위장이 가능하고 완전성을 증명할 수 없기 때문에 변조가 가능하다. 이를 방지하기 위해 HTTPS가 등장했다.
+
+HTTPS는 HTTP에 암호화나 인증 등의 구조를 더한 것이다.
+
+## SSL 인증서
 
 ## 적용하기
 
 ### EC2 탄력적 IP 설정하기
 
+탄력적 IP 주소는 사용자가 계정에 연결할 수 있는 퍼블릭 IPv4 주소이다.
+
+EC2 인스턴스의 Public IP는 고정 IP가 아니기 때문에 EC2 인스턴스를 중지하고 재시작하면 IP주소가 바뀐다.
+
 ![](../images/etc/aws-ec2-lets-encrypt-1.png)
 
-탄력적 IP 주소를 발급받는다
+EC2 서비스 메뉴에서 탄력적 IP 탭을 선택한다. 탄력적 IP 주소를 발급받는다
 
 ![](../images/etc/aws-ec2-lets-encrypt-2.png)
 
@@ -93,5 +103,7 @@ server {
 
 ## Reference
 
+> - [](https://opentutorials.org/course/228/4894)
+> - [](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-instance-addressing.html#ip-addressing-eips)
 > - [(Certbot) 공짜로 HTTPS 서버를 열어보자. (feat. AWS)](https://perfectacle.github.io/2017/10/05/letsencrypt-with-certbot-feat-aws/)
 > - [AWS 환경에서 LetsEncrypt 와일드 카드 인증서를 발급받아 적용하기](https://cydin.tistory.com/7)
