@@ -10,11 +10,11 @@ tags:
 
 ## HTTPS
 
-HTTP(Hypertext Transfer Protocol)란 HTML로 작성된 문서를 주고받기 위한 통신규약을 의미한다. 웹브라우저가 HTTP를 통하여 서버로부터 웹페이지를 요청하면 서버는 이 요청에 응답하여 필요한 정보를 웹브라우저에게 전달하게 된다.
+HTTP(Hypertext Transfer Protocol)란 HTML로 작성된 문서를 주고받기 위한 프로토콜(통신규약)을 의미한다. 웹브라우저가 HTTP를 통하여 서버로부터 웹페이지를 요청하면 서버는 이 요청에 응답하여 필요한 정보를 웹브라우저에게 전달하게 된다. HTTP의 기본 TCP/IP 포트는 80이다.
 
 하지만 HTTP는 보안에 취약하다. 평문 통신이기 때문에 도청이 가능하며 통신 상대를 확인하지 않기 때문에 위장이 가능하고 완전성을 증명할 수 없기 때문에 변조가 가능하다. 이를 방지하기 위해 HTTPS가 등장했다.
 
-HTTPS는 HTTP에 암호화나 인증 등의 구조를 더한 것이다.
+HTTPS는 HTTP의 보안이 강화된 버전이다. HTTPS는 통신에서 일반 텍스트를 이용하는 대신에, SSL이나 TLS 프로토콜을 통해 세션 데이터를 암호화한다. 따라서 데이터의 적절한 보호를 보장한다. HTTPS의 기본 TCP/IP 포트는 443이다.
 
 ## SSL 인증서
 
@@ -103,6 +103,8 @@ server {
 
 ## Reference
 
+> - [](https://ko.wikipedia.org/wiki/HTTP)
+> - [](https://ko.wikipedia.org/wiki/HTTPS)
 > - [](https://opentutorials.org/course/228/4894)
 > - [](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-instance-addressing.html#ip-addressing-eips)
 > - [(Certbot) 공짜로 HTTPS 서버를 열어보자. (feat. AWS)](https://perfectacle.github.io/2017/10/05/letsencrypt-with-certbot-feat-aws/)
