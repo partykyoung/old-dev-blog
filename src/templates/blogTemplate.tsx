@@ -15,7 +15,7 @@ const PostHeader = styled.header`
 
   h1 {
     margin-bottom: 1rem;
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.5;
   }
@@ -38,7 +38,7 @@ const PostArticle = styled.article`
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.625rem;
   }
 
   h3 {
@@ -46,10 +46,13 @@ const PostArticle = styled.article`
   }
 
   h4 {
+    font-size: 1.25rem;
+  }
+
+  h5 {
     font-size: 1.125rem;
   }
 
-  h5,
   h6 {
     font-size: 1rem;
   }
